@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f629d7c320cd2784a8116aeca9759635, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  _player:
+  - name: Player_Cow
+    playerObject: {fileID: 3521379764105083055, guid: 805895b2ce94a1342b2a2cf8b12d4fb9,
+      type: 3}
+    moveSpeed: 15
+    attackPower: 3
+    attackCD: 0.5
+    currentAttackCD: 0
+    hurtCD: 3
+    currentHurtCD: 0
+    maxHP: 3
+    currentHP: 0
+    items: []
+  - name: Player_Octopus
+    playerObject: {fileID: 3521379764105083055, guid: c1135c67ddac71d49a98a622a5d6b2eb,
+      type: 3}
+    moveSpeed: 15
+    attackPower: 3
+    attackCD: 0.5
+    currentAttackCD: 0.03999991
+    hurtCD: 3
+    currentHurtCD: -0.019997705
+    maxHP: 3
+    currentHP: 0
+    items: []

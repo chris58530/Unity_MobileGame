@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6e5923f5f318d48b75d9eacf33b956, type: 3}
+  m_Name: PlanetData
+  m_EditorClassIdentifier: 
+  _planet:
+  - planetTitle: Grassland Planet
+    planetIntroduce: Lush green grassland is beautiful your wellcome!
+    planetObject: {fileID: 6185105767668762942, guid: 1088f795173ed1a4990033c8b63ef4ca,
+      type: 3}
+  - planetTitle: Desert Planet
+    planetIntroduce: 'Barren desert and nothing here... '
+    planetObject: {fileID: 3566611828995035156, guid: a1adf14d24dcd134884cc6aa5a606695,
+      type: 3}
+  - planetTitle: Lava Planet
+    planetIntroduce: Lava volcano terrain very hot...
+    planetObject: {fileID: 4424034553344229018, guid: 4b8791e6c8206164990cdf0587b21521,
+      type: 3}
+  - planetTitle: Ice Planet
+    planetIntroduce: Very cold very danger do not come...
+    planetObject: {fileID: 4685510883742679094, guid: 9362b7d70907e0d4fb7748114de9a6b9,
+      type: 3}
