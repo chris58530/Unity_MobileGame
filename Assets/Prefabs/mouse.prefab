@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2169603970904281759}
   - component: {fileID: 3837869142133032491}
   - component: {fileID: 4432529230618870080}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: LEAF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2131830050552558438}
   - component: {fileID: 6653677896749865682}
   - component: {fileID: 5195556961858991910}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: mouse.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 1585182286}
   - component: {fileID: 1585182287}
   - component: {fileID: 6663186500343564443}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: mouse
   m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 8115612419070732686}
   - component: {fileID: 2530826805210129818}
   - component: {fileID: 7850212870295144448}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: PLANT
   m_TagString: Untagged
   m_Icon: {fileID: 0}

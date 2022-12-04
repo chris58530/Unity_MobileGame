@@ -7,5 +7,5 @@ public class PlayerData : MonoBehaviour
     [SerializeField]
     private PlayerDataBaseSO Data;
 
-    public float attack { get { return 1; } } //之後要改
+    public float attack { get { return Data.GetPlayer(PlayerDataBaseSO.Name.player_Cow).attackPower; } } //之後要改
 }

@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private float speed;
 
-    // Update is called once per frame
-    void Update()
+    public Transform target;
+
+    public delegate void Recycle(Bullet bullet);
+    public Recycle recycle;
+
+    private void FixedUpdate()
     {
-        
+        if (target != null)
+        {
+            transform.position = Vector3.Lerp(transform.position, target.position, speed * Time.deltaTime);
+            transform.LookAt(target);
+        }
+        else recycle(this);
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EnemyAttack"))
+        {
+            recycle(this);
+            Actions.OnDamageEnemy?.Invoke(1);
+        }
     }
 }

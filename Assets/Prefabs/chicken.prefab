@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4550294734565273464}
   - component: {fileID: 9638457960414592}
   - component: {fileID: 2793106774910843769}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: bird_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 9206780063008089180}
   - component: {fileID: 4787503181008702416}
   - component: {fileID: 5766894064321671528}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: mushroomup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 3479986002401330154}
   - component: {fileID: 718687538712138324}
   - component: {fileID: 8578491885991294871}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: bird_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 6774852691134955401}
   - component: {fileID: 4320232223733869278}
   - component: {fileID: 4166279850558983898}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: bird_mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 1957646643002741145}
   - component: {fileID: 1300433501826994185}
   - component: {fileID: 7024394292692835533}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: down_mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 7931748958980982565}
   - component: {fileID: 8211450276059303384}
   - component: {fileID: 427424401207699565}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: chicken
   m_TagString: EnemyAttack
   m_Icon: {fileID: 0}

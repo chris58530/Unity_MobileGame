@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3684181158076112515}
   - component: {fileID: 3372354094746648049}
   - component: {fileID: 7533931806655382384}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: pumpking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5226890352179404027}
   - component: {fileID: 8623993453421051653}
   - component: {fileID: 1680518298079528762}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: horn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 6804939460889000577}
   - component: {fileID: 333269294861154671}
   - component: {fileID: 4188521449245669551}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: downmouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 5316727189466544572}
   - component: {fileID: 3453973410702026497}
   - component: {fileID: 5994015570248741295}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 4193904094804915699}
   - component: {fileID: 446827428308023630}
   - component: {fileID: 2760522654089896637}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 101296363053177043}
   - component: {fileID: 7979923752007292362}
   - component: {fileID: 3525137013097392219}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: hatleaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 3768859129216736266}
   - component: {fileID: 5908697590785178385}
   - component: {fileID: 4717887535734655837}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 7310841228145122811}
   - component: {fileID: 901069506169244804}
   - component: {fileID: 2499124332703940294}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: tail.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 3590455537884249991}
   - component: {fileID: 7792552714166639554}
   - component: {fileID: 1306682099618231898}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: upmouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 1524083327}
   - component: {fileID: 1524083328}
   - component: {fileID: 8983245186634835827}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: cow
   m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
