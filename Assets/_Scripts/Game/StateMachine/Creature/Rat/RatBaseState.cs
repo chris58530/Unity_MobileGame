@@ -6,6 +6,7 @@ public abstract  class RatBaseState
 {
     protected Transform playerTrans;
     protected Rigidbody rb; 
+    protected string Rat = "Rat";
     public virtual void EnterState(RatStateManager creature)
     {
         Debug.Log(string.Format("<color=#fff000>{0}</color>", creature.currentState + "¼Ò¦¡"));
@@ -18,9 +19,9 @@ public abstract  class RatBaseState
         if (other.gameObject.CompareTag("PlayerAttack"))
         {
             float damage = other.gameObject.GetComponentInParent<PlayerData>().attack;
-            creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.rat).currentHP -= damage;
+            creature.CreatureData.GetCreature(Rat).currentHP -= damage;
             creature.SwitchState(creature.hurtState);
-            if (creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.rat).currentHP <= 0)
+            if (creature.CreatureData.GetCreature(Rat).currentHP <= 0)
                 GameObject.Destroy(creature.gameObject);
         }
     }
@@ -71,7 +72,7 @@ public class RatMoveState : RatBaseState
         if (playerTrans != null)
         {
             rb.transform.LookAt(new Vector3(playerTrans.position.x, creature.transform.position.y, playerTrans.position.z));
-            rb.transform.Translate(new Vector3(0, 0, 1 * creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.rat).moveSpeed * Time.deltaTime));
+            rb.transform.Translate(new Vector3(0, 0, 1 * creature.CreatureData.GetCreature(Rat).moveSpeed * Time.deltaTime));
         }
         else
         {
@@ -85,7 +86,7 @@ public class RatMoveState : RatBaseState
 
         //creature.CreatureData.hp -= collision.gameObject.GetComponent<CreatureDataSO>().attack;
 
-        if (creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.rat).currentHP < 0)
+        if (creature.CreatureData.GetCreature(Rat).currentHP < 0)
             creature.SwitchState(creature.moveState);
         else
             creature.SwitchState(creature.hurtState);

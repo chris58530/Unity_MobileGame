@@ -34,7 +34,7 @@ public class Player
     public GameObject playerObject;
     public float moveSpeed;
 
-    public float attackPower;
+    public int attackPower;
 
 
 
@@ -46,7 +46,7 @@ public class Player
     [HideInInspector]
     public float currentHurtCD;
 
-    public float maxHP;
+    public int maxHP;
     [HideInInspector]
     public float currentHP;
 

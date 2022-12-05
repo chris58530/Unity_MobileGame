@@ -12,14 +12,14 @@ public class SlimeStateManager : MonoBehaviour
 
     public CreatureDataBaseSO creatureData;
 
-
+    public int currentHP;
     private void Start()    
     {
         currentState = moveState;
 
         currentState.EnterState(this);
 
-        creatureData.GetCreature(CreatureDataBaseSO.Name.slime).currentHP = creatureData.GetCreature(CreatureDataBaseSO.Name.slime).maxHP;
+        currentHP = creatureData.GetCreature("Slime").maxHP;
 
     }
     private void FixedUpdate()

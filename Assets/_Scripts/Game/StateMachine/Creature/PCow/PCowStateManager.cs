@@ -19,7 +19,7 @@ public class PCowStateManager : MonoBehaviour
 
         currentState.EnterState(this);
 
-        CreatureData.GetCreature(CreatureDataBaseSO.Name.PCow).currentHP = CreatureData.GetCreature(CreatureDataBaseSO.Name.PCow).maxHP;
+        CreatureData.GetCreature("PCow").currentHP = CreatureData.GetCreature("PCow").maxHP;
     }
     private void FixedUpdate()
     {

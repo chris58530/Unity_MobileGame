@@ -6,6 +6,7 @@ public abstract class PCowBaseState
 {
     protected Transform playerTrans;
     protected Rigidbody rb;
+    protected string PCow = "PCow";
     public virtual void EnterState(PCowStateManager creature)
     {
         Debug.Log(string.Format("<color=#ff0000>{0}</color>", creature.currentState + "¼Ò¦¡"));
@@ -45,7 +46,7 @@ public class PCowMoveState : PCowBaseState
         if (playerTrans != null)
         {
             rb.transform.LookAt(new Vector3(playerTrans.position.x, creature.transform.position.y, playerTrans.position.z));
-            rb.transform.Translate(new Vector3(0, 0, 1 * creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.PCow).moveSpeed * Time.deltaTime));
+            rb.transform.Translate(new Vector3(0, 0, 1 * creature.CreatureData.GetCreature(PCow).moveSpeed * Time.deltaTime));
             float distance = Vector3.Distance(playerTrans.position, creature.transform.position);
             //Debug.Log(distance);
             //if (creature.CreatureData.currentAttackCD > 0)
@@ -72,7 +73,7 @@ public class PCowChargeState : PCowBaseState , IDamageable
     public override void EnterState(PCowStateManager creature)
     {
         base.EnterState(creature);
-        charge = creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.PCow).attackCD;
+        charge = creature.CreatureData.GetCreature(PCow).attackCD;
 
     }
     public override void UpdateState(PCowStateManager creature)
@@ -83,7 +84,7 @@ public class PCowChargeState : PCowBaseState , IDamageable
         charge -= Time.deltaTime;
         if (charge <= 0)
             creature.SwitchState(creature.attackState);
-        if (creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.PCow).currentHP <= 0)
+        if (creature.CreatureData.GetCreature(PCow).currentHP <= 0)
             GameObject.Destroy(creature.gameObject  );
       
     }
@@ -92,7 +93,7 @@ public class PCowChargeState : PCowBaseState , IDamageable
         if (collision.gameObject.CompareTag("PlayerAttack"))
         {
             float damage = collision.GetComponentInParent<PlayerData>().attack;
-            creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.PCow).currentHP -= damage;
+            creature.CreatureData.GetCreature(PCow).currentHP -= damage;
          
         }
     }
@@ -109,7 +110,7 @@ public class PCowAttackState : PCowBaseState
     public override void EnterState(PCowStateManager creature)
     {
         base.EnterState(creature);
-        wait = creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.PCow).attackCD;
+        wait = creature.CreatureData.GetCreature(PCow).attackCD;
         target = playerTrans.position;
         rb = creature.GetComponent<Rigidbody>();
     }
@@ -118,7 +119,7 @@ public class PCowAttackState : PCowBaseState
     {
         rb.transform.LookAt(new Vector3(target.x, creature.transform.position.y, target.z));
 
-        creature.transform.position = Vector3.MoveTowards(creature.transform.position, target,creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.PCow).moveSpeed*15*Time.deltaTime);
+        creature.transform.position = Vector3.MoveTowards(creature.transform.position, target,creature.CreatureData.GetCreature(PCow).moveSpeed*15*Time.deltaTime);
         wait -= Time.deltaTime;
         if (wait <= 0)      
             creature.SwitchState(creature.moveState);

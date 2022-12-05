@@ -24,10 +24,13 @@ public class Bullet : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("EnemyAttack"))
+        if (other.CompareTag("EnemyAttack")) //子彈產生傷害在敵人BaseState
         {
             recycle(this);
-            Actions.OnDamageEnemy?.Invoke(1);
         }
+    }
+    public int GetBulletDamage()
+    {
+        return 1;
     }
 }

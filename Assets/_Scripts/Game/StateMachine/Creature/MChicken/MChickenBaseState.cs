@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class MChickenBaseState
 {
+    protected string Chicken = "Chicken";
     public virtual void EnterState(MChickenStateManager creature)
     {
         Debug.Log(string.Format("<color=#fff000>{0}</color>", creature.currentState + "模式"));
@@ -14,7 +15,7 @@ public abstract class MChickenBaseState
         if (other.gameObject.CompareTag("PlayerAttack"))
         {
             float damage = other.gameObject.GetComponentInParent<PlayerData>().attack;
-            creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.chicken).currentHP -= damage;
+            creature.CreatureData.GetCreature(Chicken).currentHP -= damage;
             creature.SwitchState(creature.hurtState);
         }
     }
@@ -62,15 +63,15 @@ public class MChickenHurtState : MChickenBaseState //計時僵直時間
 {
     public override void EnterState(MChickenStateManager creature)
     {
-        if(creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.chicken).currentHP <= 0)
+        if(creature.CreatureData.GetCreature(Chicken).currentHP <= 0)
             GameObject.Destroy(creature.gameObject);
        base.EnterState(creature);
-       creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.chicken).currentHurtCD = creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.chicken).hurtCD;
+       creature.CreatureData.GetCreature(Chicken).currentHurtCD = creature.CreatureData.GetCreature(Chicken).hurtCD;
     }
     public override void UpdateState(MChickenStateManager creature)
     {
-        if (creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.chicken).currentHurtCD > 0)
-            creature.CreatureData.GetCreature(CreatureDataBaseSO.Name.chicken).currentHurtCD -= Time.deltaTime;
+        if (creature.CreatureData.GetCreature(Chicken).currentHurtCD > 0)
+            creature.CreatureData.GetCreature(Chicken).currentHurtCD -= Time.deltaTime;
         else
             creature.SwitchState(creature.moveState);
     }

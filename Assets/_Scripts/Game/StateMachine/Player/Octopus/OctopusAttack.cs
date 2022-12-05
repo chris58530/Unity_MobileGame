@@ -8,7 +8,6 @@ public class OctopusAttack : MonoBehaviour
     private GameObject attackObject;
     public void Attack()
     {
-        Debug.Log("PlayerAttack!");
         attackObject.GetComponent<CapsuleCollider>().enabled = true;
         attackObject.GetComponent<MeshRenderer>().enabled = true;
         StartCoroutine(Enabled());
@@ -17,7 +16,6 @@ public class OctopusAttack : MonoBehaviour
     IEnumerator Enabled()
     {
         yield return new WaitForSeconds(0.25f);
-        Debug.Log("PlayerDontAttack!");
 
         attackObject.GetComponent<MeshRenderer>().enabled = false;
         attackObject.GetComponent<CapsuleCollider>().enabled = false;

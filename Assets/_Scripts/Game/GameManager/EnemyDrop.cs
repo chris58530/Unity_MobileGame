@@ -16,7 +16,6 @@ public class EnemyDrop : MonoBehaviour
 
             }
         }
-
     }
 
 }

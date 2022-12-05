@@ -20,7 +20,7 @@ public class RatStateManager : MonoBehaviour
 
         currentState.EnterState(this);
 
-        CreatureData.GetCreature(CreatureDataBaseSO.Name.rat).currentHP = CreatureData.GetCreature(CreatureDataBaseSO.Name.rat).maxHP;
+        CreatureData.GetCreature("Rat").currentHP = CreatureData.GetCreature("Rat").maxHP;
 
     }
     private void FixedUpdate()

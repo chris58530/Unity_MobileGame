@@ -5,6 +5,12 @@ using UnityEngine;
 public class CreatureBase : MonoBehaviour
 {
     Transform playerTrans;
+
+    [SerializeField]
+    private CreatureDataBaseSO m_CreatureData;
+
+    [SerializeField]
+    private string creatureName;
     private void Start()
     {
         playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
@@ -21,4 +27,5 @@ public class CreatureBase : MonoBehaviour
             Destroy(transform.gameObject);
         }
     }
+   
 }

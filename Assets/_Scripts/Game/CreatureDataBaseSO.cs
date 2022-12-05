@@ -5,23 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Creature Data",menuName ="ScriptableObject/Creat Creature Asset",order =1)]
 public class CreatureDataBaseSO : ScriptableObject
 {
-    public Creature[] _creature;
+    public List<Creature> _creatureList;
    
-    public int CreatureCoun
+ 
+    public Creature GetCreature(string creatureName)
     {
-        get { return _creature.Length; }
+        return _creatureList.Find(i => i.creatureName == creatureName);
     }
-    public Creature GetCreature(Name name)
-    {
-        return _creature[(int)name];    
-    }
-    public enum Name
-    {
-        slime,
-        chicken,
-        PCow,
-        rat
-    }
+ 
    
 }
 [System.Serializable]
@@ -42,7 +33,7 @@ public class Creature
     [HideInInspector]
     public float currentHurtCD;
 
-    public float maxHP;
+    public int maxHP;
     [HideInInspector]
     public float currentHP;
 
