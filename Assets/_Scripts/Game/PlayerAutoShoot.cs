@@ -66,11 +66,11 @@ public class PlayerAutoShoot : MonoBehaviour
     #endregion
     private void OnEnable()
     {
-        Actions.OnShootEnemy += AttackTarget;
+        GameActions.OnShootEnemy += AttackTarget;
     }
     private void OnDisable()
     {
-        Actions.OnShootEnemy -= AttackTarget;
+        GameActions.OnShootEnemy -= AttackTarget;
 
     }
    

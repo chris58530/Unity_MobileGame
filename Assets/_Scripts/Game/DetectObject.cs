@@ -27,7 +27,7 @@ public class DetectObject : MonoBehaviour
         if(canDetect && transform.localScale.x<=detectRange)
         {
             //膨脹至detect上限值
-            transform.localScale += new Vector3(1, 0, 1);
+            transform.localScale += new Vector3(2, 0, 2);
         }
       
     }
@@ -37,7 +37,7 @@ public class DetectObject : MonoBehaviour
         {
             //初始化scale currentRange
             transform.localScale = new Vector3(0, 0, 0);
-            Actions.OnShootEnemy?.Invoke(other.transform);
+            GameActions.OnShootEnemy?.Invoke(other.transform);
             canDetect = false;
             StartCoroutine(DetectCount());
         }
