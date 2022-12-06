@@ -78,5 +78,6 @@ public class PlayerAutoShoot : MonoBehaviour
     {
         Bullet b =bulletObjectPool.Get();
         b.target = target;
+        transform.LookAt(target);
     }
 }

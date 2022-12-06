@@ -26,12 +26,12 @@ MonoBehaviour:
     currentHP: 0
     items: []
   - name: Player_Octopus
-    playerObject: {fileID: 3521379764105083055, guid: c1135c67ddac71d49a98a622a5d6b2eb,
+    playerObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
       type: 3}
     moveSpeed: 15
     attackPower: 3
     attackCD: 0.5
-    currentAttackCD: 0.03999991
+    currentAttackCD: 0.19999988
     hurtCD: 3
     currentHurtCD: -0.019997705
     maxHP: 3
