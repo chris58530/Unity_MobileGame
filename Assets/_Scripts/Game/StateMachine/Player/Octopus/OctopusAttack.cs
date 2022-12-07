@@ -5,20 +5,26 @@ using UnityEngine;
 public class OctopusAttack : MonoBehaviour
 {
     [SerializeField]
-    private GameObject attackObject;
+    private BoxCollider[] attackCollider;
     public void Attack()
     {
-        attackObject.GetComponent<CapsuleCollider>().enabled = true;
-        attackObject.GetComponent<MeshRenderer>().enabled = true;
+        for (int i = 0; i < attackCollider.Length; i++)
+        {
+            attackCollider[i].GetComponent<BoxCollider>().enabled = true;
+        }
+       
         StartCoroutine(Enabled());
         //設置動畫Event
     }
     IEnumerator Enabled()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1f); //相當於開啟攻擊一秒鐘
 
-        attackObject.GetComponent<MeshRenderer>().enabled = false;
-        attackObject.GetComponent<CapsuleCollider>().enabled = false;
+        for (int i = 0; i < attackCollider.Length; i++)
+        {
+            attackCollider[i].GetComponent<BoxCollider>().enabled = false;
+        }
+
 
     }
 
