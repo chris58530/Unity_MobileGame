@@ -30,8 +30,8 @@ MonoBehaviour:
       type: 3}
     moveSpeed: 15
     attackPower: 3
-    attackCD: 0.5
-    currentAttackCD: 0.19999988
+    attackCD: 3
+    currentAttackCD: 1.6600013
     hurtCD: 3
     currentHurtCD: -0.019997705
     maxHP: 3
