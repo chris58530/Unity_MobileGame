@@ -1120,6 +1120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 05593b53a5191d1439fb0822bfc3edf8, type: 2}
   fixedJoystick: {fileID: 8101756447323846684}
+  ani: {fileID: 7443818204516186331}
 --- !u!114 &3929357347147589630
 MonoBehaviour:
   m_ObjectHideFlags: 0

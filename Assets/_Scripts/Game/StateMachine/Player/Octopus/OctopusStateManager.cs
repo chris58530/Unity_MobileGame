@@ -18,6 +18,12 @@ public class OctopusStateManager : MonoBehaviour
 
     public FixedJoystick fixedJoystick;
     private Vector3 fixedJoystickPos;
+
+    public Animator ani;
+    private void Awake()
+    {
+        ani = transform.GetComponentInChildren<Animator>();
+    }
     private void Start()
     {
         currentState = idleState;

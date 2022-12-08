@@ -56,6 +56,7 @@ public class OctopusIdleState : OctopusBaseState
     {
         base.EnterState(creature);
         creature.SwitchState(creature.moveState);
+        creature.ani.SetBool("isWalking", false);
 
     }
     public override void UpdateState(OctopusStateManager creature)
@@ -73,7 +74,7 @@ public class OctopusMoveState : OctopusBaseState
         base.EnterState(creature);
         _joystick = creature.fixedJoystick;
         rb = creature.gameObject.GetComponent<Rigidbody>();
-
+        creature.ani.SetBool("isWalking", true);
 
     }
 
@@ -96,6 +97,8 @@ public class OctopusAttackState : OctopusBaseState
     public override void EnterState(OctopusStateManager creature)
     {
         base.EnterState(creature);
+        creature.ani.SetBool("isWalking", false);
+
     }
     public override void UpdateState(OctopusStateManager creature)
     {
@@ -104,7 +107,10 @@ public class OctopusAttackState : OctopusBaseState
         {
             OctopusAttack octopusAttack = creature.GetComponent<OctopusAttack>();
             octopusAttack.Attack();
-            creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).currentAttackCD = creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).attackCD;
+            creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).currentAttackCD = 
+                creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).attackCD;
+            creature.ani.SetTrigger("Attack");
+
         }
     }    
 }
@@ -117,6 +123,7 @@ public class OctopusHurtState : OctopusBaseState
         base.EnterState(creature);
         creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).currentHurtCD = creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).hurtCD;
         creature.SwitchState(creature.idleState);
+        creature.ani.SetTrigger("Hurt");
 
     }
 }
