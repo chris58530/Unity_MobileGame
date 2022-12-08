@@ -81,10 +81,11 @@ public class OctopusMoveState : OctopusBaseState
     public override void UpdateState(OctopusStateManager creature)
     {
         base.UpdateState(creature);
-        rb.velocity = new Vector3(creature.fixedJoystick.Horizontal * creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).moveSpeed
-            , rb.velocity.y, creature.fixedJoystick.Vertical * creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).moveSpeed);
-        if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+        
+        if (_joystick.Horizontal >= 0.1f || _joystick.Vertical >= 0.1f && _joystick.Horizontal <= -0.1f || _joystick.Vertical <= -0.1f)
         {
+            rb.velocity = new Vector3(creature.fixedJoystick.Horizontal * creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).moveSpeed
+             , rb.velocity.y, creature.fixedJoystick.Vertical * creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).moveSpeed);
             creature.transform.rotation = Quaternion.LookRotation(rb.velocity);           
         }
     }
