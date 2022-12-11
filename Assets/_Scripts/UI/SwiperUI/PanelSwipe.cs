@@ -20,12 +20,19 @@ public class PanelSwipe : MonoBehaviour, IDragHandler,IEndDragHandler
 
     [SerializeField]
     private float targetSize;
+
+    [SerializeField]
+    private GameObject FixedPanelUp;
     private void Start()
     {
         panelLocation = transform.position;
     }
 
+    void LateUpdate()
+    {
+        FixedPanelUp.SetActive(currentChild > 3 ? false : true);       
 
+    }
     public void OnDrag(PointerEventData eventData)
     {
         float difference = eventData.pressPosition.x - eventData.position.x;
