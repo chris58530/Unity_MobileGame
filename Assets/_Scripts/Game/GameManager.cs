@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         PauseTime(false);
-
     }
   
 }
