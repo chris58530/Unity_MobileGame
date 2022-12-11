@@ -74,7 +74,6 @@ public class OctopusMoveState : OctopusBaseState
         base.EnterState(creature);
         _joystick = creature.fixedJoystick;
         rb = creature.gameObject.GetComponent<Rigidbody>();
-        creature.ani.SetBool("isWalking", true);
 
     }
 
@@ -86,10 +85,15 @@ public class OctopusMoveState : OctopusBaseState
         {
             rb.velocity = new Vector3(creature.fixedJoystick.Horizontal * creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).moveSpeed
              , rb.velocity.y, creature.fixedJoystick.Vertical * creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).moveSpeed);
-            creature.transform.rotation = Quaternion.LookRotation(rb.velocity);           
-        }
+            creature.transform.rotation = Quaternion.LookRotation(rb.velocity);
+            creature.ani.SetBool("isWalking", true);
+
+        }else
+            creature.ani.SetBool("isWalking", false);
+
+
     }
-    
+
 }
 
 public class OctopusAttackState : OctopusBaseState
