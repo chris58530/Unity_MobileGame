@@ -547,6 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy:
+  - {fileID: 3539184689496919333, guid: 1723de3f51b35de4aa01fce38e39c105, type: 3}
   - {fileID: 2939252080224235274, guid: 7985c3a64721d8b4a87a5b27d417243e, type: 3}
   _spawnRate: 1
   _minSpawnPos: -70
