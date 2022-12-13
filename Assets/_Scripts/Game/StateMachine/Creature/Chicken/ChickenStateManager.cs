@@ -3,13 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class MChickenStateManager : MonoBehaviour
+public class ChickenStateManager : MonoBehaviour
 {
-    public MChickenBaseState currentState;
-    public MChickenHurtState hurtState = new MChickenHurtState();
-    public MChickenMoveState moveState = new MChickenMoveState();
+    public ChickenBaseState currentState;
+    public ChickenHurtState hurtState = new ChickenHurtState();
+    public ChickenMoveState moveState = new ChickenMoveState();
 
-    public CreatureDataBaseSO CreatureData;
+    [HideInInspector]
+    public CreatureBase creatureBase;
+
+    public int currentHP;
+
+    public Animator ani;
+    private void Awake()
+    {
+        creatureBase = GetComponent<CreatureBase>();
+    }
 
 
     private void Start()
@@ -18,8 +27,7 @@ public class MChickenStateManager : MonoBehaviour
 
         currentState.EnterState(this);
 
-        //CreatureData.GetCreature(CreatureDataBaseSO.Name.chicken).currentHP = CreatureData.GetCreature(CreatureDataBaseSO.Name.chicken).maxHP;
-
+    
     }
     private void FixedUpdate()
     {
@@ -37,7 +45,7 @@ public class MChickenStateManager : MonoBehaviour
     }
     
 
-    public void SwitchState(MChickenBaseState creatureBaseState)
+    public void SwitchState(ChickenBaseState creatureBaseState)
     {
         currentState = creatureBaseState;
         creatureBaseState.EnterState(this);

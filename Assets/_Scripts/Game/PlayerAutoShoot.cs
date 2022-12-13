@@ -15,8 +15,8 @@ public class PlayerAutoShoot : MonoBehaviour
     [SerializeField]
     private GameObject bulletPool; //子彈物件池
 
-   
-   
+
+
 
     private ObjectPool<Bullet> bulletObjectPool;
 
@@ -29,7 +29,7 @@ public class PlayerAutoShoot : MonoBehaviour
 
         //物件池
         bulletObjectPool = new ObjectPool<Bullet>(
-            OnCreatBullet,OnGetBullet,OnReleaseBullet,OnDestroyBullet,true,100,1000);
+            OnCreatBullet, OnGetBullet, OnReleaseBullet, OnDestroyBullet, true, 100, 1000);
 
         for (int i = 0; i < 10; i++)
         {
@@ -40,7 +40,7 @@ public class PlayerAutoShoot : MonoBehaviour
     #region bulletPoolSet
     private Bullet OnCreatBullet()
     {
-        Bullet newBullet = Instantiate(bulletPrefab, bulletSpawnPoint.position,Quaternion.identity).GetComponent<Bullet>();
+        Bullet newBullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity).GetComponent<Bullet>();
         newBullet.recycle = (bullet) => { bulletObjectPool.Release(bullet); };
         return newBullet;
     }
@@ -73,11 +73,12 @@ public class PlayerAutoShoot : MonoBehaviour
         GameActions.OnShootEnemy -= AttackTarget;
 
     }
-   
+
     public void AttackTarget(Transform target)
     {
-        Bullet b =bulletObjectPool.Get();
+        Bullet b = bulletObjectPool.Get();
         b.target = target;
-        transform.LookAt(target);
+        Vector3 catLook = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+        transform.LookAt(catLook);
     }
 }

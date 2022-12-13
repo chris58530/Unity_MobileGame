@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d9887272c616941b9e7759fb191b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creatureData: {fileID: 11400000, guid: 05ea8790b0ddf1640b1c727139b1c1db, type: 2}
+  creatureBase: {fileID: 0}
   currentHP: 0
 --- !u!114 &5674514413867689855
 MonoBehaviour:
@@ -284,8 +284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb40e0e25a538b749a8147cf65ff17f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CreatureData: {fileID: 0}
-  creatureName: Slime
+  playerTrans: {fileID: 0}
+  Data: {fileID: 11400000, guid: 05ea8790b0ddf1640b1c727139b1c1db, type: 2}
+  stiffTime: 2
 --- !u!1 &5580635312612533646
 GameObject:
   m_ObjectHideFlags: 0

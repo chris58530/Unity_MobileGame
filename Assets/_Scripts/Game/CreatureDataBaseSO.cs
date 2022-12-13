@@ -19,21 +19,24 @@ public class CreatureDataBaseSO : ScriptableObject
 public class Creature
 {
     public string creatureName;
-    [Space(20)]
 
-    public float moveSpeed;
-    public float attackPower;
+    [Space(20)]
+    public int moveSpeed;
+    public int attackPower;
 
 
     public float attackCD;
+
     [HideInInspector]
     public float currentAttackCD;
 
     public float hurtCD;
+
     [HideInInspector]
     public float currentHurtCD;
 
     public int maxHP;
+
     [HideInInspector]
     public float currentHP;
 

@@ -92,7 +92,7 @@ public class PCowChargeState : PCowBaseState , IDamageable
     {
         if (collision.gameObject.CompareTag("PlayerAttack"))
         {
-            float damage = collision.GetComponentInParent<PlayerData>().attack;
+            float damage = collision.GetComponentInParent<CharacterBase>().GetAttack();
             creature.CreatureData.GetCreature(PCow).currentHP -= damage;
          
         }

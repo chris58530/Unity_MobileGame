@@ -17,5 +17,13 @@ public class EnemyDrop : MonoBehaviour
             }
         }
     }
+    private void OnEnable()
+    {
+        GameActions.OnDropItem += DropItem;
+    }
+    private void OnDisable()
+    {
+        GameActions.OnDropItem -= DropItem;
 
+    }
 }

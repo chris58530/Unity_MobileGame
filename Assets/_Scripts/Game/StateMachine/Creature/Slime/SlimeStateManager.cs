@@ -10,16 +10,27 @@ public class SlimeStateManager : MonoBehaviour
     public SlimeMoveState moveState = new SlimeMoveState();
     public SlimeHurtState hurtState = new SlimeHurtState();
 
-    public CreatureDataBaseSO creatureData;
+    [HideInInspector]
+    public CreatureBase creatureBase;
+
+    public float currentAttackCD;
+    public float currentDamagedCD;
+    public float currentMoveSpeed;
+
 
     public int currentHP;
+
+    private void Awake()
+    {
+        creatureBase = GetComponent<CreatureBase>();
+    }
     private void Start()    
     {
         currentState = moveState;
 
         currentState.EnterState(this);
 
-        currentHP = creatureData.GetCreature("Slime").maxHP;
+        currentHP = creatureBase.GetCreature("Slime").maxHP;
 
     }
     private void FixedUpdate()

@@ -498,6 +498,7 @@ GameObject:
   - component: {fileID: 344921651}
   - component: {fileID: 344921652}
   - component: {fileID: 344921653}
+  - component: {fileID: 344921654}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -562,8 +563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f904f803ec49354582c1d9c58b6ea94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpawnPos: {fileID: 1268966130}
-  playerDataBaseSO: {fileID: 11400000, guid: 05593b53a5191d1439fb0822bfc3edf8, type: 2}
+  characterSpawnPos: {fileID: 1268966130}
+  CharacterDataBaseSO: {fileID: 11400000, guid: 05593b53a5191d1439fb0822bfc3edf8,
+    type: 2}
 --- !u!114 &344921653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +576,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 359149381c2579647bdff45e3feba7d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &344921654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344921648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ab7d22be3aa7d4082a9337a1cbba55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &507025599

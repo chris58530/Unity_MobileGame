@@ -22,8 +22,8 @@ public class CharacterSwipe : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _characterIntroduce;
 
-    public static int currentCharacter;
-    public static float currentCharacterBarValue;
+    public static int currentCharacter;//存檔
+    public static float currentCharacterBarValue;//想要存當前side進度，但失敗
 
     void Update()
     {
@@ -54,7 +54,7 @@ public class CharacterSwipe : MonoBehaviour
             {
                 transform.GetChild(i).DOScale(new Vector2(1.3f, 1.3f), 0.1f).SetEase(Ease.InOutBounce);
                 transform.GetChild(i).GetComponent<RawImage>().color = Color.white;
-                UpdatePlanet(i);
+                UpdateCharacter(i);
                 currentCharacter = i;
 
                 //transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale,new Vector2(1f,1f),0.1f);
@@ -69,11 +69,11 @@ public class CharacterSwipe : MonoBehaviour
             }
         }
     }
-    private void UpdatePlanet(int selectedOption)
+    private void UpdateCharacter(int selectedOption)
     {
-        Character  character  = _characterDataBase.GetCharacter(selectedOption);
-        _characterTitle.text = character.characterTitle;
-        _characterIntroduce.text = character.characterIntroduce;
+        Character character = _characterDataBase.GetCharacter(selectedOption);
+        _characterTitle.text = character.name;
+        _characterIntroduce.text = character.introduciotn;
     }
 
 }

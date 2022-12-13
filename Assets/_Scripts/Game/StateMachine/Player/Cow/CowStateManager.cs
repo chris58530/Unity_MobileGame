@@ -11,17 +11,26 @@ public class CowStateManager : MonoBehaviour
     public CowAttackState attackState = new CowAttackState();
     public CowHurtState hurtState = new CowHurtState();
 
-    public PlayerDataBaseSO playerData;
-
     public FixedJoystick fixedJoystick;
     private Vector3 fixedJoystickPos;
+
+    [HideInInspector]
+    public CharacterBase characterBase;
+
+    public float currentAttackCD;
+    public float currentDamagedCD;
+    public float currentMoveSpeed;
+
     private void Start()
     {
         currentState = idleState;
-        playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).currentAttackCD = playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).attackCD;
 
         currentState.EnterState(this);
         fixedJoystickPos = fixedJoystick.transform.position;
+
+        currentAttackCD = characterBase.GetAttackCD();
+        currentDamagedCD = characterBase.GetDamagedCD();
+        currentMoveSpeed = characterBase.GetMoveSpeed();
 
     }
     private void FixedUpdate()

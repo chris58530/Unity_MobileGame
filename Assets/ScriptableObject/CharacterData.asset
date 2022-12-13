@@ -9,15 +9,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38d47cb3468bbd54189b18b1500a5240, type: 3}
+  m_Script: {fileID: 11500000, guid: f629d7c320cd2784a8116aeca9759635, type: 3}
   m_Name: CharacterData
   m_EditorClassIdentifier: 
-  _character:
-  - characterTitle: No Money Man
-    characterIntroduce: I am very strong
-  - characterTitle: Dirty Three
-    characterIntroduce: I am very dirty
-  - characterTitle: none3
-    characterIntroduce: none introduce3
-  - characterTitle: none 4
-    characterIntroduce: none introduce4
+  _characterList:
+  - name: Cow
+    introduciotn: ccc
+    characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
+      type: 3}
+    moveSpeed: 33
+    attackPower: 5
+    attackCD: 5
+    currentAttackCD: 0
+    hurtCD: 5
+    currentHurtCD: 0
+    maxHP: 5
+    currentHP: 0
+  - name: Octopus
+    introduciotn: ooo
+    characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
+      type: 3}
+    moveSpeed: 33
+    attackPower: 5
+    attackCD: 1
+    currentAttackCD: 0
+    hurtCD: 5
+    currentHurtCD: 0
+    maxHP: 5
+    currentHP: 0

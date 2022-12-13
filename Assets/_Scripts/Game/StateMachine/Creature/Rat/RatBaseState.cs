@@ -18,7 +18,7 @@ public abstract  class RatBaseState
     {
         if (other.gameObject.CompareTag("PlayerAttack"))
         {
-            float damage = other.gameObject.GetComponentInParent<PlayerData>().attack;
+            float damage = other.gameObject.GetComponentInParent<CharacterBase>().GetAttack(); 
             creature.CreatureData.GetCreature(Rat).currentHP -= damage;
             creature.SwitchState(creature.hurtState);
             if (creature.CreatureData.GetCreature(Rat).currentHP <= 0)

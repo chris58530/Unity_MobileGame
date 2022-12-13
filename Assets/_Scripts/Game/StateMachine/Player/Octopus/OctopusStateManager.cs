@@ -14,23 +14,31 @@ public class OctopusStateManager : MonoBehaviour
     public OctopusMoveState moveState = new OctopusMoveState();
     public OctopusIdleState idleState = new OctopusIdleState();
 
-    public PlayerDataBaseSO playerData;
+    [HideInInspector]
+    public CharacterBase characterBase;
+
+    public float currentAttackCD;
+    public float currentDamagedCD;
+    public float currentMoveSpeed;
 
     public FixedJoystick fixedJoystick;
     private Vector3 fixedJoystickPos;
 
-    public Animator ani;
+    public Animator octopusAni;
     private void Awake()
     {
-        ani = transform.GetComponentInChildren<Animator>();
+        characterBase = GetComponent<CharacterBase>();
     }
     private void Start()
     {
         currentState = idleState;
-        playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).currentAttackCD = playerData.GetPlayer(PlayerDataBaseSO.Name.player_Octopus).attackCD;
 
         currentState.EnterState(this);
         fixedJoystickPos = fixedJoystick.transform.position;
+
+        currentAttackCD = characterBase.GetAttackCD();
+        currentDamagedCD = characterBase.GetDamagedCD();
+        currentMoveSpeed = characterBase.GetMoveSpeed();
 
     }
     private void FixedUpdate()

@@ -15,7 +15,7 @@ public abstract class CowBaseState
     {
 
 
-        if (!Input.anyKey && creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).currentAttackCD <= 0)
+        if (!Input.anyKey && creature.currentAttackCD <= 0)
             creature.SwitchState(creature.attackState);
         else
             creature.SwitchState(creature.moveState);
@@ -23,18 +23,18 @@ public abstract class CowBaseState
       
 
 
-        if (creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).currentAttackCD > 0)
-            creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).currentAttackCD -= Time.deltaTime;
+        if (creature.currentAttackCD > 0)
+            creature.currentAttackCD -= Time.deltaTime;
 
-        if (creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).currentHurtCD > 0)
-            creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).currentHurtCD -= Time.deltaTime;
+        if (creature.currentDamagedCD > 0)
+            creature.currentDamagedCD -= Time.deltaTime;
 
 
     }
 
     public virtual void OnCollisionEnter(CowStateManager creature, Collision collision)
     {
-        if (collision.gameObject.tag == ("EnemyAttack") && creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).currentHurtCD <= 0)
+        if (collision.gameObject.tag == ("EnemyAttack") && creature.currentDamagedCD <= 0)
         {
             Debug.Log("EnemyAttack!!!");
 
@@ -73,10 +73,7 @@ public class CowAttackState : CowBaseState
     {
         //animation here
         base.UpdateState(creature);
-        if (creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).currentAttackCD <= 0)
-        {
-           creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).currentAttackCD = creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).attackCD;
-        }
+      
     }
     IEnumerator TimeToIdle(CowStateManager creature)
     {
@@ -99,8 +96,8 @@ public class CowMoveState : CowBaseState
     {
         //animation here
         base.UpdateState(creature);
-        rb.velocity = new Vector3(creature.fixedJoystick.Horizontal * creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).moveSpeed, rb.velocity.y
-            , creature.fixedJoystick.Vertical * creature.playerData.GetPlayer(PlayerDataBaseSO.Name.player_Cow).moveSpeed);
+        rb.velocity = new Vector3(creature.fixedJoystick.Horizontal * creature.currentMoveSpeed, rb.velocity.y
+            , creature.fixedJoystick.Vertical * creature.currentMoveSpeed);
         if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
             creature.transform.rotation = Quaternion.LookRotation(rb.velocity);

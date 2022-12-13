@@ -5,13 +5,16 @@ using UnityEngine;
 public class DetectObject : MonoBehaviour
 {
     [SerializeField]
-    [Range(1, 15)]
+    [Range(1, 50)]
     private float detectRange;
 
     [SerializeField]
     private float attackSpeed;
 
     public bool canDetect;
+    public Animator catAni;
+
+  
 
     void Start()
     {
@@ -19,6 +22,7 @@ public class DetectObject : MonoBehaviour
         transform.localScale = new Vector3(0, 0, 0);
 
         canDetect = true;
+
     }
 
     
@@ -28,8 +32,9 @@ public class DetectObject : MonoBehaviour
         {
             //¿±µÈ¦Üdetect¤W­­­È
             transform.localScale += new Vector3(2, 0, 2);
+
         }
-      
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -39,6 +44,7 @@ public class DetectObject : MonoBehaviour
             transform.localScale = new Vector3(0, 0, 0);
             GameActions.OnShootEnemy?.Invoke(other.transform);
             canDetect = false;
+            catAni.SetTrigger("Shoot");
             StartCoroutine(DetectCount());
         }
     }
@@ -47,4 +53,5 @@ public class DetectObject : MonoBehaviour
         yield return new WaitForSecondsRealtime(attackSpeed);  
         canDetect = true;    
     }
+   
 }
