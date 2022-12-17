@@ -70,7 +70,7 @@ public class MojiAttackState : MojiBaseState
         creature.CompareTag("PlayerAttack");
 
         base.EnterState(creature);
-        creature.octopusAni.SetBool("isWalking", false);
+        creature.ani.SetBool("isWalking", false);
 
     }
     public override void UpdateState(MojiStateManager creature)
