@@ -9,24 +9,39 @@ public abstract  class RatBaseState
     protected string Rat = "Rat";
     public virtual void EnterState(RatStateManager creature)
     {
-        Debug.Log(string.Format("<color=#fff000>{0}</color>", creature.currentState + "模式"));
         playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
         rb = creature.GetComponent<Rigidbody>();
     }
     public abstract void UpdateState(RatStateManager creature);
     public virtual void OnTriggerEnter(RatStateManager creature, Collider other)
     {
-        if (other.gameObject.CompareTag("PlayerAttack"))
+        if (other.gameObject.CompareTag("PlayerAttack"))//被這個打到要表演
         {
-            float damage = other.gameObject.GetComponentInParent<CharacterBase>().GetAttack(); 
-            creature.CreatureData.GetCreature(Rat).currentHP -= damage;
+            int damage = other.gameObject.GetComponentInParent<CharacterBase>().GetAttack();
+            Vector3 forcePos = new Vector3(creature.transform.position.x - other.transform.position.x, 0, creature.transform.position.z - other.transform.position.z);
+            rb.AddForce(forcePos * 500);
+            creature.currentHP -= damage;
             creature.SwitchState(creature.hurtState);
-            if (creature.CreatureData.GetCreature(Rat).currentHP <= 0)
-                GameObject.Destroy(creature.gameObject);
+        }
+        if (other.gameObject.CompareTag("Bullet"))//被這個打到不用表演
+        {
+            int damage = other.gameObject.GetComponent<Bullet>().GetBulletDamage();
+            creature.currentHP -= damage;
+            Debug.Log(damage);
+
+        }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            creature.ani.SetTrigger("Attack");
+
+        }
+        if (creature.currentHP <= 0)
+        {
+            creature.SwitchState(creature.dieState);
         }
     }
 }
-#region NChicken: Idle Move Attack Hurt Destroy
+#region NChicken: Idle Move Attack Hurt Die
 public class RatIdleState : RatBaseState
 {
     public override void EnterState(RatStateManager creature)
@@ -62,7 +77,7 @@ public class RatMoveState : RatBaseState
     public override void EnterState(RatStateManager creature)
     {
         base.EnterState(creature);
-
+        creature.ani.SetTrigger("Jump");
         rb.constraints = RigidbodyConstraints.None;
 
     }
@@ -72,24 +87,16 @@ public class RatMoveState : RatBaseState
         if (playerTrans != null)
         {
             rb.transform.LookAt(new Vector3(playerTrans.position.x, creature.transform.position.y, playerTrans.position.z));
-            rb.transform.Translate(new Vector3(0, 0, 1 * creature.CreatureData.GetCreature(Rat).moveSpeed * Time.deltaTime));
+            rb.transform.Translate(new Vector3(0, 0, 1 * creature.creatureBase.GetSpeed(Rat) * Time.deltaTime));
         }
-        else
-        {
-            Debug.Log("NO PlAYER");
-
-        }
+     
     }
     public override void OnTriggerEnter(RatStateManager creature, Collider other)
     {
         base.OnTriggerEnter(creature, other);
 
-        //creature.CreatureData.hp -= collision.gameObject.GetComponent<CreatureDataSO>().attack;
 
-        if (creature.CreatureData.GetCreature(Rat).currentHP < 0)
-            creature.SwitchState(creature.moveState);
-        else
-            creature.SwitchState(creature.hurtState);
+     
     }
 }
 
@@ -98,9 +105,7 @@ public class RatAttackState : RatBaseState
     public override void EnterState(RatStateManager creature)
     {
         base.EnterState(creature);
-
-        //GameObject.FindObjectOfType<PlayerController>().GetDamage(creature.transform);
-        creature.SwitchState(creature.moveState);
+        creature.ani.SetTrigger("Attack");
     }
     public override void UpdateState(RatStateManager creature)
     {
@@ -110,6 +115,21 @@ public class RatAttackState : RatBaseState
 
 
 public class RatHurtState : RatBaseState
+{
+   
+    public override void EnterState(RatStateManager creature)
+    {
+        base.EnterState(creature);
+    }
+    public override void UpdateState(RatStateManager creature)
+    {
+        if (hurtCD > 0)
+            hurtCD -= Time.deltaTime;
+        else
+            creature.SwitchState(creature.moveState);
+    }
+}
+public class RatDieState : RatBaseState
 {
     float hurtCD;
     public override void EnterState(RatStateManager creature)
@@ -124,5 +144,4 @@ public class RatHurtState : RatBaseState
             creature.SwitchState(creature.moveState);
     }
 }
-
 #endregion
