@@ -52,6 +52,11 @@ public class MojiIdleState : MojiBaseState
     public override void EnterState(MojiStateManager creature)
     {
         base.EnterState(creature);
+        creature.tag = ("Player");
+
+        BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
+        boxCollider.isTrigger = false;
+        rb.constraints = RigidbodyConstraints.None;
 
     }
     public override void UpdateState(MojiStateManager creature)
@@ -64,26 +69,38 @@ public class MojiAttackState : MojiBaseState
 {
     public override void EnterState(MojiStateManager creature)
     {
-        base.EnterState(creature);
-        rb.AddForce(creature.transform.forward* 100);
-        creature.StartCoroutine(TimeToIdle(creature));
-        creature.CompareTag("PlayerAttack");
 
         base.EnterState(creature);
         creature.ani.SetBool("isWalking", false);
+        creature.tag = ("PlayerAttack");
+        rb.constraints = RigidbodyConstraints.FreezePositionY;
+
+        BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
+        boxCollider.isTrigger = true;
 
     }
     public override void UpdateState(MojiStateManager creature)
     {
-        //animation here
         base.UpdateState(creature);
-      
+        if (creature.currentAttackCD <= 0)
+        {
+            creature.StartCoroutine(TimeToIdle(creature));
+
+            creature.currentAttackCD = creature.characterBase.GetAttackCD();
+            creature.ani.SetTrigger("Attack");
+
+
+        }
+
     }
     IEnumerator TimeToIdle(MojiStateManager creature)
     {
-        Debug.Log("TimeToIdle");
+        rb.AddForce(creature.transform.forward * 5000);
+
         yield return new WaitForSeconds(1);
-        creature.SwitchState(creature.hurtState);
+        Debug.Log("TimeToIdle");
+
+        creature.SwitchState(creature.idleState);
     }
 }
 public class MojiMoveState : MojiBaseState

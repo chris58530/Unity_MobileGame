@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5754054887578169996}
   m_Layer: 0
   m_Name: Octopus
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1939,7 +1939,7 @@ PrefabInstance:
         type: 3}
       propertyPath: catAni
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5953066752908754409}
     - target: {fileID: 4185820622565480391, guid: fe20adc9e26710243a9834c63cc3ef38,
         type: 3}
       propertyPath: m_RootOrder
@@ -2077,6 +2077,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 901f40945d4dfd54cb656c2afdc12bf1, type: 3}
+--- !u!95 &5953066752908754409 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1698742914029481622, guid: 901f40945d4dfd54cb656c2afdc12bf1,
+    type: 3}
+  m_PrefabInstance: {fileID: 4976107077926654847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6836576188216286534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2012769110708358713, guid: 901f40945d4dfd54cb656c2afdc12bf1,

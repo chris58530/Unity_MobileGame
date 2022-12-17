@@ -23,7 +23,10 @@ public class MojiStateManager : MonoBehaviour
 
     public Animator ani;
 
-
+    private void Awake()
+    {
+        characterBase = GetComponent<CharacterBase>();
+    }
     private void Start()
     {
         currentState = idleState;

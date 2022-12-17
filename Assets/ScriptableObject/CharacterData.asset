@@ -17,9 +17,9 @@ MonoBehaviour:
     introduciotn: ccc
     characterObject: {fileID: 3929357347147589621, guid: ddb4267ea810b57498d6f254a761802b,
       type: 3}
-    moveSpeed: 20
+    moveSpeed: 10
     attackPower: 5
-    attackCD: 5
+    attackCD: 3
     currentAttackCD: 0
     hurtCD: 5
     currentHurtCD: 0
@@ -27,6 +27,30 @@ MonoBehaviour:
     currentHP: 0
   - name: Octopus
     introduciotn: ooo
+    characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
+      type: 3}
+    moveSpeed: 20
+    attackPower: 4
+    attackCD: 1
+    currentAttackCD: 0
+    hurtCD: 5
+    currentHurtCD: 0
+    maxHP: 5
+    currentHP: 0
+  - name: None
+    introduciotn: None
+    characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
+      type: 3}
+    moveSpeed: 20
+    attackPower: 4
+    attackCD: 1
+    currentAttackCD: 0
+    hurtCD: 5
+    currentHurtCD: 0
+    maxHP: 5
+    currentHP: 0
+  - name: None
+    introduciotn: None
     characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
       type: 3}
     moveSpeed: 20

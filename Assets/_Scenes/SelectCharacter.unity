@@ -3237,6 +3237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollBar: {fileID: 1348181955}
-  _characterDataBase: {fileID: 11400000, guid: ec9da07d6df94b94aa065496f9278ad1, type: 2}
+  _characterDataBase: {fileID: 11400000, guid: 05593b53a5191d1439fb0822bfc3edf8, type: 2}
   _characterTitle: {fileID: 1015840343}
   _characterIntroduce: {fileID: 1239524596}
