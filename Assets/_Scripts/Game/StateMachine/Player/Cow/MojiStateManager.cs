@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CowStateManager : MonoBehaviour
+public class MojiStateManager : MonoBehaviour
 {
-    public CowBaseState currentState; //DEBUG 使用 正式版需改為PRIVATES
+    public MojiBaseState currentState; //DEBUG 使用 
 
-    public CowIdleState idleState = new CowIdleState();
-    public CowMoveState moveState = new CowMoveState();
-    public CowAttackState attackState = new CowAttackState();
-    public CowHurtState hurtState = new CowHurtState();
+    public MojiIdleState idleState = new MojiIdleState();
+    public MojiMoveState moveState = new MojiMoveState();
+    public MojiAttackState attackState = new MojiAttackState();
+    public MojiHurtState hurtState = new MojiHurtState();
 
     public FixedJoystick fixedJoystick;
     private Vector3 fixedJoystickPos;
@@ -50,7 +50,7 @@ public class CowStateManager : MonoBehaviour
             currentState.OnCollisionEnter(this, collision);
     }
 
-    public void SwitchState(CowBaseState creatureBaseState)
+    public void SwitchState(MojiBaseState creatureBaseState)
     {
         currentState = creatureBaseState;
         creatureBaseState.EnterState(this);

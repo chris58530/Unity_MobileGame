@@ -20,7 +20,7 @@ MonoBehaviour:
     currentAttackCD: 0
     hurtCD: 1
     currentHurtCD: 1
-    maxHP: 20
+    maxHP: 1
     currentHP: 0
     items:
     - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}
@@ -34,7 +34,21 @@ MonoBehaviour:
     currentAttackCD: 0
     hurtCD: 1
     currentHurtCD: 1
-    maxHP: 5
+    maxHP: 1
+    currentHP: 0
+    items:
+    - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}
+    - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}
+    - {fileID: 2996883092409544701, guid: 9a47f705ff52cc04a9765219a209a87c, type: 3}
+    probability: 64000000320000000a000000
+  - creatureName: Cow
+    moveSpeed: 1
+    attackPower: 1
+    attackCD: 1
+    currentAttackCD: 0
+    hurtCD: 1
+    currentHurtCD: 1
+    maxHP: 100
     currentHP: 0
     items:
     - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}

@@ -5,10 +5,11 @@ using UnityEngine;
 public abstract class ChickenBaseState
 {
     protected string Chicken = "Chicken";
+    protected Rigidbody rb;
 
     public virtual void EnterState(ChickenStateManager creature)
     {
-        Debug.Log(string.Format("<color=#fff000>{0}</color>", creature.currentState + "模式"));
+        rb = creature.GetComponent<Rigidbody>();
 
     }
     public abstract void UpdateState(ChickenStateManager creature);
@@ -16,18 +17,27 @@ public abstract class ChickenBaseState
     {
         if (other.gameObject.CompareTag("PlayerAttack"))
         {
+            int damage = other.gameObject.GetComponentInParent<CharacterBase>().GetAttack();
+            Vector3 forcePos = new Vector3(creature.transform.position.x - other.transform.position.x, 0, creature.transform.position.z - other.transform.position.z);
+            rb.AddForce(forcePos * 500);
+            creature.currentHP -= damage;
             creature.SwitchState(creature.hurtState);
+        }       
+        if (other.gameObject.CompareTag("Bullet"))//被這個打到不用表演
+        {
+            int damage = other.gameObject.GetComponent<Bullet>().GetBulletDamage();
+            creature.currentHP -= damage;
+            Debug.Log(damage);
         }
         if (other.gameObject.CompareTag("Player"))
         {
             creature.ani.SetTrigger("Attack");
 
         }
-        if (other.gameObject.CompareTag("Bullet"))//被這個打到不用表演
+        if (creature.currentHP <= 0)
         {
-            int damage = other.gameObject.GetComponent<Bullet>().GetBulletDamage();
-            creature.currentHP -= damage;
-            Debug.Log(damage);
+            creature.SwitchState(creature.dieState);
+
         }
     }
 }
@@ -35,8 +45,6 @@ public abstract class ChickenBaseState
 
 public class ChickenMoveState : ChickenBaseState
 {
-    Rigidbody rb;
-
 
     public override void EnterState(ChickenStateManager creature)
     {
@@ -77,8 +85,8 @@ public class ChickenHurtState : ChickenBaseState //計時僵直時間
         int hp = creature.currentHP;
         if (hp <= 0)
         {
-            creature.ani.SetTrigger("Die");
-            creature.creatureBase.Die(creature.creatureBase.GetCreature(Chicken), creature.transform);
+            creature.SwitchState(creature.dieState);
+
         }
         else
         {
@@ -100,6 +108,36 @@ public class ChickenHurtState : ChickenBaseState //計時僵直時間
         yield return new WaitForSeconds(time);
         stiff = false;
     }
-}
+    public override void OnTriggerEnter(ChickenStateManager creature, Collider other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))//被這個打到不用表演
+        {
+            int damage = other.gameObject.GetComponent<Bullet>().GetBulletDamage();
+            creature.currentHP -= damage;
+            Debug.Log(damage);
 
+        }
+        if (creature.currentHP <= 0)
+        {
+            creature.SwitchState(creature.dieState);
+        }
+    }
+}
+public class ChickenDieState : ChickenBaseState
+{
+    public override void EnterState(ChickenStateManager creature)
+    {
+        base.EnterState(creature);
+        creature.CompareTag("DeadEnemy");
+        creature.ani.SetTrigger("Die");
+        creature.creatureBase.GetDrop(creature.creatureBase.GetCreature(Chicken), creature.transform);
+    }
+    public override void UpdateState(ChickenStateManager creature)
+    {
+        
+    }
+    public override void OnTriggerEnter(ChickenStateManager creature, Collider other)
+    {
+    }
+}
 #endregion

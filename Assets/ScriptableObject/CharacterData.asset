@@ -30,7 +30,7 @@ MonoBehaviour:
     characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
       type: 3}
     moveSpeed: 33
-    attackPower: 5
+    attackPower: 4
     attackCD: 1
     currentAttackCD: 0
     hurtCD: 5

@@ -24,7 +24,7 @@ public abstract class SlimeBaseState
         {
             int damage = other.gameObject.GetComponentInParent<CharacterBase>().GetAttack();
             Vector3 forcePos = new Vector3(creature.transform.position.x - other.transform.position.x, 0, creature.transform.position.z - other.transform.position.z);
-            rb.AddForce(forcePos.normalized * 1000);
+            rb.AddForce(forcePos * 500);
             creature.currentHP -= damage;
             creature.SwitchState(creature.hurtState);
         }
@@ -33,20 +33,21 @@ public abstract class SlimeBaseState
             int damage = other.gameObject.GetComponent<Bullet>().GetBulletDamage();
             creature.currentHP -= damage;
             Debug.Log(damage);
+
+        }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            creature.ani.SetTrigger("Attack");
+
         }
         if (creature.currentHP <= 0)
         {
-            Debug.Log("droppppp");
-            GameObject.Destroy(creature.gameObject);
-            GameActions.OnDropItem?.Invoke(creature.creatureBase.GetCreature(Slime), creature.transform);
-
-            //EnemyDrop enemyDrop = new EnemyDrop();
-            //enemyDrop.DropItem(creature.creatureData.GetCreature(Slime), creature.transform);
+            creature.SwitchState(creature.dieState);
         }
     }
     
 }
-#region SlimeState:  Move  Hurt 
+#region SlimeState:  Move  Hurt Die
 
 
 
@@ -80,17 +81,70 @@ public class SlimeMoveState : SlimeBaseState
 
 public class SlimeHurtState : SlimeBaseState
 {
-  
+    bool stiff=false;
+
     public override void EnterState(SlimeStateManager creature)
     {
         
+        int hp = creature.currentHP;
+        if (hp <= 0)
+        {
+            creature.SwitchState(creature.dieState);
+
+        }
+        else
+        {
+            //creature.ani.SetTrigger("Hurt"); //並沒有
+            stiff = true;
+        }
         base.EnterState(creature);
     }  
     public override void UpdateState(SlimeStateManager creature)
     {
         base.UpdateState(creature);
+        creature.StartCoroutine(StiffTime(2));
+        if (!stiff)
+            creature.SwitchState(creature.moveState);
+    }
+    IEnumerator StiffTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        stiff = false;
+    }
+    public override void OnTriggerEnter(SlimeStateManager creature, Collider other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))//被這個打到不用表演
+        {
+            int damage = other.gameObject.GetComponent<Bullet>().GetBulletDamage();
+            creature.currentHP -= damage;
+            Debug.Log(damage);
+
+        }
+        if (creature.currentHP <= 0)
+        {
+            creature.SwitchState(creature.dieState);
+        }
+    }
+}
+public class SlimeDieState : SlimeBaseState
+{
+
+    public override void EnterState(SlimeStateManager creature)
+    {
+        base.EnterState(creature);
+        creature.CompareTag("DeadEnemy");
+
+        creature.ani.SetTrigger("Die");
+        creature.creatureBase.GetDrop(creature.creatureBase.GetCreature(Slime), creature.transform);
+    }
+
+    public override void UpdateState(SlimeStateManager creature)
+    {
       
-        creature.SwitchState(creature.moveState);
+    }
+    public override void OnTriggerEnter(SlimeStateManager creature, Collider other)
+    {
+
     }
 }
 

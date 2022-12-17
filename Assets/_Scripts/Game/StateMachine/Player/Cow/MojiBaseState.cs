@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CowBaseState
+public abstract class MojiBaseState
 {
     public Rigidbody rb;
 
-    public virtual void EnterState(CowStateManager creature)
+    public virtual void EnterState(MojiStateManager creature)
     {
         Debug.Log(string.Format("<color=#f5f500>{0}</color>", creature.currentState + "¼Ò¦¡"));
         rb = creature.GetComponent<Rigidbody>();
     }
-    public virtual void UpdateState(CowStateManager creature)
+    public virtual void UpdateState(MojiStateManager creature)
     {
 
 
@@ -32,7 +32,7 @@ public abstract class CowBaseState
 
     }
 
-    public virtual void OnCollisionEnter(CowStateManager creature, Collision collision)
+    public virtual void OnCollisionEnter(MojiStateManager creature, Collision collision)
     {
         if (collision.gameObject.tag == ("EnemyAttack") && creature.currentDamagedCD <= 0)
         {
@@ -44,55 +44,55 @@ public abstract class CowBaseState
         }
     }
 }
-#region Player_Cow: Idle Move Attack Hurt Destroy
+#region Player_Moji: Idle Move Attack Hurt Destroy
 
 
-public class CowIdleState : CowBaseState
+public class MojiIdleState : MojiBaseState
 {
-    public override void EnterState(CowStateManager creature)
+    public override void EnterState(MojiStateManager creature)
     {
         base.EnterState(creature);
 
     }
-    public override void UpdateState(CowStateManager creature)
+    public override void UpdateState(MojiStateManager creature)
     {
         //animation here
         base.UpdateState(creature);
     }
 }
-public class CowAttackState : CowBaseState
+public class MojiAttackState : MojiBaseState
 {
-    public override void EnterState(CowStateManager creature)
+    public override void EnterState(MojiStateManager creature)
     {
         base.EnterState(creature);
         rb.AddForce(creature.transform.forward* 100);
         creature.StartCoroutine(TimeToIdle(creature));
 
     }
-    public override void UpdateState(CowStateManager creature)
+    public override void UpdateState(MojiStateManager creature)
     {
         //animation here
         base.UpdateState(creature);
       
     }
-    IEnumerator TimeToIdle(CowStateManager creature)
+    IEnumerator TimeToIdle(MojiStateManager creature)
     {
         Debug.Log("TimeToIdle");
         yield return new WaitForSeconds(1);
         creature.SwitchState(creature.hurtState);
     }
 }
-public class CowMoveState : CowBaseState
+public class MojiMoveState : MojiBaseState
 {
     private FixedJoystick _joystick;
 
-    public override void EnterState(CowStateManager creature)
+    public override void EnterState(MojiStateManager creature)
     {
         base.EnterState(creature);
         _joystick = creature.fixedJoystick;
 
     }
-    public override void UpdateState(CowStateManager creature)
+    public override void UpdateState(MojiStateManager creature)
     {
         //animation here
         base.UpdateState(creature);
@@ -104,9 +104,9 @@ public class CowMoveState : CowBaseState
         }
     }
 }
-public class CowHurtState : CowBaseState
+public class MojiHurtState : MojiBaseState
 {
-    public override void EnterState(CowStateManager creature)
+    public override void EnterState(MojiStateManager creature)
     {
         base.EnterState(creature);
     }

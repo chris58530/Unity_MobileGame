@@ -6,23 +6,19 @@ using UnityEngine;
 public class SlimeStateManager : MonoBehaviour
 {
     public SlimeBaseState currentState;
-
     public SlimeMoveState moveState = new SlimeMoveState();
     public SlimeHurtState hurtState = new SlimeHurtState();
+    public SlimeDieState dieState = new SlimeDieState();
 
     [HideInInspector]
     public CreatureBase creatureBase;
-
-    public float currentAttackCD;
-    public float currentDamagedCD;
-    public float currentMoveSpeed;
-
-
     public int currentHP;
+    public Animator ani;
 
     private void Awake()
     {
         creatureBase = GetComponent<CreatureBase>();
+        currentHP = creatureBase.GetHealth("Slime");
     }
     private void Start()    
     {

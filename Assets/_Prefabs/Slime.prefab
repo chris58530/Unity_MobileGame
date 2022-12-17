@@ -74,6 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3124787030548676442}
   - component: {fileID: 3231262651351865746}
+  - component: {fileID: 2402875706122268063}
   m_Layer: 0
   m_Name: SlimeAni
   m_TagString: Untagged
@@ -118,6 +119,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2402875706122268063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2312221907529344480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4041957bb866ca24cabe7269516d326b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2570864656947505280
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creatureBase: {fileID: 0}
   currentHP: 0
+  ani: {fileID: 3231262651351865746}
 --- !u!114 &5674514413867689855
 MonoBehaviour:
   m_ObjectHideFlags: 0

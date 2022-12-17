@@ -7,8 +7,12 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private float speed;
 
+    [HideInInspector]
     public Transform target;
 
+    [SerializeField]
+    private int damage;
+    //objectPool
     public delegate void Recycle(Bullet bullet);
     public Recycle recycle;
 
@@ -31,6 +35,6 @@ public class Bullet : MonoBehaviour
     }
     public int GetBulletDamage()
     {
-        return 1;
+        return damage;
     }
 }

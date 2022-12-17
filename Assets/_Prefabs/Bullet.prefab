@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   target: {fileID: 0}
+  damage: 1
 --- !u!96 &253001084307114520
 TrailRenderer:
   serializedVersion: 2

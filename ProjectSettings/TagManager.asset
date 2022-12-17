@@ -8,6 +8,7 @@ TagManager:
   - PlayerAttack
   - PlayerDetectObject
   - Bullet
+  - DeadEnemy
   layers:
   - Default
   - TransparentFX

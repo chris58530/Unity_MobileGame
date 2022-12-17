@@ -49,17 +49,11 @@ public class CreatureBase : MonoBehaviour
         return Data.GetCreature(creature);
 
     }
-    public void Die(Creature creature,Transform trans) // 動畫Event
+    public void GetDrop(Creature creature,Transform trans) // animation 動畫 Event
     {
-        GameActions.OnDropItem(creature,trans);
-        StartCoroutine(Destroy());
+        GameActions.OnDropItem?.Invoke(creature, trans);
     }
-    IEnumerator Destroy()
-    {
-        yield return new WaitForSecondsRealtime(1);
-        Destroy(gameObject);
 
-    }
 
 
 }
