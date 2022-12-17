@@ -39,7 +39,7 @@ public abstract class MojiBaseState
             Debug.Log("EnemyAttack!!!");
 
             Vector3 forcePos = new Vector3(creature.transform.position.x - collision.transform.position.x, 0, creature.transform.position.z - collision.transform.position.z);
-            rb.AddForce(forcePos.normalized * 50 * 100);
+            rb.AddForce(forcePos.normalized * 500);
             creature.SwitchState(creature.hurtState);
         }
     }
@@ -67,6 +67,10 @@ public class MojiAttackState : MojiBaseState
         base.EnterState(creature);
         rb.AddForce(creature.transform.forward* 100);
         creature.StartCoroutine(TimeToIdle(creature));
+        creature.CompareTag("PlayerAttack");
+
+        base.EnterState(creature);
+        creature.octopusAni.SetBool("isWalking", false);
 
     }
     public override void UpdateState(MojiStateManager creature)
@@ -94,14 +98,18 @@ public class MojiMoveState : MojiBaseState
     }
     public override void UpdateState(MojiStateManager creature)
     {
-        //animation here
         base.UpdateState(creature);
-        rb.velocity = new Vector3(creature.fixedJoystick.Horizontal * creature.currentMoveSpeed, rb.velocity.y
-            , creature.fixedJoystick.Vertical * creature.currentMoveSpeed);
-        if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+
+        if (_joystick.Horizontal >= 0.1f || _joystick.Vertical >= 0.1f && _joystick.Horizontal <= -0.1f || _joystick.Vertical <= -0.1f)
         {
+            rb.velocity = new Vector3(creature.fixedJoystick.Horizontal * creature.currentMoveSpeed
+             , rb.velocity.y, creature.fixedJoystick.Vertical * creature.currentMoveSpeed);
             creature.transform.rotation = Quaternion.LookRotation(rb.velocity);
+            creature.ani.SetBool("isWalking", true);
+
         }
+        else
+            creature.ani.SetBool("isWalking", false);
     }
 }
 public class MojiHurtState : MojiBaseState

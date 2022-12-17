@@ -15,9 +15,9 @@ MonoBehaviour:
   _characterList:
   - name: Cow
     introduciotn: ccc
-    characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
+    characterObject: {fileID: 3929357347147589621, guid: ddb4267ea810b57498d6f254a761802b,
       type: 3}
-    moveSpeed: 33
+    moveSpeed: 20
     attackPower: 5
     attackCD: 5
     currentAttackCD: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
     introduciotn: ooo
     characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
       type: 3}
-    moveSpeed: 33
+    moveSpeed: 20
     attackPower: 4
     attackCD: 1
     currentAttackCD: 0

@@ -42,7 +42,7 @@ public abstract class OctopusBaseState
             Debug.Log("EnemyAttack!!!");
 
             Vector3 forcePos = new Vector3(creature.transform.position.x - collision.transform.position.x, 0, creature.transform.position.z - collision.transform.position.z);
-            rb.AddForce(forcePos.normalized * 100);
+            rb.AddForce(forcePos.normalized * 500);
             creature.SwitchState(creature.hurtState);
         }
     }

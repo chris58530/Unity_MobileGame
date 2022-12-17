@@ -21,6 +21,9 @@ public class MojiStateManager : MonoBehaviour
     public float currentDamagedCD;
     public float currentMoveSpeed;
 
+    public Animator ani;
+
+
     private void Start()
     {
         currentState = idleState;

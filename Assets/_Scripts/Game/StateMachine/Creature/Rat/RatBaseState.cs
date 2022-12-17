@@ -12,7 +12,10 @@ public abstract  class RatBaseState
         playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
         rb = creature.GetComponent<Rigidbody>();
     }
-    public abstract void UpdateState(RatStateManager creature);
+    public virtual void UpdateState(RatStateManager creature)
+    {
+
+    }
     public virtual void OnTriggerEnter(RatStateManager creature, Collider other)
     {
         if (other.gameObject.CompareTag("PlayerAttack"))//被這個打到要表演
@@ -41,13 +44,13 @@ public abstract  class RatBaseState
         }
     }
 }
-#region NChicken: Idle Move Attack Hurt Die
+#region Rat: Idle Move Attack Hurt Die
 public class RatIdleState : RatBaseState
 {
     public override void EnterState(RatStateManager creature)
     {
         base.EnterState(creature);
-        creature.transform.position += new Vector3(0, -3, 0);
+        creature.transform.position += new Vector3(0, -2.5f, 0);
         rb.constraints = RigidbodyConstraints.FreezePosition;
         BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
         boxCollider.isTrigger = true;
@@ -116,32 +119,51 @@ public class RatAttackState : RatBaseState
 
 public class RatHurtState : RatBaseState
 {
-   
+    bool stiff = false;
     public override void EnterState(RatStateManager creature)
     {
+        int hp = creature.currentHP;
+        if (hp <= 0)
+        {
+            creature.SwitchState(creature.dieState);
+
+        }
+        else
+        {
+            //creature.ani.SetTrigger("Hurt"); //並沒有
+            stiff = true;
+        }
         base.EnterState(creature);
     }
     public override void UpdateState(RatStateManager creature)
     {
-        if (hurtCD > 0)
-            hurtCD -= Time.deltaTime;
-        else
+        base.UpdateState(creature);
+        creature.StartCoroutine(StiffTime(2));
+        if (!stiff)
             creature.SwitchState(creature.moveState);
+    }
+    IEnumerator StiffTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        stiff = false;
     }
 }
 public class RatDieState : RatBaseState
 {
-    float hurtCD;
     public override void EnterState(RatStateManager creature)
     {
         base.EnterState(creature);
+        creature.CompareTag("DeadEnemy");
+
+        creature.ani.SetTrigger("Die");
+        creature.creatureBase.GetDrop(creature.creatureBase.GetCreature(Rat), creature.transform);
     }
     public override void UpdateState(RatStateManager creature)
     {
-        if (hurtCD > 0)
-            hurtCD -= Time.deltaTime;
-        else
-            creature.SwitchState(creature.moveState);
+     
+    }
+    public override void OnTriggerEnter(RatStateManager creature, Collider other)
+    {
     }
 }
 #endregion
