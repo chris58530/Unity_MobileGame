@@ -73,6 +73,8 @@ public class MojiIdleState : MojiBaseState
         BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
         boxCollider.isTrigger = false;
         rb.constraints = RigidbodyConstraints.None;
+        rb.constraints = RigidbodyConstraints.FreezePositionY;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
 
     }
     public override void UpdateState(MojiStateManager creature)
