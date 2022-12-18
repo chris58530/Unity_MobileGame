@@ -78,11 +78,12 @@ public class CowMoveState : CowBaseState
 public class CowChargeState : CowBaseState 
 {
     //純粹倒數時間
-    float charge = 2; //續力時間
+    float charge; //續力時間
     public override void EnterState(CowStateManager creature)
     {
         base.EnterState(creature);
         creature.ani.SetTrigger("Attack_1");
+        charge = 2;
     }
     public override void UpdateState(CowStateManager creature)
     {
@@ -112,23 +113,30 @@ public class CowChargeState : CowBaseState
 public class CowAttackState : CowBaseState
 {
     Vector3 target;
-
     float wait; //攻擊結束等待時間
     public override void EnterState(CowStateManager creature)
     {
-        creature.ani.SetTrigger("Attack_2");
 
         base.EnterState(creature);
+        creature.ani.SetTrigger("Attack_2");
         target = playerTrans.position;
+        wait = creature.attackTime;
+        //BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
+        //boxCollider.isTrigger = true;
+        rb.transform.LookAt(new Vector3(target.x, creature.transform.position.y, target.z));
+
     }
 
     public override void UpdateState(CowStateManager creature)
     {
-        rb.transform.LookAt(new Vector3(target.x, creature.transform.position.y, target.z));
 
-        creature.transform.position = 
-            Vector3.MoveTowards(
-                creature.transform.position, target,creature.creatureBase.GetSpeed(Cow)*15*Time.deltaTime);
+
+        rb.transform.Translate(new Vector3(0, 0, 1 * creature.creatureBase.GetSpeed(Cow)*  4  * Time.deltaTime));
+
+
+        //creature.transform.position = 
+        //    Vector3.MoveTowards(
+        //        creature.transform.position, target,creature.creatureBase.GetSpeed(Cow)*3*Time.deltaTime);
         wait -= Time.deltaTime;
         if (wait <= 0)      
             creature.SwitchState(creature.moveState);

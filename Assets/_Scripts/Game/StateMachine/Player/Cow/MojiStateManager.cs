@@ -12,9 +12,8 @@ public class MojiStateManager : MonoBehaviour
     public MojiAttackState attackState = new MojiAttackState();
     public MojiHurtState hurtState = new MojiHurtState();
 
-    public FixedJoystick fixedJoystick;
+    public FloatingJoystick fixedJoystick;
     private Vector3 fixedJoystickPos;
-
     [HideInInspector]
     public CharacterBase characterBase;
 

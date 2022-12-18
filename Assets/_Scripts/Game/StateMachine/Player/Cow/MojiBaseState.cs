@@ -9,26 +9,21 @@ public abstract class MojiBaseState
     public virtual void EnterState(MojiStateManager creature)
     {
         rb = creature.GetComponent<Rigidbody>();
+        //rb.constraints = RigidbodyConstraints.FreezePositionY;
+
     }
     public virtual void UpdateState(MojiStateManager creature)
     {
-
-
         if (!Input.anyKey && creature.currentAttackCD <= 0)
             creature.SwitchState(creature.attackState);
         else
             creature.SwitchState(creature.moveState);
-
-
-
 
         if (creature.currentAttackCD > 0)
             creature.currentAttackCD -= Time.deltaTime;
 
         if (creature.currentDamagedCD > 0)
             creature.currentDamagedCD -= Time.deltaTime;
-
-
     }
 
     public virtual void OnCollisionEnter(MojiStateManager creature, Collision collision)
@@ -37,6 +32,8 @@ public abstract class MojiBaseState
         {
             //重設受傷CD時間
             creature.currentDamagedCD = creature.characterBase.GetDamagedCD();
+            Debug.Log(creature.currentAttackCD);
+            Debug.Log(creature.characterBase.GetDamagedCD());
 
             //彈開
             float forceX = creature.transform.position.x - collision.transform.position.x;
@@ -72,9 +69,7 @@ public class MojiIdleState : MojiBaseState
 
         BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
         boxCollider.isTrigger = false;
-        rb.constraints = RigidbodyConstraints.None;
-        rb.constraints = RigidbodyConstraints.FreezePositionY;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
+
 
     }
     public override void UpdateState(MojiStateManager creature)
@@ -91,7 +86,6 @@ public class MojiAttackState : MojiBaseState
         base.EnterState(creature);
         creature.ani.SetBool("isWalking", false);
         creature.tag = ("PlayerAttack");
-        rb.constraints = RigidbodyConstraints.FreezePositionY;
 
         BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
         boxCollider.isTrigger = true;
@@ -99,15 +93,12 @@ public class MojiAttackState : MojiBaseState
     }
     public override void UpdateState(MojiStateManager creature)
     {
-        base.UpdateState(creature);
         if (creature.currentAttackCD <= 0)
         {
             creature.StartCoroutine(TimeToIdle(creature));
 
             creature.currentAttackCD = creature.characterBase.GetAttackCD();
             creature.ani.SetTrigger("Attack");
-
-
         }
 
     }
@@ -116,14 +107,13 @@ public class MojiAttackState : MojiBaseState
         rb.AddForce(creature.transform.forward * 5000);
 
         yield return new WaitForSeconds(1);
-        Debug.Log("TimeToIdle");
 
         creature.SwitchState(creature.idleState);
     }
 }
 public class MojiMoveState : MojiBaseState
 {
-    private FixedJoystick _joystick;
+    private FloatingJoystick _joystick;
 
     public override void EnterState(MojiStateManager creature)
     {
@@ -133,18 +123,23 @@ public class MojiMoveState : MojiBaseState
     }
     public override void UpdateState(MojiStateManager creature)
     {
+
         base.UpdateState(creature);
 
-        if (_joystick.Horizontal >= 0.1f || _joystick.Vertical >= 0.1f && _joystick.Horizontal <= -0.1f || _joystick.Vertical <= -0.1f)
+        float moveX = creature.fixedJoystick.Horizontal;
+        float moveY = creature.fixedJoystick.Vertical;
+        rb.velocity = new Vector3(moveX * creature.currentMoveSpeed, rb.velocity.y, moveY * creature.currentMoveSpeed);
+        if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
-            rb.velocity = new Vector3(creature.fixedJoystick.Horizontal * creature.currentMoveSpeed
-             , rb.velocity.y, creature.fixedJoystick.Vertical * creature.currentMoveSpeed);
             creature.transform.rotation = Quaternion.LookRotation(rb.velocity);
             creature.ani.SetBool("isWalking", true);
-
         }
         else
             creature.ani.SetBool("isWalking", false);
+    }
+    public override void OnCollisionEnter(MojiStateManager creature, Collision collision)
+    {
+        base.OnCollisionEnter(creature, collision);
     }
 }
 public class MojiHurtState : MojiBaseState

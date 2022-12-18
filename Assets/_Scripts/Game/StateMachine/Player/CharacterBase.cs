@@ -34,7 +34,7 @@ public class CharacterBase : MonoBehaviour
     }
     public float GetDamagedCD()
     {
-        return Data.GetCharacter(CharacterSpawn.currentPlayer).currentHurtCD;
+        return Data.GetCharacter(CharacterSpawn.currentPlayer).hurtCD;
     }
     public void OnDamaged(float currentHp)
     {

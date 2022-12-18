@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5797588949192130843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3134266698453977202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Downleg.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5378694138102715589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8050147017928021237}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Uparm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2953312210069643230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1382084670250920744}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 793958072994178061}
   - component: {fileID: 401173502448339051}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: l1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7663252745406824943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Downleg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4686470322294085793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Downarm.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 3691242354433225809}
   - component: {fileID: 3691242354433225814}
   - component: {fileID: 3691242354433225815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pumpking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1788166614535657845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Downarm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2731208770404706294}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hat_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6937542711903370243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Upleg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7228271423343774474}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Upleg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5731173640925717711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 509233044630368185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Uparm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7783661772353847724}
   - component: {fileID: 4285036894738924886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: h1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -720,7 +720,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1802138429073060613}
   - component: {fileID: 4098721125700239409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: downmouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,7 +820,7 @@ GameObject:
   - component: {fileID: 5237596918524952019}
   - component: {fileID: 2149418362013843818}
   - component: {fileID: 4290863565908482071}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cow
   m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
@@ -857,7 +857,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &5237596918524952019
 MonoBehaviour:
@@ -914,7 +914,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5929805814894554565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Downleg.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -945,7 +945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7405290441770121075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Downarm.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,7 +976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1321483325827404332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Downleg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1008,7 +1008,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8065184755375703971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1044,7 +1044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 944978151058844155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Downarm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}

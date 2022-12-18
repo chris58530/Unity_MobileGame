@@ -21,7 +21,7 @@ MonoBehaviour:
     attackPower: 5
     attackCD: 3
     currentAttackCD: 0
-    hurtCD: 5
+    hurtCD: 0.5
     currentHurtCD: 0
     maxHP: 100
     currentHP: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
     attackPower: 4
     attackCD: 1
     currentAttackCD: 0
-    hurtCD: 5
+    hurtCD: 0.5
     currentHurtCD: 0
     maxHP: 100
     currentHP: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
     attackPower: 4
     attackCD: 1
     currentAttackCD: 0
-    hurtCD: 5
+    hurtCD: 0.5
     currentHurtCD: 0
     maxHP: 5
     currentHP: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
     attackPower: 4
     attackCD: 1
     currentAttackCD: 0
-    hurtCD: 5
+    hurtCD: 0.5
     currentHurtCD: 0
     maxHP: 5
     currentHP: 0
