@@ -14,6 +14,9 @@ public class CreatureBase : MonoBehaviour
     [SerializeField]
     private float stiffTime;
 
+    [SerializeField]
+    public string Name;
+
     private void Start()
     {
         playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
@@ -42,14 +45,17 @@ public class CreatureBase : MonoBehaviour
     {
         return Data.GetCreature(creature).moveSpeed;
     }
-   
-   
+
+    public string GetName() //提供玩家讀取
+    {
+        return name;
+    }
     public Creature GetCreature(string creature)
     {
         return Data.GetCreature(creature);
 
     }
-    public void GetDrop(Creature creature,Transform trans) // animation 動畫 Event
+    public void GetDrop(Creature creature, Transform trans) // animation 動畫 Event
     {
         GameActions.OnDropItem?.Invoke(creature, trans);
     }

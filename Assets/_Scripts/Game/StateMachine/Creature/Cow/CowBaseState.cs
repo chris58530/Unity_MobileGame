@@ -9,7 +9,6 @@ public abstract class CowBaseState
     protected string Cow = "Cow";
     public virtual void EnterState(CowStateManager creature)
     {
-        Debug.Log(string.Format("<color=#ff0000>{0}</color>", creature.currentState + "¼Ò¦¡"));
 
         playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
         rb = creature.GetComponent<Rigidbody>();

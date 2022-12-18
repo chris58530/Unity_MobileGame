@@ -4,11 +4,10 @@ using UnityEngine;
 
 public abstract class MojiBaseState
 {
-    public Rigidbody rb;
+    protected Rigidbody rb;
 
     public virtual void EnterState(MojiStateManager creature)
     {
-        Debug.Log(string.Format("<color=#f5f500>{0}</color>", creature.currentState + "模式"));
         rb = creature.GetComponent<Rigidbody>();
     }
     public virtual void UpdateState(MojiStateManager creature)
@@ -20,7 +19,7 @@ public abstract class MojiBaseState
         else
             creature.SwitchState(creature.moveState);
 
-      
+
 
 
         if (creature.currentAttackCD > 0)
@@ -36,10 +35,27 @@ public abstract class MojiBaseState
     {
         if (collision.gameObject.tag == ("EnemyAttack") && creature.currentDamagedCD <= 0)
         {
-            Debug.Log("EnemyAttack!!!");
+            //重設受傷CD時間
+            creature.currentDamagedCD = creature.characterBase.GetDamagedCD();
 
-            Vector3 forcePos = new Vector3(creature.transform.position.x - collision.transform.position.x, 0, creature.transform.position.z - collision.transform.position.z);
-            rb.AddForce(forcePos.normalized * 500);
+            //彈開
+            float forceX = creature.transform.position.x - collision.transform.position.x;
+            float forceZ = creature.transform.position.z - collision.transform.position.z;
+            Vector3 forcePos = new Vector3(forceX, 0, forceZ);
+            rb.AddForce(forcePos * 500);
+
+            //扣血
+            //string collisionName = collision.gameObject.GetComponent<CreatureBase>().GetName();
+            string collisionName = collision.gameObject.GetComponent<CreatureBase>().Name;
+            Debug.Log(collisionName);
+            int damage = collision.gameObject.GetComponent<CreatureBase>().GetAttack(collisionName);
+            creature.currentHp -= damage;
+            creature.characterBase.OnDamaged(creature.currentHp);
+            //鏡頭晃動
+
+            //Shader閃紅
+
+            Debug.Log("EnemyAttack");
             creature.SwitchState(creature.hurtState);
         }
     }
@@ -133,8 +149,9 @@ public class MojiHurtState : MojiBaseState
 {
     public override void EnterState(MojiStateManager creature)
     {
-        base.EnterState(creature);
+        creature.ani.SetTrigger("Hurt");
+        creature.SwitchState(creature.idleState);
     }
-   
+
 }
 #endregion

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class CharacterBase : MonoBehaviour
@@ -10,6 +11,14 @@ public class CharacterBase : MonoBehaviour
 
     [SerializeField]
     private UnityEvent toMenu;
+
+    [SerializeField]
+    private Image healthBar;
+    private void Start()
+    {
+        //初始化血條
+        healthBar.fillAmount = 1;
+    }
 
     public int GetHealth() //加入曲線成長數值
     {
@@ -27,10 +36,14 @@ public class CharacterBase : MonoBehaviour
     {
         return Data.GetCharacter(CharacterSpawn.currentPlayer).currentHurtCD;
     }
+    public void OnDamaged(float currentHp)
+    {
+        //血條改變
+        healthBar.fillAmount = currentHp / 100;
+    }
     public int GetMoveSpeed()
     {
         return Data.GetCharacter(CharacterSpawn.currentPlayer).moveSpeed;
-
     }
 
     public void Die() // 動畫Event

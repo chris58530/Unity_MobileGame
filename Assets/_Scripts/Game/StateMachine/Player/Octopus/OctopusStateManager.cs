@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class OctopusStateManager : MonoBehaviour
@@ -22,6 +23,10 @@ public class OctopusStateManager : MonoBehaviour
     public float currentMoveSpeed;
 
     public FixedJoystick fixedJoystick;
+
+
+
+
     private Vector3 fixedJoystickPos;
 
     public Animator octopusAni;

@@ -23,7 +23,7 @@ MonoBehaviour:
     currentAttackCD: 0
     hurtCD: 5
     currentHurtCD: 0
-    maxHP: 5
+    maxHP: 100
     currentHP: 0
   - name: Octopus
     introduciotn: ooo
@@ -35,7 +35,7 @@ MonoBehaviour:
     currentAttackCD: 0
     hurtCD: 5
     currentHurtCD: 0
-    maxHP: 5
+    maxHP: 100
     currentHP: 0
   - name: None
     introduciotn: None

@@ -39,10 +39,10 @@ public abstract class OctopusBaseState
     {
         if (collision.gameObject.tag == ("EnemyAttack") && creature.currentDamagedCD <= 0)
         {
-            Debug.Log("EnemyAttack!!!");
+            Debug.Log("EnemyAttack");
 
             Vector3 forcePos = new Vector3(creature.transform.position.x - collision.transform.position.x, 0, creature.transform.position.z - collision.transform.position.z);
-            rb.AddForce(forcePos.normalized * 500);
+            rb.AddForce(forcePos * 500);
             creature.SwitchState(creature.hurtState);
         }
     }

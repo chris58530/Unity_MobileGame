@@ -518,7 +518,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &3929357347147589629
 MonoBehaviour:
@@ -536,6 +536,7 @@ MonoBehaviour:
   toMenu:
     m_PersistentCalls:
       m_Calls: []
+  healthBar: {fileID: 0}
 --- !u!114 &3929357347147589631
 MonoBehaviour:
   m_ObjectHideFlags: 0

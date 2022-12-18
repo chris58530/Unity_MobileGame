@@ -385,6 +385,7 @@ MonoBehaviour:
   playerTrans: {fileID: 0}
   Data: {fileID: 11400000, guid: 05ea8790b0ddf1640b1c727139b1c1db, type: 2}
   stiffTime: 1
+  Name: Chicken
 --- !u!1 &3819727448370437130
 GameObject:
   m_ObjectHideFlags: 0

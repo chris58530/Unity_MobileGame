@@ -11,7 +11,6 @@ public abstract class SlimeBaseState
     public virtual void EnterState(SlimeStateManager creature)
     {
         rb = creature.GetComponent<Rigidbody>();
-        Debug.Log(string.Format("<color=#ff0000>{0}</color>", creature.currentState + "¼Ò¦¡"));
     }
     public virtual void UpdateState(SlimeStateManager creature)
     {

@@ -30,7 +30,6 @@ public abstract  class RatBaseState
         {
             int damage = other.gameObject.GetComponent<Bullet>().GetBulletDamage();
             creature.currentHP -= damage;
-            Debug.Log(damage);
 
         }
         if (other.gameObject.CompareTag("Player"))

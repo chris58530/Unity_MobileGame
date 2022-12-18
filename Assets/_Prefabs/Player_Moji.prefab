@@ -1318,7 +1318,9 @@ MonoBehaviour:
   currentAttackCD: 0
   currentDamagedCD: 0
   currentMoveSpeed: 0
+  currentHp: 0
   ani: {fileID: 2162706743440015533}
+  healthBar: {fileID: 1398621404797485649}
 --- !u!114 &3929357347147589629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1335,6 +1337,7 @@ MonoBehaviour:
   toMenu:
     m_PersistentCalls:
       m_Calls: []
+  healthBar: {fileID: 1398621404797485649}
 --- !u!1 &4099980430867011319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,9 +1619,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2285,7 +2288,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 529688f04262e1c4eace9bec843d8e6e, type: 3}
+  - {fileID: 2100000, guid: dfdc1d4414b77c549987a7522ce259fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MojiStateManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class MojiStateManager : MonoBehaviour
     public float currentAttackCD;
     public float currentDamagedCD;
     public float currentMoveSpeed;
+    public float currentHp;
 
     public Animator ani;
 
@@ -37,6 +39,7 @@ public class MojiStateManager : MonoBehaviour
         currentAttackCD = characterBase.GetAttackCD();
         currentDamagedCD = characterBase.GetDamagedCD();
         currentMoveSpeed = characterBase.GetMoveSpeed();
+        currentHp = characterBase.GetHealth();
 
     }
     private void FixedUpdate()
