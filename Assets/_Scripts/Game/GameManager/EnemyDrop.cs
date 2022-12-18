@@ -11,8 +11,9 @@ public class EnemyDrop : MonoBehaviour
         {
             if (creature.probability[i] >= randomCount)
             {
-                Vector3 posOffset = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
-                Instantiate(creature.items[i],creatuerTrans.position+ posOffset, creatuerTrans.rotation);
+                Vector3 posOffset = new Vector3(Random.Range(-1, 1), 1, Random.Range(-1, 1));
+                Vector3 creaturePos = new Vector3(creatuerTrans.position.x, 0, creatuerTrans.position.z);
+                Instantiate(creature.items[i], creaturePos + posOffset, creatuerTrans.rotation);
 
             }
         }

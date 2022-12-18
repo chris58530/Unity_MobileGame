@@ -23,9 +23,9 @@ MonoBehaviour:
     maxHP: 1
     currentHP: 0
     items:
-    - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}
-    - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}
-    - {fileID: 2996883092409544701, guid: 9a47f705ff52cc04a9765219a209a87c, type: 3}
+    - {fileID: 8781424987689343743, guid: a9a96fc1bff23134aaafd7661e3e00ae, type: 3}
+    - {fileID: 8007638731067291284, guid: ade15ef446a99ee49b0784641153f466, type: 3}
+    - {fileID: 4695204670636721570, guid: 340733f81b1918041b8400bf578a33e3, type: 3}
     probability: 64000000320000000a000000
   - creatureName: Chicken
     moveSpeed: 1
@@ -37,10 +37,11 @@ MonoBehaviour:
     maxHP: 1
     currentHP: 0
     items:
-    - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}
-    - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}
-    - {fileID: 2996883092409544701, guid: 9a47f705ff52cc04a9765219a209a87c, type: 3}
-    probability: 64000000320000000a000000
+    - {fileID: 8781424987689343743, guid: a9a96fc1bff23134aaafd7661e3e00ae, type: 3}
+    - {fileID: 8007638731067291284, guid: ade15ef446a99ee49b0784641153f466, type: 3}
+    - {fileID: 2883541521932797259, guid: 323581ebe2973754589f22c81731c301, type: 3}
+    - {fileID: 3444486809432609865, guid: 1caec83cc5d223343917ce246555f545, type: 3}
+    probability: 64000000320000000a0000000a000000
   - creatureName: Cow
     moveSpeed: 3
     attackPower: 1
@@ -51,10 +52,11 @@ MonoBehaviour:
     maxHP: 5
     currentHP: 0
     items:
-    - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}
-    - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}
-    - {fileID: 2996883092409544701, guid: 9a47f705ff52cc04a9765219a209a87c, type: 3}
-    probability: 64000000320000000a000000
+    - {fileID: 8781424987689343743, guid: a9a96fc1bff23134aaafd7661e3e00ae, type: 3}
+    - {fileID: 8007638731067291284, guid: ade15ef446a99ee49b0784641153f466, type: 3}
+    - {fileID: 2260792113439378229, guid: 0ca46a30e3aae22498df8aa4d35a7994, type: 3}
+    - {fileID: 2930505800920096262, guid: 7ae3df82be0f43a4b93f68fe158c7dee, type: 3}
+    probability: 64000000320000000a0000000a000000
   - creatureName: Rat
     moveSpeed: 2
     attackPower: 1
@@ -65,7 +67,9 @@ MonoBehaviour:
     maxHP: 5
     currentHP: 0
     items:
-    - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}
-    - {fileID: 2996883092409544701, guid: ccd13d19eb52c6243882fb41eef3afd6, type: 3}
-    - {fileID: 2996883092409544701, guid: 9a47f705ff52cc04a9765219a209a87c, type: 3}
-    probability: 64000000320000000a000000
+    - {fileID: 8781424987689343743, guid: a9a96fc1bff23134aaafd7661e3e00ae, type: 3}
+    - {fileID: 8007638731067291284, guid: ade15ef446a99ee49b0784641153f466, type: 3}
+    - {fileID: 3373315320574315348, guid: 4aebd76ca91259e47aa5b2f088fdb277, type: 3}
+    - {fileID: 1713281501574689165, guid: 5750db179345df1408c0f88400292344, type: 3}
+    - {fileID: 7431797546310920672, guid: 40bd60e06470f4a46814d4fd2112e474, type: 3}
+    probability: 64000000320000000a0000000a0000000a000000
