@@ -548,13 +548,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy:
-  - {fileID: 6903811045123087369, guid: b9088268882846a45bdceb377dc0c314, type: 3}
-  - {fileID: 33772848078534695, guid: 507c945d89c447d46bb15a87161fe61b, type: 3}
-  - {fileID: 3539184689496919333, guid: 1723de3f51b35de4aa01fce38e39c105, type: 3}
   - {fileID: 2939252080224235274, guid: 7985c3a64721d8b4a87a5b27d417243e, type: 3}
-  _spawnRate: 1
-  _minSpawnPos: -70
-  _maxSpawnPos: 70
+  - {fileID: 6903811045123087369, guid: b9088268882846a45bdceb377dc0c314, type: 3}
+  - {fileID: 3539184689496919333, guid: 1723de3f51b35de4aa01fce38e39c105, type: 3}
+  - {fileID: 33772848078534695, guid: 507c945d89c447d46bb15a87161fe61b, type: 3}
+  _spawnRate: 3
+  _minSpawnPos: 30
+  _maxSpawnPos: 40
 --- !u!114 &344921652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,7 +1412,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1219632038
 RectTransform:
@@ -1460,7 +1460,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268966129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.282, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

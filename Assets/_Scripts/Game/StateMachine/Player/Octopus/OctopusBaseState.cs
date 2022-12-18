@@ -8,7 +8,6 @@ public abstract class OctopusBaseState
 
     public virtual void EnterState(OctopusStateManager creature)
     {
-        Debug.Log(string.Format("<color=#f5f5dc>{0}</color>", creature.currentState + "模式"));
         rb = creature.GetComponent<Rigidbody>();
     }
     public virtual void UpdateState(OctopusStateManager creature)
@@ -19,11 +18,6 @@ public abstract class OctopusBaseState
             creature.SwitchState(creature.attackState);
         else
             creature.SwitchState(creature.moveState);
-
-        //if (Input.touchCount == 0 && creature.CreatureData.currentAttackCD <= 0)
-        //    creature.SwitchState(creature.attackState);
-        //else
-        //    creature.SwitchState(creature.moveState);
 
 
         if (creature.currentAttackCD > 0)
@@ -37,12 +31,32 @@ public abstract class OctopusBaseState
 
     public virtual void OnCollisionEnter(OctopusStateManager creature, Collision collision)
     {
+      
         if (collision.gameObject.tag == ("EnemyAttack") && creature.currentDamagedCD <= 0)
         {
-            Debug.Log("EnemyAttack");
+            //重設受傷CD時間
+            creature.currentDamagedCD = creature.characterBase.GetDamagedCD();
+            Debug.Log(creature.currentAttackCD);
+            Debug.Log(creature.characterBase.GetDamagedCD());
 
-            Vector3 forcePos = new Vector3(creature.transform.position.x - collision.transform.position.x, 0, creature.transform.position.z - collision.transform.position.z);
+            //彈開
+            float forceX = creature.transform.position.x - collision.transform.position.x;
+            float forceZ = creature.transform.position.z - collision.transform.position.z;
+            Vector3 forcePos = new Vector3(forceX, 0, forceZ);
             rb.AddForce(forcePos * 500);
+
+            //扣血
+            //string collisionName = collision.gameObject.GetComponent<CreatureBase>().GetName();
+            string collisionName = collision.gameObject.GetComponent<CreatureBase>().Name;
+            Debug.Log(collisionName);
+            int damage = collision.gameObject.GetComponent<CreatureBase>().GetAttack(collisionName);
+            creature.currentHp -= damage;
+            creature.characterBase.OnDamaged(creature.currentHp);
+            //鏡頭晃動
+
+            //Shader閃紅
+
+            Debug.Log("EnemyAttack");
             creature.SwitchState(creature.hurtState);
         }
     }
@@ -67,7 +81,7 @@ public class OctopusIdleState : OctopusBaseState
 }
 public class OctopusMoveState : OctopusBaseState
 {
-    private FixedJoystick _joystick;
+    private FloatingJoystick  _joystick;
 
     public override void EnterState(OctopusStateManager creature)
     {
@@ -81,13 +95,13 @@ public class OctopusMoveState : OctopusBaseState
     {
         base.UpdateState(creature);
 
-        if (_joystick.Horizontal >= 0.1f || _joystick.Vertical >= 0.1f && _joystick.Horizontal <= -0.1f || _joystick.Vertical <= -0.1f)
+        float moveX = creature.fixedJoystick.Horizontal;
+        float moveY = creature.fixedJoystick.Vertical;
+        rb.velocity = new Vector3(moveX * creature.currentMoveSpeed, rb.velocity.y, moveY * creature.currentMoveSpeed);
+        if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
-            rb.velocity = new Vector3(creature.fixedJoystick.Horizontal * creature.currentMoveSpeed
-             , rb.velocity.y, creature.fixedJoystick.Vertical * creature.currentMoveSpeed);
             creature.transform.rotation = Quaternion.LookRotation(rb.velocity);
             creature.octopusAni.SetBool("isWalking", true);
-
         }
         else
             creature.octopusAni.SetBool("isWalking", false);

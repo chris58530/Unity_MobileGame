@@ -21,13 +21,13 @@ public class OctopusStateManager : MonoBehaviour
     public float currentAttackCD;
     public float currentDamagedCD;
     public float currentMoveSpeed;
+    public float currentHp;
 
-    public FixedJoystick fixedJoystick;
+    public FloatingJoystick fixedJoystick;
 
 
 
 
-    private Vector3 fixedJoystickPos;
 
     public Animator octopusAni;
     private void Awake()
@@ -39,11 +39,11 @@ public class OctopusStateManager : MonoBehaviour
         currentState = idleState;
 
         currentState.EnterState(this);
-        fixedJoystickPos = fixedJoystick.transform.position;
 
         currentAttackCD = characterBase.GetAttackCD();
         currentDamagedCD = characterBase.GetDamagedCD();
         currentMoveSpeed = characterBase.GetMoveSpeed();
+        currentHp = characterBase.GetHealth();
 
     }
     private void FixedUpdate()

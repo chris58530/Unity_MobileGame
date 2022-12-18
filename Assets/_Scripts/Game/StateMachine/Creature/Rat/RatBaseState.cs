@@ -52,6 +52,7 @@ public class RatIdleState : RatBaseState
         creature.transform.position += new Vector3(0, -2.5f, 0);
         BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
         boxCollider.isTrigger = true;
+        creature.tag = ("Untagged");
     }
     public override void UpdateState(RatStateManager creature)
     {
@@ -68,10 +69,13 @@ public class RatIdleState : RatBaseState
     IEnumerator Jump(RatStateManager creature)
     {
         creature.transform.position += new Vector3(0, 20, 0) * Time.deltaTime;
-
-        yield return new WaitForSeconds(2);
+        Rigidbody rigidbody = creature.GetComponent<Rigidbody>();
+        rigidbody.constraints = RigidbodyConstraints.None;
         BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
         boxCollider.isTrigger = false;
+        yield return new WaitForSeconds(2);
+      
+     
         creature.SwitchState(creature.moveState);
 
     }
@@ -84,6 +88,10 @@ public class RatMoveState : RatBaseState
     public override void EnterState(RatStateManager creature)
     {
         base.EnterState(creature);
+        Rigidbody rigidbody = creature.GetComponent<Rigidbody>();
+        rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
+        rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+        creature.tag = ("EnemyAttack");
 
     }
 

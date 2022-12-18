@@ -20,7 +20,7 @@ MonoBehaviour:
     currentAttackCD: 0
     hurtCD: 1
     currentHurtCD: 1
-    maxHP: 1
+    maxHP: 5
     currentHP: 0
     items:
     - {fileID: 8781424987689343743, guid: a9a96fc1bff23134aaafd7661e3e00ae, type: 3}
@@ -34,7 +34,7 @@ MonoBehaviour:
     currentAttackCD: 0
     hurtCD: 1
     currentHurtCD: 1
-    maxHP: 1
+    maxHP: 5
     currentHP: 0
     items:
     - {fileID: 8781424987689343743, guid: a9a96fc1bff23134aaafd7661e3e00ae, type: 3}
@@ -49,7 +49,7 @@ MonoBehaviour:
     currentAttackCD: 0
     hurtCD: 1
     currentHurtCD: 1
-    maxHP: 5
+    maxHP: 10
     currentHP: 0
     items:
     - {fileID: 8781424987689343743, guid: a9a96fc1bff23134aaafd7661e3e00ae, type: 3}
@@ -64,7 +64,7 @@ MonoBehaviour:
     currentAttackCD: 0
     hurtCD: 1
     currentHurtCD: 1
-    maxHP: 5
+    maxHP: 10
     currentHP: 0
     items:
     - {fileID: 8781424987689343743, guid: a9a96fc1bff23134aaafd7661e3e00ae, type: 3}
