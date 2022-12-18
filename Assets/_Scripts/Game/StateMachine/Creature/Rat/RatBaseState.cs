@@ -50,25 +50,30 @@ public class RatIdleState : RatBaseState
     {
         base.EnterState(creature);
         creature.transform.position += new Vector3(0, -2.5f, 0);
-        rb.constraints = RigidbodyConstraints.FreezePosition;
         BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
         boxCollider.isTrigger = true;
     }
     public override void UpdateState(RatStateManager creature)
     {
         float distance = Vector3.Distance(playerTrans.position, creature.transform.position);
-        //Debug.Log(distance);
-        //if (creature.CreatureData.currentAttackCD > 0)
-        //{
-        //    creature.CreatureData.currentAttackCD -= Time.deltaTime;
-        //}
-        if (distance <=   10 /*&& creature.CreatureData.currentAttackCD <= 0*/)
+       
+        if (distance <= 10)
         {
-            creature.SwitchState(creature.moveState);
-            creature.transform.position += new Vector3(0, 4, 0);
-            BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
-            boxCollider.isTrigger = false;
+            creature.ani.SetTrigger("Jump");
+
+            creature.StartCoroutine(Jump(creature));
+
         }
+    }
+    IEnumerator Jump(RatStateManager creature)
+    {
+        creature.transform.position += new Vector3(0, 20, 0) * Time.deltaTime;
+
+        yield return new WaitForSeconds(2);
+        BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
+        boxCollider.isTrigger = false;
+        creature.SwitchState(creature.moveState);
+
     }
 }
 
@@ -79,8 +84,6 @@ public class RatMoveState : RatBaseState
     public override void EnterState(RatStateManager creature)
     {
         base.EnterState(creature);
-        creature.ani.SetTrigger("Jump");
-        rb.constraints = RigidbodyConstraints.None;
 
     }
 
