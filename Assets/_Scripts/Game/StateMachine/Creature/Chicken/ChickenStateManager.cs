@@ -19,7 +19,7 @@ public class ChickenStateManager : MonoBehaviour
     private void Awake()
     {
         creatureBase = GetComponent<CreatureBase>();
-        currentHP = creatureBase.GetHealth("Chicken");
+        currentHP = creatureBase.GetHealth("Chicken",(int)Time.time);
     }
 
 

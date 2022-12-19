@@ -892,6 +892,8 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: 05ea8790b0ddf1640b1c727139b1c1db, type: 2}
   stiffTime: 2
   Name: Cow
+  CreatureCurves: {fileID: 3304701718449820757, guid: 5b60e1817d19b714ba2324ca58dddeda,
+    type: 3}
 --- !u!65 &4290863565908482071
 BoxCollider:
   m_ObjectHideFlags: 0

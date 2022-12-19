@@ -23,7 +23,6 @@ public class TimeCount : MonoBehaviour
         while (m >= 0)
         {
             timer.text = string.Format("{0}:{1}", m.ToString("00"), s.ToString("00"));
-
             if (s == 0)
             {
                 //每分鐘產生一個BOSS

@@ -23,7 +23,7 @@ public class CowStateManager : MonoBehaviour
     private void Awake()
     {
         creatureBase = GetComponent<CreatureBase>();
-        currentHP = creatureBase.GetHealth("Cow");
+        currentHP = creatureBase.GetHealth("Cow", (int)Time.time);
     }
     private void Start()
     {

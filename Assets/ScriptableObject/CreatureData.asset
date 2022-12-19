@@ -29,7 +29,7 @@ MonoBehaviour:
     probability: 64000000320000000a000000
   - creatureName: Chicken
     moveSpeed: 1
-    attackPower: 1
+    attackPower: 2
     attackCD: 1
     currentAttackCD: 0
     hurtCD: 1
@@ -44,7 +44,7 @@ MonoBehaviour:
     probability: 64000000320000000a0000000a000000
   - creatureName: Cow
     moveSpeed: 3
-    attackPower: 1
+    attackPower: 3
     attackCD: 1
     currentAttackCD: 0
     hurtCD: 1
@@ -59,7 +59,7 @@ MonoBehaviour:
     probability: 64000000320000000a0000000a000000
   - creatureName: Rat
     moveSpeed: 2
-    attackPower: 1
+    attackPower: 3
     attackCD: 1
     currentAttackCD: 0
     hurtCD: 1

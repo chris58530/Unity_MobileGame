@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-[CustomEditor(typeof(CURVES))]
-public class curvesEditer : Editor
+[CustomEditor(typeof(Curves))]
+public class CurvesEditer : Editor
 {
     private string[] m_Tabs = { "天賦解鎖成本", "天賦加成曲線","怪物加成倍率" ,"關卡掉落倍率"};
     private int m_TabsSelecteed = -1;
@@ -40,7 +40,7 @@ public class curvesEditer : Editor
     private void OptionOne()
     {
         EditorGUILayout.Space();
-        CURVES cURVES = (CURVES)target;
+        Curves cURVES = (Curves)target;
         scroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.MaxHeight(500));
 
         for (int i = 1; i < 41; i++)
@@ -56,7 +56,7 @@ public class curvesEditer : Editor
     private void OptionTwo()
     {
         EditorGUILayout.Space();
-        CURVES cURVES = (CURVES)target;
+        Curves cURVES = (Curves)target;
         scroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.MaxHeight(500));
         int n=0;
         int x = 1;
@@ -100,13 +100,13 @@ public class curvesEditer : Editor
     private void OptionThree()
     {
         EditorGUILayout.Space();
-        CURVES cURVES = (CURVES)target;
+        Curves cURVES = (Curves)target;
         scroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.MaxHeight(500));
 
-        for (float i = 0; i <= 5; i = i+0.5f)
+        for (float i = 0; i <= 300; i = i+10)
         {
             EditorGUILayout.BeginHorizontal("box");
-            EditorGUILayout.LabelField("第" + i + "分鐘");
+            EditorGUILayout.LabelField("第" + i + "秒鐘");
             EditorGUILayout.LabelField(((float)cURVES.monsterBoost.Evaluate(i)) + "倍");
             EditorGUILayout.LabelField("跑速倍率"+(1+(float)cURVES.monsterBoost.Evaluate(i)*0.2) + "倍");
             EditorGUILayout.EndHorizontal();
@@ -116,7 +116,7 @@ public class curvesEditer : Editor
     private void OptionFour()
     {
         EditorGUILayout.Space();
-        CURVES cURVES = (CURVES)target;
+        Curves cURVES = (Curves)target;
         scroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.MaxHeight(500));
 
         for (int i = 1; i <= 10; i ++)

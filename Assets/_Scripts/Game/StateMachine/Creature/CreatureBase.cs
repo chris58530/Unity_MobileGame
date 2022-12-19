@@ -17,6 +17,9 @@ public class CreatureBase : MonoBehaviour
     [SerializeField]
     public string Name;
 
+    [SerializeField]
+    private Curves CreatureCurves;
+
     private void Start()
     {
         playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
@@ -33,13 +36,21 @@ public class CreatureBase : MonoBehaviour
             Destroy(transform.gameObject);
         }
     }
-    public int GetHealth(string creature) //�[짫┗퐑측プ
+    public int GetHealth(string creature,int time) //�[짫┗퐑측プ
     {
-        return Data.GetCreature(creature).maxHP;
+        float curvesHealth = CreatureCurves.monsterBoost.Evaluate(time);
+
+        float Hp = Data.GetCreature(creature).maxHP * curvesHealth;
+
+        return (int)Hp;
     }
-    public int GetAttack(string creature)
+    public int GetAttack(string creature, int time)
     {
-        return Data.GetCreature(creature).attackPower;
+        float curvesAttack = CreatureCurves.monsterBoost.Evaluate(time);
+
+        float ATK = Data.GetCreature(creature).attackPower * curvesAttack;
+
+        return (int)ATK;    
     }
     public int GetSpeed(string creature)
     {

@@ -49,7 +49,7 @@ public abstract class OctopusBaseState
             //string collisionName = collision.gameObject.GetComponent<CreatureBase>().GetName();
             string collisionName = collision.gameObject.GetComponent<CreatureBase>().Name;
             Debug.Log(collisionName);
-            int damage = collision.gameObject.GetComponent<CreatureBase>().GetAttack(collisionName);
+            int damage = collision.gameObject.GetComponent<CreatureBase>().GetAttack(collisionName, (int)Time.time);
             creature.currentHp -= damage;
             creature.characterBase.OnDamaged(creature.currentHp);
             //√Ë¿YÆÃ∞ 

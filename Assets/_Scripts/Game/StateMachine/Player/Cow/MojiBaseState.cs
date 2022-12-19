@@ -32,8 +32,7 @@ public abstract class MojiBaseState
         {
             //重設受傷CD時間
             creature.currentDamagedCD = creature.characterBase.GetDamagedCD();
-            Debug.Log(creature.currentAttackCD);
-            Debug.Log(creature.characterBase.GetDamagedCD());
+    
 
             //彈開
             float forceX = creature.transform.position.x - collision.transform.position.x;
@@ -44,15 +43,14 @@ public abstract class MojiBaseState
             //扣血
             //string collisionName = collision.gameObject.GetComponent<CreatureBase>().GetName();
             string collisionName = collision.gameObject.GetComponent<CreatureBase>().Name;
-            Debug.Log(collisionName);
-            int damage = collision.gameObject.GetComponent<CreatureBase>().GetAttack(collisionName);
+            int damage = collision.gameObject.GetComponent<CreatureBase>().GetAttack(collisionName, (int)Time.time);
             creature.currentHp -= damage;
+            Debug.Log("玩家受到  " +  collisionName + " : " + damage + "  的傷害");
             creature.characterBase.OnDamaged(creature.currentHp);
             //鏡頭晃動
 
             //Shader閃紅
 
-            Debug.Log("EnemyAttack");
             creature.SwitchState(creature.hurtState);
         }
     }

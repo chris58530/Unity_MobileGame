@@ -20,7 +20,7 @@ public class RatStateManager : MonoBehaviour
     private void Awake()
     {
         creatureBase = GetComponent<CreatureBase>();
-        currentHP = creatureBase.GetHealth("Slime");
+        currentHP = creatureBase.GetHealth("Slime", (int)Time.time);
     }
     private void Start()
     {
