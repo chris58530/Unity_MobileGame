@@ -86,7 +86,7 @@ public class OctopusMoveState : OctopusBaseState
     public override void EnterState(OctopusStateManager creature)
     {
         base.EnterState(creature);
-        _joystick = creature.fixedJoystick;
+        _joystick = creature.floatingJoystick;
         rb = creature.gameObject.GetComponent<Rigidbody>();
 
     }
@@ -95,8 +95,8 @@ public class OctopusMoveState : OctopusBaseState
     {
         base.UpdateState(creature);
 
-        float moveX = creature.fixedJoystick.Horizontal;
-        float moveY = creature.fixedJoystick.Vertical;
+        float moveX = creature.floatingJoystick.Horizontal;
+        float moveY = creature.floatingJoystick.Vertical;
         rb.velocity = new Vector3(moveX * creature.currentMoveSpeed, rb.velocity.y, moveY * creature.currentMoveSpeed);
         if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {

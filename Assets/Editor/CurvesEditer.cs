@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-[CustomEditor(typeof(Curves))]
 public class CurvesEditer : Editor
 {
     private string[] m_Tabs = { "天賦解鎖成本", "天賦加成曲線","怪物加成倍率" ,"關卡掉落倍率"};

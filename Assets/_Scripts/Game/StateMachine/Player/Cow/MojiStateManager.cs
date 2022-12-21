@@ -12,8 +12,8 @@ public class MojiStateManager : MonoBehaviour
     public MojiAttackState attackState = new MojiAttackState();
     public MojiHurtState hurtState = new MojiHurtState();
 
-    public FloatingJoystick fixedJoystick;
-    private Vector3 fixedJoystickPos;
+    public FloatingJoystick floatingJoystick;
+
     [HideInInspector]
     public CharacterBase characterBase;
 
@@ -27,13 +27,13 @@ public class MojiStateManager : MonoBehaviour
     private void Awake()
     {
         characterBase = GetComponent<CharacterBase>();
+        floatingJoystick = FindObjectOfType<FloatingJoystick>();
     }
     private void Start()
     {
         currentState = idleState;
 
         currentState.EnterState(this);
-        fixedJoystickPos = fixedJoystick.transform.position;
 
         currentAttackCD = characterBase.GetAttackCD();
         currentDamagedCD = characterBase.GetDamagedCD();

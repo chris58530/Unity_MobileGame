@@ -23,7 +23,7 @@ public class OctopusStateManager : MonoBehaviour
     public float currentMoveSpeed;
     public float currentHp;
 
-    public FloatingJoystick fixedJoystick;
+    public FloatingJoystick floatingJoystick;
 
 
 
@@ -33,6 +33,8 @@ public class OctopusStateManager : MonoBehaviour
     private void Awake()
     {
         characterBase = GetComponent<CharacterBase>();
+        floatingJoystick = FindObjectOfType<FloatingJoystick>();
+
     }
     private void Start()
     {
