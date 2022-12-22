@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Creature Data", menuName = "ScriptableObject/Creat Character Asset", order = 4)]
+[CreateAssetMenu(fileName = "New Character Data", menuName = "ScriptableObject/Creat Character Asset", order =3)]
 
 public class CharacterDataBaseSO : ScriptableObject
 {
