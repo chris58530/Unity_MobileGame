@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class MojiBaseState
 {
     protected Rigidbody rb;
-
+    protected bool canAttack;
     public virtual void EnterState(MojiStateManager creature)
     {
         rb = creature.GetComponent<Rigidbody>();
@@ -14,16 +14,27 @@ public abstract class MojiBaseState
     }
     public virtual void UpdateState(MojiStateManager creature)
     {
-        if (!Input.anyKey && creature.currentAttackCD <= 0)
+
+
+        if (!Input.anyKey && canAttack)
             creature.SwitchState(creature.attackState);
         else
             creature.SwitchState(creature.moveState);
 
-        if (creature.currentAttackCD > 0)
-            creature.currentAttackCD -= Time.deltaTime;
+
+        if (creature.currentAttackCD <= creature.characterBase.GetAttackCD())
+        {
+            creature.characterBase.CDBarUpdate(creature.currentDamagedCD);
+            creature.currentAttackCD += Time.deltaTime;
+            canAttack = false;
+        }
+        else
+            canAttack = true;
 
         if (creature.currentDamagedCD > 0)
+        {
             creature.currentDamagedCD -= Time.deltaTime;
+        }
     }
 
     public virtual void OnCollisionEnter(MojiStateManager creature, Collision collision)
@@ -87,6 +98,9 @@ public class MojiAttackState : MojiBaseState
 
         BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
         boxCollider.isTrigger = true;
+
+        creature.currentAttackCD = 0;
+        creature.characterBase.CDBarUpdate(creature.currentAttackCD);
 
     }
     public override void UpdateState(MojiStateManager creature)

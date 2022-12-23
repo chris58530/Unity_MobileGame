@@ -14,10 +14,14 @@ public class CharacterBase : MonoBehaviour
 
     [SerializeField]
     private Image healthBar;
+
+    [SerializeField]
+    private Image CDBar;
     private void Start()
     {
         //初始化血條
         healthBar.fillAmount = 1;
+        CDBar.fillAmount = 1;
     }
 
     public int GetHealth() //加入曲線成長數值
@@ -39,7 +43,11 @@ public class CharacterBase : MonoBehaviour
     public void OnDamaged(float currentHp)
     {
         //血條改變
-        healthBar.fillAmount = currentHp / 100;
+        healthBar.fillAmount = currentHp / GetHealth();
+    }
+    public void CDBarUpdate(float currentCD)
+    {
+        CDBar.fillAmount = currentCD / GetAttackCD();
     }
     public int GetMoveSpeed()
     {

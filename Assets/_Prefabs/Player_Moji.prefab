@@ -138,7 +138,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1492,6 +1492,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   healthBar: {fileID: 1398621404797485649}
+  CDBar: {fileID: 6375438186374574899}
 --- !u!1 &4099980430867011319
 GameObject:
   m_ObjectHideFlags: 0
