@@ -9,55 +9,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f629d7c320cd2784a8116aeca9759635, type: 3}
-  m_Name: CharacterData
+  m_Script: {fileID: 11500000, guid: 38d47cb3468bbd54189b18b1500a5240, type: 3}
+  m_Name: Character Data SO
   m_EditorClassIdentifier: 
   _characterList:
-  - name: Cow
-    introduciotn: ccc
+  - name: Moji
+    introduciotn: mmm
     characterObject: {fileID: 3929357347147589621, guid: ddb4267ea810b57498d6f254a761802b,
       type: 3}
-    moveSpeed: 10
-    attackPower: 5
-    attackCD: 3
+    moveSpeed: 15
+    attackPower: 3
+    attackCD: 2
     currentAttackCD: 0
     hurtCD: 0.5
     currentHurtCD: 0
-    maxHP: 20
+    maxHP: 100
     currentHP: 0
   - name: Octopus
     introduciotn: ooo
     characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
       type: 3}
-    moveSpeed: 20
-    attackPower: 4
-    attackCD: 5
+    moveSpeed: 25
+    attackPower: 3
+    attackCD: 2
     currentAttackCD: 0
     hurtCD: 0.5
     currentHurtCD: 0
-    maxHP: 20
+    maxHP: 100
     currentHP: 0
-  - name: None
-    introduciotn: None
+  - name: Octopus
+    introduciotn: ooo
     characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
       type: 3}
-    moveSpeed: 20
-    attackPower: 4
-    attackCD: 1
+    moveSpeed: 25
+    attackPower: 3
+    attackCD: 2
     currentAttackCD: 0
     hurtCD: 0.5
     currentHurtCD: 0
-    maxHP: 5
+    maxHP: 100
     currentHP: 0
-  - name: None
-    introduciotn: None
+  - name: Octopus
+    introduciotn: ooo
     characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
       type: 3}
-    moveSpeed: 20
-    attackPower: 4
-    attackCD: 1
+    moveSpeed: 25
+    attackPower: 3
+    attackCD: 2
     currentAttackCD: 0
     hurtCD: 0.5
     currentHurtCD: 0
-    maxHP: 5
+    maxHP: 100
     currentHP: 0

@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSpawnPos: {fileID: 1268966130}
-  CharacterDataBaseSO: {fileID: 11400000, guid: 05593b53a5191d1439fb0822bfc3edf8,
+  CharacterDataBaseSO: {fileID: 11400000, guid: e926c32f2f31d68408f869af81dff2b0,
     type: 2}
 --- !u!114 &344921653
 MonoBehaviour:

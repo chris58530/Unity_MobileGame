@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5388f984b71c7c440a19b4a1935d33d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 05593b53a5191d1439fb0822bfc3edf8, type: 2}
+  Data: {fileID: 11400000, guid: e926c32f2f31d68408f869af81dff2b0, type: 2}
   toMenu:
     m_PersistentCalls:
       m_Calls: []
@@ -554,7 +554,7 @@ MonoBehaviour:
   currentDamagedCD: 0
   currentMoveSpeed: 0
   currentHp: 0
-  fixedJoystick: {fileID: 0}
+  floatingJoystick: {fileID: 0}
   octopusAni: {fileID: 5754054887578169996}
 --- !u!114 &3929357347147589630
 MonoBehaviour:
