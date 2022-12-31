@@ -2549,8 +2549,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 152800062}
   m_HandleRect: {fileID: 152800061}
   m_Direction: 0
-  m_Value: -0.00000016241395
-  m_Size: 0.41506696
+  m_Value: -0.00000016241393
+  m_Size: 0.41506693
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3201,6 +3201,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollBar: {fileID: 1348181955}
-  _characterDataBase: {fileID: 11400000, guid: e926c32f2f31d68408f869af81dff2b0, type: 2}
+  _characterDataBase: {fileID: 11400000, guid: 6684a3c301ab7cb4f9f688040d34d697, type: 2}
   _characterTitle: {fileID: 1015840343}
   _characterIntroduce: {fileID: 1239524596}

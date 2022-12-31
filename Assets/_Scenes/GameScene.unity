@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSpawnPos: {fileID: 1268966130}
-  CharacterDataBaseSO: {fileID: 11400000, guid: e926c32f2f31d68408f869af81dff2b0,
+  CharacterDataBaseSO: {fileID: 11400000, guid: 6684a3c301ab7cb4f9f688040d34d697,
     type: 2}
 --- !u!114 &344921653
 MonoBehaviour:
@@ -1367,14 +1367,14 @@ MonoBehaviour:
   plane:
   - {fileID: 5872691972344790881, guid: 4635bcbe51ee22b4ebb8dd220498fc02, type: 3}
   - {fileID: 5872691972344790881, guid: 9c8e2281009a81b409c589911b0ce8b9, type: 3}
+  - {fileID: 5872691972344790881, guid: 79ea066d5f0f2754597500265549f720, type: 3}
+  - {fileID: 5872691972344790881, guid: baec8cd442a9bca418de1f55220eb1e9, type: 3}
   - {fileID: 5872691972344790881, guid: 9c8e2281009a81b409c589911b0ce8b9, type: 3}
+  - {fileID: 5872691972344790881, guid: 79ea066d5f0f2754597500265549f720, type: 3}
+  - {fileID: 5872691972344790881, guid: baec8cd442a9bca418de1f55220eb1e9, type: 3}
   - {fileID: 5872691972344790881, guid: 9c8e2281009a81b409c589911b0ce8b9, type: 3}
-  - {fileID: 5872691972344790881, guid: 9c8e2281009a81b409c589911b0ce8b9, type: 3}
-  - {fileID: 5872691972344790881, guid: 9c8e2281009a81b409c589911b0ce8b9, type: 3}
-  - {fileID: 5872691972344790881, guid: 9c8e2281009a81b409c589911b0ce8b9, type: 3}
-  - {fileID: 5872691972344790881, guid: 9c8e2281009a81b409c589911b0ce8b9, type: 3}
-  - {fileID: 5872691972344790881, guid: 9c8e2281009a81b409c589911b0ce8b9, type: 3}
-  - {fileID: 5872691972344790881, guid: 9c8e2281009a81b409c589911b0ce8b9, type: 3}
+  - {fileID: 5872691972344790881, guid: 79ea066d5f0f2754597500265549f720, type: 3}
+  - {fileID: 5872691972344790881, guid: baec8cd442a9bca418de1f55220eb1e9, type: 3}
   - {fileID: 5872691972344790881, guid: 9c8e2281009a81b409c589911b0ce8b9, type: 3}
 --- !u!4 &1110598294
 Transform:
