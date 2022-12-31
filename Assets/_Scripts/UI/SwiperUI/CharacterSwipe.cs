@@ -52,7 +52,7 @@ public class CharacterSwipe : MonoBehaviour
         {
             if (scrollPos < pos[i] + (distance / 2) && scrollPos > pos[i] - distance / 2)
             {
-                transform.GetChild(i).DOScale(new Vector2(1.3f, 1.3f), 0.1f).SetEase(Ease.InOutBounce);
+                transform.GetChild(i).DOScale(new Vector2(1.5f, 1.5f), 0.1f).SetEase(Ease.InOutBounce);
                 transform.GetChild(i).GetComponent<RawImage>().color = Color.white;
                 UpdateCharacter(i);
                 currentCharacter = i;
