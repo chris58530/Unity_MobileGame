@@ -135,10 +135,7 @@ public class OctopusAttackState : OctopusBaseState
         creature.characterBase.CDBarUpdate(0);
         creature.SwitchState(creature.idleState);
     }
-    public override void UpdateState(OctopusStateManager creature)
-    {
-     
-    }
+  
 
 }
 
