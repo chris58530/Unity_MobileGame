@@ -65,6 +65,8 @@ public abstract class MojiBaseState
             creature.characterBase.OnDamaged(creature.currentHp);
             //ÃèÀY®Ì°Ê
 
+
+
             //Shader°{¬õ
 
             creature.SwitchState(creature.hurtState);

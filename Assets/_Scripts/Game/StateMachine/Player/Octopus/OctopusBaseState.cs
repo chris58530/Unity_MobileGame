@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class OctopusBaseState
 {
     public Rigidbody rb;
+    protected bool canAttack;
 
     public virtual void EnterState(OctopusStateManager creature)
     {
@@ -12,26 +13,33 @@ public abstract class OctopusBaseState
     }
     public virtual void UpdateState(OctopusStateManager creature)
     {
-
-
-        if (!Input.anyKey && creature.currentAttackCD <= 0)
+        //放開自動攻擊
+        if (!Input.anyKey && canAttack)
             creature.SwitchState(creature.attackState);
         else
             creature.SwitchState(creature.moveState);
 
-
-        if (creature.currentAttackCD > 0)
-            creature.currentAttackCD -= Time.deltaTime;
+        //持續減攻擊CD並傳回CD bar CD採用加法方式計時
+        float attackCD = creature.characterBase.GetAttackCD();
+        if (creature.currentAttackCD < attackCD)
+        {
+            creature.currentAttackCD += (1 * Time.deltaTime);
+            creature.characterBase.CDBarUpdate(creature.currentAttackCD);
+            canAttack = false;
+            Debug.Log(creature.currentAttackCD);
+        }
+        else
+            canAttack = true;
 
         if (creature.currentDamagedCD > 0)
+        {
             creature.currentDamagedCD -= Time.deltaTime;
-
-
+        }
     }
 
     public virtual void OnCollisionEnter(OctopusStateManager creature, Collision collision)
     {
-      
+
         if (collision.gameObject.tag == ("EnemyAttack") && creature.currentDamagedCD <= 0)
         {
             //重設受傷CD時間
@@ -81,7 +89,7 @@ public class OctopusIdleState : OctopusBaseState
 }
 public class OctopusMoveState : OctopusBaseState
 {
-    private FloatingJoystick  _joystick;
+    private FloatingJoystick _joystick;
 
     public override void EnterState(OctopusStateManager creature)
     {
@@ -117,21 +125,21 @@ public class OctopusAttackState : OctopusBaseState
     public override void EnterState(OctopusStateManager creature)
     {
         base.EnterState(creature);
+        //章魚攻擊
+        OctopusAttack octopusAttack = creature.GetComponent<OctopusAttack>();
+        octopusAttack.Attack();
         creature.octopusAni.SetBool("isWalking", false);
-
+        creature.octopusAni.SetTrigger("Attack");
+        canAttack = false;
+        creature.currentAttackCD = 0;
+        creature.characterBase.CDBarUpdate(0);
+        creature.SwitchState(creature.idleState);
     }
     public override void UpdateState(OctopusStateManager creature)
     {
-        base.UpdateState(creature);
-        if (creature.currentAttackCD <= 0)
-        {
-            OctopusAttack octopusAttack = creature.GetComponent<OctopusAttack>();
-            octopusAttack.Attack();
-            creature.currentAttackCD = creature.characterBase.GetAttackCD();
-            creature.octopusAni.SetTrigger("Attack");
-
-        }
+     
     }
+
 }
 
 
