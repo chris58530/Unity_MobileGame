@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 public class SQLConnection :MonoBehaviour
 {
@@ -15,17 +16,23 @@ public class SQLConnection :MonoBehaviour
 
     void Start()
     {
+
         //先從本地Json找有無 PID 如果有就用Json裡的PID 去 SQL下載資料
         //沒有的話就會自動註冊 Register()
-        var saveData = SaveSystem.LoadFormJson<SaveData>(SaveSystem.CharacterSave);
-        if (saveData.PlayerIDFormSQL != null)
-        {
-            PlayerCurrentData.playerPID = saveData.PlayerIDFormSQL;
+        string path = Path.Combine(Application.persistentDataPath, SaveSystem.SQLSave);
 
+        if (!System.IO.File.Exists(path))
+        {
+            Debug.Log(System.IO.File.Exists(path));
+            Register();
+        }     
+        else
+        {       
+            var saveData = SaveSystem.LoadFormJson<SaveData>(SaveSystem.SQLSave);
+            PlayerCurrentData.playerPID = saveData.PlayerIDFormSQL;
 
             GetDataFromSQL(); //Register()寫在裡面
         }
-        else Register();
            
 
 
@@ -55,43 +62,13 @@ public class SQLConnection :MonoBehaviour
             sqlConnection.Dispose();
         }
         else
+        {
             Debug.Log("SQL讀取不到");
+            Register();
+        }
         
 
     }
-    public void UpdatelDataFromSQL()
-    {
-        SqlConnection sqlConnection = new SqlConnection(connectionString);
-        sqlConnection.Open();
-        string isChecked = "UPDATE PlayerTable SET PlayerMoney = @Money,PlayerLevel = @Level,PlayerRuby = @Ruby WHERE PID = @1 ,PlayerName = @2";
-        SqlCommand sqlCommand = new SqlCommand(isChecked, sqlConnection);
-
-        string PID = PlayerCurrentData.playerPID;
-        string Name = PlayerCurrentData.playerName;
-        int Level = PlayerCurrentData.playerLevel;
-        int Ruby = PlayerCurrentData.playerRuby;
-        int Money = PlayerCurrentData.playerMoney;
-        sqlCommand.Parameters.Add(new SqlParameter("@1", PID));
-        sqlCommand.Parameters.Add(new SqlParameter("@2", Name));
-        sqlCommand.Parameters.Add(new SqlParameter("@Level", Level));
-        sqlCommand.Parameters.Add(new SqlParameter("@Ruby", Ruby));
-        sqlCommand.Parameters.Add(new SqlParameter("@Money", Money));
-
-        SqlDataReader reader = sqlCommand.ExecuteReader();
-        if (reader.Read())
-        {
-            PlayerCurrentData.playerLevel = int.Parse(reader[1].ToString());
-            PlayerCurrentData.playerRuby = int.Parse(reader[2].ToString());
-            PlayerCurrentData.playerMoney = int.Parse(reader[3].ToString());
-            Debug.Log("儲存...玩家等級 : " + PlayerCurrentData.playerLevel);
-            Debug.Log("儲存...玩家寶石 : " + PlayerCurrentData.playerRuby);
-            Debug.Log("儲存...玩家金錢 : " + PlayerCurrentData.playerMoney);
-            sqlConnection.Close();
-            sqlConnection.Dispose();
-
-        }
-    }
-  
     void Register()
     {
         Debug.Log("Register");
@@ -106,7 +83,7 @@ public class SQLConnection :MonoBehaviour
         {
             totalCount++;//最大行數
         }
-        Debug.Log(totalCount); //最大行數
+
 
 
         SqlConnection sqlConnection1 = new SqlConnection(connectionString);
@@ -128,14 +105,13 @@ public class SQLConnection :MonoBehaviour
             if (readerCount == totalCount)
             {
                 //賦予PlayerCurrentData 玩家基本資料
-               
+
 
                 PlayerCurrentData.playerPID = reader2[0].ToString();
                 PlayerCurrentData.playerLevel = int.Parse(reader2[1].ToString());
                 PlayerCurrentData.playerRuby = int.Parse(reader2[2].ToString());
                 PlayerCurrentData.playerMoney = int.Parse(reader2[3].ToString());
-                PlayerCurrentData.playerName = reader2[4].ToString();
-                SaveSystem.SaveByJson(SaveSystem.CharacterSave, SavingData());
+                SaveSystem.SaveByJson(SaveSystem.SQLSave, SavingData());
 
             }
             readerCount++;
@@ -150,11 +126,42 @@ public class SQLConnection :MonoBehaviour
 
 
     }
+    public void UpdatelDataFromSQL()
+    {
+        SqlConnection sqlConnection = new SqlConnection(connectionString);
+        sqlConnection.Open();
+        string isChecked = "UPDATE PlayerTable SET PlayerMoney = @Money,PlayerLevel = @Level,PlayerRuby = @Ruby WHERE PID = @1 ,PlayerName = @2";
+        SqlCommand sqlCommand = new SqlCommand(isChecked, sqlConnection);
+
+        string PID = PlayerCurrentData.playerPID;
+        int Level = PlayerCurrentData.playerLevel;
+        int Ruby = PlayerCurrentData.playerRuby;
+        int Money = PlayerCurrentData.playerMoney;
+        sqlCommand.Parameters.Add(new SqlParameter("@1", PID));
+        sqlCommand.Parameters.Add(new SqlParameter("@Level", Level));
+        sqlCommand.Parameters.Add(new SqlParameter("@Ruby", Ruby));
+        sqlCommand.Parameters.Add(new SqlParameter("@Money", Money));
+
+        SqlDataReader reader = sqlCommand.ExecuteReader();
+        if (reader.Read())
+        {
+            PlayerCurrentData.playerLevel = int.Parse(reader[1].ToString());
+            PlayerCurrentData.playerRuby = int.Parse(reader[2].ToString());
+            PlayerCurrentData.playerMoney = int.Parse(reader[3].ToString());
+            Debug.Log("儲存...玩家等級 : " + PlayerCurrentData.playerLevel);
+            Debug.Log("儲存...玩家寶石 : " + PlayerCurrentData.playerRuby);
+            Debug.Log("儲存...玩家金錢 : " + PlayerCurrentData.playerMoney);
+            sqlConnection.Close();
+            sqlConnection.Dispose();
+
+        }
+    }
+  
+    
     SaveData SavingData()
     {
         var saveData = new SaveData();
         saveData.PlayerIDFormSQL = PlayerCurrentData.playerPID;
-        saveData.PlayerNameFormSQL = PlayerCurrentData.playerName;
         return saveData;
     }
 }

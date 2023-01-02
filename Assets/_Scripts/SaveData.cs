@@ -6,7 +6,6 @@ using UnityEngine;
  class SaveData
 {
     public string PlayerIDFormSQL;
-    public string PlayerNameFormSQL;
 
 
     public int selectPlanet;
