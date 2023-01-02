@@ -32,8 +32,7 @@ public class MenuManager : MonoBehaviour
         var saveData =  SaveSystem.LoadFormJson<SaveData>(planetConst);
 
         Planet planet = PlanetDataBaseSO.GetPlanet(saveData.selectPlanet);
-        Instantiate(planet.planetObject, PlanetSpawnPoint.position  , Quaternion.identity);
-        
+        Instantiate(planet.planetObject, PlanetSpawnPoint.position  , Quaternion.identity);        
     }
    
 }

@@ -4,27 +4,12 @@ using UnityEngine;
 
 public class PlayerCurrentData : MonoBehaviour
 {
+    public static string playerPID;
+    public static string playerName;
+    public static int playerLevel;
+    public static int playerMoney;
+    public static int playerRuby;
 
-    public static PlayerCurrentData instance;
+   
 
-    public string playerPID;
-    public string playerName;
-    public int playerLevel;
-    public int playerMoney;
-    public int playerRuby;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-    public int GetPlayerID()
-    {
-
-        return instance.GetPlayerID();
-    }
-    //public int GetPlayerLevel()
-    //{
-    //    SQLConnection connection = new SQLConnection();
-
-    //}
 }

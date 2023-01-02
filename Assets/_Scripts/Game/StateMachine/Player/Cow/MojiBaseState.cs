@@ -29,7 +29,6 @@ public abstract class MojiBaseState
             creature.currentAttackCD += (1 *Time.deltaTime);
             creature.characterBase.CDBarUpdate(creature.currentAttackCD);
             canAttack = false;
-            Debug.Log(creature.currentAttackCD);
         }
         else
             canAttack = true;
