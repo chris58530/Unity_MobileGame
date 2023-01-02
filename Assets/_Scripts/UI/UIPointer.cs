@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class UIPointer : MonoBehaviour
 {
-    public void ClickNext()
-    {
-       
+    public void ClickActive(GameObject o)
+    {        
+        o.SetActive(!o.activeInHierarchy);
     }
+ 
 }

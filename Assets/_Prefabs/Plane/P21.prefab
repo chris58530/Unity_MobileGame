@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7495811348896855290}
   - component: {fileID: 7495811348896855288}
   - component: {fileID: 7495811348896855291}
-  m_Layer: 0
+  - component: {fileID: 5513320568993543517}
+  m_Layer: 8
   m_Name: Small stone (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5513320568993543517
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495811348896855293}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.65226763, y: 0.53008705, z: 0.6300047}
+  m_Center: {x: 0.029117234, y: 0.26426658, z: 1.4018153}
 --- !u!1 &7495811350451245555
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +208,8 @@ GameObject:
   - component: {fileID: 7495811350627823330}
   - component: {fileID: 7495811350627823328}
   - component: {fileID: 7495811350627823331}
-  m_Layer: 0
+  - component: {fileID: 2634888227164310827}
+  m_Layer: 8
   m_Name: tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,3 +281,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2634888227164310827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495811350627823333}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.4725394, y: 3.883583, z: 4.4725394}
+  m_Center: {x: -0.0022637842, y: 1.9417915, z: -0.0017330647}

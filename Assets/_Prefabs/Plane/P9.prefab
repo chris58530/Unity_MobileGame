@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8989482922794733937}
   - component: {fileID: 8989482922794733710}
   - component: {fileID: 5853046103917325777}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Small stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8989482922794733708}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 8989482922873240664}
   - component: {fileID: 8989482922873240665}
   - component: {fileID: 7728200500029198186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Small stone_totem (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8989482922873240663}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 8989482923348188438}
   - component: {fileID: 8989482923348188439}
   - component: {fileID: 4099711450254736511}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Small stone_totem (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8989482923348188437}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 8989482924210414561}
   - component: {fileID: 8989482924210414590}
   - component: {fileID: 2704151797838772336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Small stone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8989482924210414588}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 8989482924482655752}
   - component: {fileID: 8989482924482655753}
   - component: {fileID: 1470320576576675279}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Big stone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8989482924482655751}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

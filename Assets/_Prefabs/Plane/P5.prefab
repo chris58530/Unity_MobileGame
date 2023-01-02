@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9218994393731084376}
   - component: {fileID: 9218994393731084379}
   - component: {fileID: 5126739746228724737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Big stone (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9218994393731084373}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 9218994394100304158}
   - component: {fileID: 9218994394100304153}
   - component: {fileID: 1807176895822245370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Small stone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9218994394100304155}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 9218994395574343041}
   - component: {fileID: 9218994395574343040}
   - component: {fileID: 5567642392614737115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Big stone (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9218994395574343042}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -470,6 +470,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_stump (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4578350381284241888, guid: af8b09bc3161e054c9dc28d48dca2e37,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af8b09bc3161e054c9dc28d48dca2e37, type: 3}
 --- !u!1 &4645995061561027104 stripped
@@ -485,7 +490,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4645995061561027104}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

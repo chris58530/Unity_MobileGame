@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5305654690219736502}
   - component: {fileID: 5305654690219736501}
   - component: {fileID: 8915047348661462897}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flower2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5305654690219736499}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 5305654691546688955}
   - component: {fileID: 5305654691546688954}
   - component: {fileID: 3270913423028621599}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flower3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5305654691546688952}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 5305654692148647220}
   - component: {fileID: 5305654692148647219}
   - component: {fileID: 6487416503514087952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flower3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5305654692148647217}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -471,6 +471,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_2
       objectReference: {fileID: 0}
+    - target: {fileID: 7840101494464525118, guid: ba2fcfdb51852174799c5b844eda9cc0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba2fcfdb51852174799c5b844eda9cc0, type: 3}
 --- !u!1 &2696770046907288127 stripped
@@ -486,7 +491,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2696770046907288127}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -575,6 +580,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7840101494464525118, guid: ba2fcfdb51852174799c5b844eda9cc0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba2fcfdb51852174799c5b844eda9cc0, type: 3}
 --- !u!1 &2696770046496299792 stripped
@@ -590,7 +600,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2696770046496299792}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7263173352021175790}
   - component: {fileID: 7263173352021175793}
   - component: {fileID: 1516976240109651083}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flower2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7263173352021175795}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 7263173352502197467}
   - component: {fileID: 7263173352502197466}
   - component: {fileID: 5189892656158454664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flower2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7263173352502197468}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 7263173353384620257}
   - component: {fileID: 7263173353384620256}
   - component: {fileID: 6437067428699648823}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flower2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7263173353384620258}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 7263173353526476462}
   - component: {fileID: 7263173353526476465}
   - component: {fileID: 1558358116091529083}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flower2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7263173353526476467}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

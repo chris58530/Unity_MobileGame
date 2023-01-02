@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1568024869246277569}
   - component: {fileID: 1568024869246277598}
   - component: {fileID: 6716247430828258472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Small stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568024869246277596}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1568024869528944938}
   - component: {fileID: 1568024869528944939}
   - component: {fileID: 3735564040105771477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Small stone_totem (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568024869528944937}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 1568024870267647651}
   - component: {fileID: 1568024870267647648}
   - component: {fileID: 26431170098123311}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Small stone_totem (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568024870267647678}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 1568024870474284792}
   - component: {fileID: 1568024870474284793}
   - component: {fileID: 3971370667867255476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Big stone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568024870474284791}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5f109d1b77012244a546882ef173197, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
