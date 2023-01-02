@@ -8,6 +8,7 @@ public class PlayerCurrentData : MonoBehaviour
     public static PlayerCurrentData instance;
 
     public string playerPID;
+    public string playerName;
     public int playerLevel;
     public int playerMoney;
     public int playerRuby;
