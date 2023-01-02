@@ -1567,6 +1567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8435563861451908309}
   - component: {fileID: 3718577701485249771}
+  - component: {fileID: 7649178016164257312}
   m_Layer: 0
   m_Name: stove
   m_TagString: Untagged
@@ -1609,6 +1610,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf8c3d529e782a438e7f7cedde00bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7649178016164257312
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104857945891864175}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6155953, y: 2.991051, z: 2.821383}
+  m_Center: {x: 0.2503035, y: 1.4961325, z: -0.08002645}
 --- !u!1 &9124673036926109141
 GameObject:
   m_ObjectHideFlags: 0

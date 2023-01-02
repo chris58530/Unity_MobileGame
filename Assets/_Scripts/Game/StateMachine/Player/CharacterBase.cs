@@ -12,13 +12,13 @@ public class CharacterBase : MonoBehaviour
     [SerializeField]
     private UnityEvent toMenu;
 
-    [SerializeField]
     private Image healthBar;
 
-    [SerializeField]
     private Image CDBar;
     private void Start()
     {
+        healthBar = GameObject.Find("HealthBar").GetComponent<Image>();
+        CDBar = GameObject.Find("CDBar").GetComponent<Image>();
         //ªì©l¤Æ¦å±ø
         healthBar.fillAmount = 1;
         CDBar.fillAmount = 1;
