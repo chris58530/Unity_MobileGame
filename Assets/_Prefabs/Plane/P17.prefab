@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4367247092814829707}
   - component: {fileID: 4367247092814829705}
   - component: {fileID: 4367247092814829706}
+  - component: {fileID: 138873782419881298}
   m_Layer: 0
   m_Name: flower3 (1)
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &138873782419881298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367247092814829708}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5377527, y: 1.2837033, z: 1.025091}
+  m_Center: {x: 0.0027694108, y: 0.6496508, z: 0.26126552}
 --- !u!1 &4367247093504064129
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +108,7 @@ GameObject:
   - component: {fileID: 4367247093504064128}
   - component: {fileID: 4367247093504064142}
   - component: {fileID: 4367247093504064143}
+  - component: {fileID: 518494291653789286}
   m_Layer: 0
   m_Name: Small stone (2)
   m_TagString: Untagged
@@ -166,6 +181,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &518494291653789286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367247093504064129}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.65226763, y: 0.53008705, z: 0.6300047}
+  m_Center: {x: 0.029117234, y: 0.26426658, z: 1.4018143}
 --- !u!1 &4367247093603998079
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +306,7 @@ GameObject:
   - component: {fileID: 4367247093732038521}
   - component: {fileID: 4367247093732038503}
   - component: {fileID: 4367247093732038520}
+  - component: {fileID: 2294232977844542483}
   m_Layer: 0
   m_Name: tree3
   m_TagString: Untagged
@@ -350,3 +379,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2294232977844542483
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367247093732038522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.4725394, y: 3.8835828, z: 4.4725394}
+  m_Center: {x: -0.0022647379, y: 1.9417914, z: -0.0017330647}

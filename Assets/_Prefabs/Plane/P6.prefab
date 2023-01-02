@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8159706487724534164}
   - component: {fileID: 8159706487724534166}
   - component: {fileID: 8159706487724534167}
+  - component: {fileID: 1228904130477893502}
   m_Layer: 0
   m_Name: Small stone (1)
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1228904130477893502
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8159706487724534165}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.65226763, y: 0.53008705, z: 0.6300047}
+  m_Center: {x: 0.029115327, y: 0.26426658, z: 1.4018153}
 --- !u!1 &8159706489499761414
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,3 +282,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8159706488668713054}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5671308171486216638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4578350381284241888, guid: af8b09bc3161e054c9dc28d48dca2e37,
+    type: 3}
+  m_PrefabInstance: {fileID: 8159706488668713054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8432321425108537877
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671308171486216638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4897082, y: 2.1507034, z: 1.8443453}
+  m_Center: {x: 0.32963213, y: 1.0753517, z: 0.13714574}

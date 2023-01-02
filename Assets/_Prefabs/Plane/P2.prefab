@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7263173352021175792}
   - component: {fileID: 7263173352021175790}
   - component: {fileID: 7263173352021175793}
+  - component: {fileID: 1516976240109651083}
   m_Layer: 0
   m_Name: flower2 (1)
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1516976240109651083
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263173352021175795}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.153994, y: 0.9566048, z: 1.3338335}
+  m_Center: {x: 0.06725857, y: 0.48202834, z: 3.089124}
 --- !u!1 &7263173352125373567
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +210,7 @@ GameObject:
   - component: {fileID: 7263173352502197469}
   - component: {fileID: 7263173352502197467}
   - component: {fileID: 7263173352502197466}
+  - component: {fileID: 5189892656158454664}
   m_Layer: 0
   m_Name: flower2 (3)
   m_TagString: Untagged
@@ -268,6 +283,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5189892656158454664
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263173352502197468}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1539937, y: 0.95660484, z: 1.3338333}
+  m_Center: {x: 0.06726048, y: 0.48202834, z: 3.0891232}
 --- !u!1 &7263173353384620258
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +307,7 @@ GameObject:
   - component: {fileID: 7263173353384620259}
   - component: {fileID: 7263173353384620257}
   - component: {fileID: 7263173353384620256}
+  - component: {fileID: 6437067428699648823}
   m_Layer: 0
   m_Name: flower2
   m_TagString: Untagged
@@ -351,6 +380,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6437067428699648823
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263173353384620258}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1539942, y: 0.95660484, z: 1.3338335}
+  m_Center: {x: 0.06726241, y: 0.48202837, z: 3.0891259}
 --- !u!1 &7263173353526476467
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +404,7 @@ GameObject:
   - component: {fileID: 7263173353526476464}
   - component: {fileID: 7263173353526476462}
   - component: {fileID: 7263173353526476465}
+  - component: {fileID: 1558358116091529083}
   m_Layer: 0
   m_Name: flower2 (2)
   m_TagString: Untagged
@@ -434,3 +477,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1558358116091529083
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263173353526476467}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1539938, y: 0.95660484, z: 1.3338331}
+  m_Center: {x: 0.06726049, y: 0.48202837, z: 3.0891232}

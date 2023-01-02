@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 66226965906277676}
   - component: {fileID: 66226965906277650}
   - component: {fileID: 66226965906277651}
+  - component: {fileID: 7605969331609256533}
   m_Layer: 0
   m_Name: Big stone (2)
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7605969331609256533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66226965906277677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2242897, y: 2.2619462, z: 2.6340957}
+  m_Center: {x: 0.09894335, y: 1.1147678, z: 8.000627}
 --- !u!1 &66226966001172888
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +108,7 @@ GameObject:
   - component: {fileID: 66226966001172895}
   - component: {fileID: 66226966001172893}
   - component: {fileID: 66226966001172894}
+  - component: {fileID: 1078764056389217597}
   m_Layer: 0
   m_Name: tree3
   m_TagString: Untagged
@@ -166,6 +181,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1078764056389217597
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66226966001172888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.47254, y: 3.8835828, z: 4.4725394}
+  m_Center: {x: -0.002264738, y: 1.9417914, z: -0.0017330647}
 --- !u!1 &66226966061380618
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +205,7 @@ GameObject:
   - component: {fileID: 66226966061380617}
   - component: {fileID: 66226966061380623}
   - component: {fileID: 66226966061380616}
+  - component: {fileID: 4494623302330978395}
   m_Layer: 0
   m_Name: Big stone (1)
   m_TagString: Untagged
@@ -249,6 +278,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4494623302330978395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66226966061380618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.22429, y: 2.2619462, z: 2.634096}
+  m_Center: {x: 0.09894408, y: 1.1147678, z: 8.000624}
 --- !u!1 &3357039999854120219
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +405,7 @@ GameObject:
   - component: {fileID: 2510748212440751360}
   - component: {fileID: 8080693406504923177}
   - component: {fileID: 3851840506843948024}
+  - component: {fileID: 5384811163325058390}
   m_Layer: 0
   m_Name: Big stone
   m_TagString: Untagged
@@ -435,6 +478,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5384811163325058390
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585652057400154572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2242897, y: 2.261946, z: 2.6340957}
+  m_Center: {x: 0.09894383, y: 1.1147677, z: 8.000624}
 --- !u!1001 &66226966463424781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -520,3 +576,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 66226966463424781}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4567450986832074989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4578350381284241888, guid: af8b09bc3161e054c9dc28d48dca2e37,
+    type: 3}
+  m_PrefabInstance: {fileID: 66226966463424781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7018970859492153873
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567450986832074989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4897087, y: 2.1507032, z: 1.844346}
+  m_Center: {x: 0.32963222, y: 1.0753516, z: 0.13714483}

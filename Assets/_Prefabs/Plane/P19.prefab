@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 7329204862928145488}
   - component: {fileID: 7329204862928145490}
   - component: {fileID: 7329204862928145491}
+  - component: {fileID: 7020530244554296398}
   m_Layer: 0
   m_Name: Small stone_totem (3)
   m_TagString: Untagged
@@ -186,6 +187,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7020530244554296398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7329204862928145489}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.96806496, y: 0.6511245, z: 1.101621}
+  m_Center: {x: 0.0000020558464, y: 0.33595872, z: 4.982754}
 --- !u!1 &7329204863026258653
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +211,7 @@ GameObject:
   - component: {fileID: 7329204863026258652}
   - component: {fileID: 7329204863026258654}
   - component: {fileID: 7329204863026258655}
+  - component: {fileID: 3855626534562783525}
   m_Layer: 0
   m_Name: Big stone (2)
   m_TagString: Untagged
@@ -269,6 +284,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3855626534562783525
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7329204863026258653}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.22429, y: 2.2619462, z: 2.634096}
+  m_Center: {x: 0.098951235, y: 1.1147678, z: 8.000626}
 --- !u!1 &7329204863235732319
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +308,7 @@ GameObject:
   - component: {fileID: 7329204863235732318}
   - component: {fileID: 7329204863235732312}
   - component: {fileID: 7329204863235732313}
+  - component: {fileID: 4660906562064866650}
   m_Layer: 0
   m_Name: Big stone2 (1)
   m_TagString: Untagged
@@ -352,6 +381,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4660906562064866650
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7329204863235732319}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7925814, y: 2.3026936, z: 2.4703846}
+  m_Center: {x: -0.004501851, y: 1.1475867, z: 11.706833}
 --- !u!1 &7329204863397773086
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +405,7 @@ GameObject:
   - component: {fileID: 7329204863397773081}
   - component: {fileID: 7329204863397773083}
   - component: {fileID: 7329204863397773080}
+  - component: {fileID: 1945218022031648842}
   m_Layer: 0
   m_Name: Big stone
   m_TagString: Untagged
@@ -435,6 +478,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1945218022031648842
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7329204863397773086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2242901, y: 2.261946, z: 2.6340964}
+  m_Center: {x: 0.09894433, y: 1.1147677, z: 8.000627}
 --- !u!1 &7329204863971420726
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +502,7 @@ GameObject:
   - component: {fileID: 7329204863971420721}
   - component: {fileID: 7329204863971420723}
   - component: {fileID: 7329204863971420720}
+  - component: {fileID: 9020931344732544137}
   m_Layer: 0
   m_Name: Big stone (1)
   m_TagString: Untagged
@@ -518,3 +575,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9020931344732544137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7329204863971420726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.22429, y: 2.2619462, z: 2.634096}
+  m_Center: {x: 0.09894003, y: 1.1147678, z: 8.000626}
