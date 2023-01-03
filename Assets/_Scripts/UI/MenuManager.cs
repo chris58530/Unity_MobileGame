@@ -24,6 +24,7 @@ public class MenuManager : MonoBehaviour
     }
     public void ChangeScene(string scene)
     {
+        SoundManager.instance.Bottun();
         SaveSystem.SaveByJson(SaveSystem.PackageSave, SavingData());
         SQLConnection.UpdatelDataFromSQL();
         SceneManager.LoadScene(scene);

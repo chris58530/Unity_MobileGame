@@ -35480,6 +35480,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056812276}
   m_CullTransparentMesh: 1
+--- !u!1 &2065012313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2065012315}
+  - component: {fileID: 2065012314}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2065012314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065012313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22531bb09038e9b4e9cfe913638ae2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Bottun: {fileID: 8300000, guid: a7d48b6e9ea86c0488078d8d478a37e1, type: 3}
+  _BuyGem: {fileID: 8300000, guid: 5884a14bb926f934daa318bc94d1aed4, type: 3}
+  _Coin: {fileID: 8300000, guid: f45f32d4512acb14f93034ce3eb36dcc, type: 3}
+  _CowAttack: {fileID: 8300000, guid: 52003f45b97721943b2c687a719a1c25, type: 3}
+  _GetHurt: {fileID: 8300000, guid: f2e19afa905476548a4a24770363146a, type: 3}
+  _Lazer: {fileID: 8300000, guid: 39ec31ec096649c45bda6c835cca5893, type: 3}
+  _OctopusATK: {fileID: 8300000, guid: 014c266e5d65c4048b80c5432e90cab8, type: 3}
+  _PickUp: {fileID: 8300000, guid: 39fcfbe74eefed548bcacee3c1e72fc8, type: 3}
+  _UnlcokItem: {fileID: 8300000, guid: a306934148c7a4e4ab9d2a4d405045c1, type: 3}
+--- !u!4 &2065012315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065012313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 230.71985, y: 1477.7892, z: -14.467623}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2068989515
 GameObject:
   m_ObjectHideFlags: 0

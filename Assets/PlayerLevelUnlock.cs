@@ -30,6 +30,8 @@ public class PlayerLevelUnlock : MonoBehaviour
         {
             PlayerCurrentData.playerMoney -= 1000;
             PlayerCurrentData.playerLevel += 1;
+            SoundManager.instance.UnlcokItem();
+
         }
     }
 }
