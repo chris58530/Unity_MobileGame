@@ -8,13 +8,6 @@ public class CharacterDataBaseSO : ScriptableObject
 {
     public List<Character> _characterList;
 
-
-    //public Character GetCharacter(string playerName)
-    //{
-    //    return _playerList.Find(i => i.name == playerName);
-    //}
-   
-   
     public Character GetCharacter(int index)
     {
         return _characterList[index];

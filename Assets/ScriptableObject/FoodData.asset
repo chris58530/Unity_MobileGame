@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31275f45d019ca43b11105410751786, type: 3}
+  m_Name: FoodData
+  m_EditorClassIdentifier: 
+  _food:
+  - name: Fries
+    introduciotn: Yummy Fries
+    foodSprite: {fileID: -1604229134, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: -1604229134, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    gameLevel: 0
+  - name: Croissant
+    introduciotn: Yummy Croissant
+    foodSprite: {fileID: -76989032, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: -76989032, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    gameLevel: 0
+  - name: Ramen
+    introduciotn: Yummy Ramen
+    foodSprite: {fileID: -1995460359, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: -1995460359, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    gameLevel: 0
+  - name: Steak Rice
+    introduciotn: Yummy Steak Rice
+    foodSprite: {fileID: 1053388226, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: 1053388226, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    gameLevel: 0
+  - name: Soup
+    introduciotn: Yummy Soup
+    foodSprite: {fileID: 2133962399, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: 2133962399, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    gameLevel: 0
+  - name: Pumkie Pie
+    introduciotn: Yummy Pumkie Pie
+    foodSprite: {fileID: 1920548470, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: 1920548470, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    gameLevel: 0
+  - name: Mushroom Soup
+    introduciotn: Yummy Mushroom Soup
+    foodSprite: {fileID: 1490670522, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: 1490670522, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    gameLevel: 0

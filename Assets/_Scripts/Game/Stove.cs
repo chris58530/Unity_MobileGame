@@ -5,12 +5,11 @@ using UnityEngine;
 public class Stove : MonoBehaviour
 {
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("PlayerAttack"))
+        if (other.CompareTag("Player") || other.CompareTag("PlayerAttack"))
         {
             Destroy(gameObject);
-            GameObject.Find("Selection Menu").SetActive(true);
 
         }
     }

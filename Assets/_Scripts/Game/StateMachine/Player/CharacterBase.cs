@@ -9,8 +9,7 @@ public class CharacterBase : MonoBehaviour
     [SerializeField]
     private CharacterDataBaseSO Data;
 
-    [SerializeField]
-    private UnityEvent toMenu;
+  
 
     private Image healthBar;
 
@@ -24,7 +23,7 @@ public class CharacterBase : MonoBehaviour
         CDBar.fillAmount = 1;
     }
 
-    public int GetHealth() //加入曲線成長數值
+    public int GetHealth() //加入曲線成長數值 //料理加乘
     {
         return Data.GetCharacter(CharacterSpawn.currentPlayer).maxHP;
     }
@@ -57,6 +56,5 @@ public class CharacterBase : MonoBehaviour
     public void Die() // 動畫Event
     {
         Destroy(gameObject);
-        toMenu?.Invoke();
     }
 }
