@@ -43,10 +43,16 @@ public class CharacterBase : MonoBehaviour
     {
         //¦å±ø§ïÅÜ
         healthBar.fillAmount = currentHp / GetHealth();
+        if (healthBar.fillAmount <= 0)
+        {
+            GameObject select = GameObject.Find("SystemCanvas");
+            select.transform.Find("EndView").gameObject.SetActive(true);
+        }
     }
     public void CDBarUpdate(float currentCD)
     {
         CDBar.fillAmount = currentCD / GetAttackCD();
+        
     }
     public int GetMoveSpeed()
     {
