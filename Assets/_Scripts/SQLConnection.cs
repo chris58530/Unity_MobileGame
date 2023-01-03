@@ -33,8 +33,8 @@ public class SQLConnection :MonoBehaviour
 
             GetDataFromSQL(); //Register()寫在裡面
         }
-           
 
+        GetShopItemFromSQL();
 
     }  
     public void GetDataFromSQL()//沒有的話就會自動註冊 Register()
@@ -157,7 +157,22 @@ public class SQLConnection :MonoBehaviour
         }
     }
   
-    
+    public void GetShopItemFromSQL()
+    {
+        Debug.Log(" GetShop");
+        SqlConnection sqlConnection = new SqlConnection(connectionString);
+        sqlConnection.Open();
+        string isChecked = "SELECT * FROM Shop";
+
+        SqlCommand sqlCommand = new SqlCommand(isChecked, sqlConnection);
+        SqlDataReader reader = sqlCommand.ExecuteReader();
+        while (reader.Read())
+        {
+            Shop.item1 = int.Parse(reader[0].ToString());
+            Shop.item2 = int.Parse(reader[1].ToString());
+            Shop.item3 = int.Parse(reader[2].ToString());
+        }
+    }
     SaveData SavingData()
     {
         var saveData = new SaveData();

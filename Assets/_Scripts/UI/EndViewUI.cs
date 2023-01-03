@@ -26,17 +26,17 @@ public class EndViewUI : MonoBehaviour
     {
 
         var saveData = new SaveData();
-        saveData.EggCount = PlayerCurrentData.EggCount;
-        saveData.EyeCount = PlayerCurrentData.EyeCount;
-        saveData.HornCount = PlayerCurrentData.HornCount;
-        saveData.LeafCount = PlayerCurrentData.LeafCount;
-        saveData.MeatCount = PlayerCurrentData.MeatCount;
-        saveData.MushroomCount = PlayerCurrentData.MushroomCount;
-        saveData.PotatoCount = PlayerCurrentData.PotatoCount;
-        saveData.PotatoTailCount = PlayerCurrentData.PotatoTailCount;
-        saveData.PumpkingCount = PlayerCurrentData.PumpkingCount;
-        saveData.SimeCount = PlayerCurrentData.SimeCount;
-        saveData.SmallMeatCount = PlayerCurrentData.SmallMeatCount;      
+        saveData.EggCount = PlayerCurrentData.itemCount[0];
+        saveData.EyeCount = PlayerCurrentData.itemCount[1];
+        saveData.HornCount = PlayerCurrentData.itemCount[2];
+        saveData.LeafCount = PlayerCurrentData.itemCount[3];
+        saveData.MeatCount = PlayerCurrentData.itemCount[4];
+        saveData.MushroomCount = PlayerCurrentData.itemCount[5];
+        saveData.PotatoCount = PlayerCurrentData.itemCount[6];
+        saveData.PotatoTailCount = PlayerCurrentData.itemCount[7];
+        saveData.PumpkingCount = PlayerCurrentData.itemCount[8];
+        saveData.SimeCount = PlayerCurrentData.itemCount[9];
+        saveData.SmallMeatCount = PlayerCurrentData.itemCount[10];      
 
         return saveData;
     }

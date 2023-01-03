@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    [SerializeField]
+    private IngredientsDataSO ingredientsData;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player")|| other.gameObject.CompareTag("PlayerAttack"))

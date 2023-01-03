@@ -9,15 +9,17 @@ public class PlayerCurrentData : MonoBehaviour
     public static int playerMoney;
     public static int playerRuby;
 
-    public static int EggCount;
-    public static int EyeCount;
-    public static int HornCount;
-    public static int LeafCount;
-    public static int MeatCount;
-    public static int MushroomCount;
-    public static int PotatoCount;
-    public static int PotatoTailCount;
-    public static int PumpkingCount;
-    public static int SimeCount;
-    public static int SmallMeatCount;
+    public static int[] itemCount = {0,0,0,0,0,0,0,0,0,0,0 };
+
+    //public static int EggCount;
+    //public static int EyeCount;
+    //public static int HornCount;
+    //public static int LeafCount;
+    //public static int MeatCount;
+    //public static int MushroomCount;
+    //public static int PotatoCount;
+    //public static int PotatoTailCount;
+    //public static int PumpkingCount;
+    //public static int SimeCount;
+    //public static int SmallMeatCount;
 }

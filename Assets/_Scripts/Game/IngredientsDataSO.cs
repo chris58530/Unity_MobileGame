@@ -16,4 +16,6 @@ public class Ingredients
     public string name;
 
     public Sprite sprite;
+
+    public int cost;
 }
