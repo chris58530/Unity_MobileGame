@@ -103,7 +103,7 @@ public class Shop : MonoBehaviour
         if ((PlayerCurrentData.playerRuby - cost) >= 0)
         {
             PlayerCurrentData.playerRuby -= cost;
-            PlayerCurrentData.playerMoney += 30;
+            PlayerCurrentData.playerMoney += 180;
             SoundManager.instance.Coin();
         }
         else Debug.Log("Ä_¥Û¤£°÷");
@@ -116,7 +116,7 @@ public class Shop : MonoBehaviour
         if ((PlayerCurrentData.playerRuby - cost) >= 0)
         {
             PlayerCurrentData.playerRuby -= cost;
-            PlayerCurrentData.playerMoney += 30;
+            PlayerCurrentData.playerMoney += 550;
             SoundManager.instance.Coin();
         }
         else Debug.Log("Ä_¥Û¤£°÷");

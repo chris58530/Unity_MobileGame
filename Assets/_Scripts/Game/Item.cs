@@ -13,6 +13,7 @@ public class Item : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player")|| other.gameObject.CompareTag("PlayerAttack"))
         {
+            SoundManager.instance.PickUp();
             PlayerCurrentData.itemCount[thisItemCount] += 1;
             Destroy(gameObject);
         }

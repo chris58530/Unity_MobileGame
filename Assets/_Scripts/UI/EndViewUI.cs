@@ -11,6 +11,11 @@ public class EndViewUI : MonoBehaviour
 
     private void OnEnable()
     {
+        GameManager.instance.PauseTime(true);
+    }
+    private void OnDisable()
+    {
+        GameManager.instance.PauseTime(false);
         
     }
     public void VideoButton()

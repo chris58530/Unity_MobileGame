@@ -36,6 +36,9 @@ public class TimeCount : MonoBehaviour
             }
         }
         //通關 玩家星球等級+1
+        GameObject select = GameObject.Find("SystemCanvas");
+        select.transform.Find("EndView").gameObject.SetActive(true);
+
         Debug.Log("時間到了");
     }
 }

@@ -131,6 +131,8 @@ public class OctopusAttackState : OctopusBaseState
         octopusAttack.Attack();
         creature.octopusAni.SetBool("isWalking", false);
         creature.octopusAni.SetTrigger("Attack");
+        SoundManager.instance.OctopusATK();
+
         canAttack = false;
         creature.currentAttackCD = 0;
         creature.characterBase.CDBarUpdate(0);
@@ -147,6 +149,7 @@ public class OctopusHurtState : OctopusBaseState
     {
         base.EnterState(creature);
         creature.currentDamagedCD = creature.characterBase.GetDamagedCD();
+        SoundManager.instance.GetHurt();
         creature.SwitchState(creature.idleState);
         creature.octopusAni.SetTrigger("Hurt");
 

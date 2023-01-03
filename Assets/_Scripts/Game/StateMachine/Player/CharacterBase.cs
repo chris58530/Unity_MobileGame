@@ -47,6 +47,7 @@ public class CharacterBase : MonoBehaviour
         {
             GameObject select = GameObject.Find("SystemCanvas");
             select.transform.Find("EndView").gameObject.SetActive(true);
+            
         }
     }
     public void CDBarUpdate(float currentCD)

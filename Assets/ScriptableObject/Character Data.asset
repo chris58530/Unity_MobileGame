@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterList:
   - name: moji
-    introduciotn: mmm
+    introduciotn: im very strong!!!
     characterObject: {fileID: 3929357347147589621, guid: ddb4267ea810b57498d6f254a761802b,
       type: 3}
     moveSpeed: 20
@@ -26,7 +26,7 @@ MonoBehaviour:
     maxHP: 20
     currentHP: 0
   - name: Octopus
-    introduciotn: ooo
+    introduciotn: im not a fish!!!!
     characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
       type: 3}
     moveSpeed: 20
@@ -37,8 +37,8 @@ MonoBehaviour:
     currentHurtCD: 0
     maxHP: 20
     currentHP: 0
-  - name: Octopus
-    introduciotn: ooo
+  - name: None
+    introduciotn: None
     characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
       type: 3}
     moveSpeed: 20
@@ -49,8 +49,8 @@ MonoBehaviour:
     currentHurtCD: 0
     maxHP: 20
     currentHP: 0
-  - name: Octopus
-    introduciotn: ooo
+  - name: None
+    introduciotn: None
     characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
       type: 3}
     moveSpeed: 20

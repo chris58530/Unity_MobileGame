@@ -105,6 +105,8 @@ public class MojiAttackState : MojiBaseState
         creature.ani.SetBool("isWalking", false);
         creature.tag = ("PlayerAttack");
 
+        SoundManager.instance.CowAttack();
+
         BoxCollider boxCollider = creature.GetComponent<BoxCollider>();
         boxCollider.isTrigger = true;
 
@@ -173,6 +175,8 @@ public class MojiHurtState : MojiBaseState
     {
         creature.ani.SetTrigger("Hurt");
         creature.SwitchState(creature.idleState);
+        SoundManager.instance.GetHurt();
+
     }
     public override void UpdateState(MojiStateManager creature)
     {
