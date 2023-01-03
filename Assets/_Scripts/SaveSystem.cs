@@ -9,11 +9,13 @@ public static class SaveSystem
     const string SCELECT_PLANET = "Player.Planet.sav";
     const string SCELECT_CHARACTER = "Player.Character.sav";
     const string SCELECT_SQL = "Player.SQL.sav";
+    const string SCELECT_Package = "Player.Package.sav";
     #endregion
     #region 外部存取文件名
     public static string PlanetSave => SCELECT_PLANET;
     public static string CharacterSave => SCELECT_CHARACTER;
     public static string SQLSave => SCELECT_SQL;
+    public static string PackageSave => SCELECT_Package;
     #endregion
 
     public static void SaveByJson(string fileName , object data)
