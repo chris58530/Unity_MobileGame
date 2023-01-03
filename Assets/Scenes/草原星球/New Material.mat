@@ -337,16 +337,16 @@ Material:
     - _Is_BlendBaseColor: 0
     - _Is_ColorShift: 0
     - _Is_Filter_HiCutPointLightColor: 1
-    - _Is_Filter_LightColor: 1
+    - _Is_Filter_LightColor: 0
     - _Is_LightColor_1st_Shade: 1
-    - _Is_LightColor_2nd_Shade: 1
+    - _Is_LightColor_2nd_Shade: 0
     - _Is_LightColor_AR: 1
-    - _Is_LightColor_Ap_RimLight: 1
+    - _Is_LightColor_Ap_RimLight: 0
     - _Is_LightColor_Base: 1
-    - _Is_LightColor_HighColor: 1
-    - _Is_LightColor_MatCap: 1
-    - _Is_LightColor_Outline: 1
-    - _Is_LightColor_RimLight: 1
+    - _Is_LightColor_HighColor: 0
+    - _Is_LightColor_MatCap: 0
+    - _Is_LightColor_Outline: 0
+    - _Is_LightColor_RimLight: 0
     - _Is_NormalMapForMatCap: 0
     - _Is_NormalMapToBase: 0
     - _Is_NormalMapToHighColor: 0
@@ -463,7 +463,7 @@ Material:
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
     - _Use_1stAs2nd: 0
-    - _Use_BaseAs1st: 0
+    - _Use_BaseAs1st: 1
     - _ZOverDrawMode: 0
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4

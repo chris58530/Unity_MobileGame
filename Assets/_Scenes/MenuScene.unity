@@ -7170,8 +7170,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b267b9538fc5a4bbd52828bd8a1da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
-  abilityImages: []
+  foodData: {fileID: 0}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  button3: {fileID: 0}
+  abilityArray: []
+  abliltyCount: 0
 --- !u!1 &505276115
 GameObject:
   m_ObjectHideFlags: 0

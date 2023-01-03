@@ -463,7 +463,7 @@ Material:
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
     - _Use_1stAs2nd: 0
-    - _Use_BaseAs1st: 0
+    - _Use_BaseAs1st: 1
     - _ZOverDrawMode: 0
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
