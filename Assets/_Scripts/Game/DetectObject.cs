@@ -6,10 +6,10 @@ public class DetectObject : MonoBehaviour
 {
     [SerializeField]
     [Range(1, 50)]
-    private float detectRange;
+    public float detectRange;
 
     [SerializeField]
-    private float attackSpeed;
+    public float attackSpeed;
 
     public bool canDetect;
     public Animator catAni;
@@ -28,7 +28,8 @@ public class DetectObject : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if(canDetect && transform.localScale.x<=detectRange)
+        
+        if(canDetect && transform.localScale.x<=(detectRange + PlayerAbility.ability_CatDetectRange))
         {
             //¿±µÈ¦Üdetect¤W­­­È
             transform.localScale += new Vector3(2, 0, 2);
@@ -50,7 +51,7 @@ public class DetectObject : MonoBehaviour
     }
     IEnumerator DetectCount()
     {
-        yield return new WaitForSecondsRealtime(attackSpeed);  
+        yield return new WaitForSecondsRealtime((attackSpeed - PlayerAbility.ability_CatShootSpeed));  
         canDetect = true;    
     }
    

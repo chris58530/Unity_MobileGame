@@ -10,7 +10,8 @@ public class Stove : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("PlayerAttack"))
         {
             Destroy(gameObject);
-
+            GameObject selectMenu = GameObject.Find("SelectionMenu");
+            selectMenu.gameObject.SetActive(true);
         }
     }
 }

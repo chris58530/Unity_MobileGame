@@ -11,11 +11,15 @@ public class Bullet : MonoBehaviour
     public Transform target;
 
     [SerializeField]
-    private int damage;
+    public int damage;
+
     //objectPool
     public delegate void Recycle(Bullet bullet);
     public Recycle recycle;
-
+    private void Start()
+    {
+        transform.localScale *= PlayerAbility.ability_BulltetScale;
+    }
     private void FixedUpdate()
     {
         if (target != null)
@@ -35,6 +39,6 @@ public class Bullet : MonoBehaviour
     }
     public int GetBulletDamage()
     {
-        return damage;
+        return damage + PlayerAbility.ability_BulletDamage;
     }
 }

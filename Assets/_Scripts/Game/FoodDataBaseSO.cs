@@ -21,9 +21,9 @@ public class Food
     public string name;
     public string introduciotn;
     public string abilityInfo;
+    public int abilityLevel = 0 ;
 
     public Sprite foodSprite;
     public Sprite foodIcon;
 
-    public int gameLevel;
 }

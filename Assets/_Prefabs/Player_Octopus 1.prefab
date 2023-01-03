@@ -454,10 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5388f984b71c7c440a19b4a1935d33d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 6684a3c301ab7cb4f9f688040d34d697, type: 2}
-  toMenu:
-    m_PersistentCalls:
-      m_Calls: []
+  Data: {fileID: 11400000, guid: 047bd7876b0aadd46a4e798c89e32a9a, type: 2}
 --- !u!114 &3929357347147589631
 MonoBehaviour:
   m_ObjectHideFlags: 0

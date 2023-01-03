@@ -48,7 +48,7 @@ public class CreatureBase : MonoBehaviour
     {
         float curvesAttack = CreatureCurves.monsterBoost.Evaluate(time);
 
-        float ATK = Data.GetCreature(creature).attackPower * curvesAttack;
+        float ATK = (Data.GetCreature(creature).attackPower * curvesAttack) + PlayerAbility.ability_RideAttackDamage;
 
         return (int)ATK;    
     }

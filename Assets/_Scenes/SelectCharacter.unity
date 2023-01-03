@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18083125, g: 0.22636612, b: 0.30720383, a: 1}
+  m_IndirectSpecularColor: {r: 0.46234828, g: 0.5130987, b: 0.59017897, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2355,8 +2355,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 152800062}
   m_HandleRect: {fileID: 152800061}
   m_Direction: 0
-  m_Value: -0.00000021655195
-  m_Size: 0.415067
+  m_Value: -0.00000010827594
+  m_Size: 0.4150669
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3007,7 +3007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollBar: {fileID: 1348181955}
-  _characterDataBase: {fileID: 11400000, guid: 6684a3c301ab7cb4f9f688040d34d697, type: 2}
+  _characterDataBase: {fileID: 11400000, guid: 047bd7876b0aadd46a4e798c89e32a9a, type: 2}
   _characterTitle: {fileID: 1015840343}
   _characterIntroduce: {fileID: 1239524596}
 --- !u!23 &49771043832979524

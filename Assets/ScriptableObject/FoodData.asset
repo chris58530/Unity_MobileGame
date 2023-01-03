@@ -15,36 +15,43 @@ MonoBehaviour:
   _food:
   - name: Fries
     introduciotn: Yummy Fries
+    abilityInfo: 
     foodSprite: {fileID: -1604229134, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
-    foodIcon: {fileID: -1604229134, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: 21300000, guid: 413f5cf54e301a046afa9977754cea84, type: 3}
     gameLevel: 0
   - name: Croissant
     introduciotn: Yummy Croissant
+    abilityInfo: 
     foodSprite: {fileID: -76989032, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
-    foodIcon: {fileID: -76989032, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: 21300000, guid: b25fea217c7132044bf8a252184ea046, type: 3}
     gameLevel: 0
   - name: Ramen
     introduciotn: Yummy Ramen
+    abilityInfo: 
     foodSprite: {fileID: -1995460359, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
-    foodIcon: {fileID: -1995460359, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: 21300000, guid: b3aca37f86b1abc408a291f19b82dd18, type: 3}
     gameLevel: 0
   - name: Steak Rice
     introduciotn: Yummy Steak Rice
+    abilityInfo: 
     foodSprite: {fileID: 1053388226, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
-    foodIcon: {fileID: 1053388226, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: 21300000, guid: 17b3403a8c5021c4fbeb27d754ac3cd6, type: 3}
     gameLevel: 0
   - name: Soup
     introduciotn: Yummy Soup
+    abilityInfo: 
     foodSprite: {fileID: 2133962399, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
-    foodIcon: {fileID: 2133962399, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: 21300000, guid: 9b11f551d797727439f7d9cca4928d10, type: 3}
     gameLevel: 0
   - name: Pumkie Pie
     introduciotn: Yummy Pumkie Pie
+    abilityInfo: 
     foodSprite: {fileID: 1920548470, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
-    foodIcon: {fileID: 1920548470, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: 21300000, guid: ec0cfb997a8809f4c809bd124ae925d1, type: 3}
     gameLevel: 0
   - name: Mushroom Soup
     introduciotn: Yummy Mushroom Soup
+    abilityInfo: 
     foodSprite: {fileID: 1490670522, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
-    foodIcon: {fileID: 1490670522, guid: b9989f3fcd149ba499e68c98c648b60d, type: 3}
+    foodIcon: {fileID: 21300000, guid: 1ef00660a3bee0946911d2c059524791, type: 3}
     gameLevel: 0

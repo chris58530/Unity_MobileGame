@@ -9,18 +9,29 @@ public class PlayerAbility : MonoBehaviour
     [SerializeField]
     private FoodDataBaseSO foodData;
     [SerializeField]
-    private Button button1 , button2, button3;
+    private Button button1, button2, button3;
 
     [SerializeField]
     private Image[] abilityArray;
 
+    private int[] abilityLevel = { 1, 1, 1, 1, 1 };
+
     public int abliltyCount = 0;
+    string[] abilityNameArray = { "", "", "", "", "" };
 
     private int currentFoodIndex1;
     private int currentFoodIndex2;
     private int currentFoodIndex3;
 
-    private GameObject player;
+    //腳色能力
+    public static int ability_BulletDamage = 0;
+    public static int ability_CatDetectRange = 0;
+    public static float ability_CatShootSpeed = 0;
+    public static float ability_RideAttackSpeed = 0;
+    public static float ability_RideMoveSpeed = 0;
+    public static float ability_RideAttackDamage = 0;
+    public static float ability_BulltetScale = 0;
+
     private void OnEnable()
     {
         currentFoodIndex1 = Random.Range(0, 7);
@@ -51,41 +62,129 @@ public class PlayerAbility : MonoBehaviour
     }
     public void ButtonClick_1() //有空要架構化
     {
-        abilityArray[abliltyCount].sprite = foodData.GetFood(currentFoodIndex1).foodIcon;
-        abliltyCount++;
-        //switch (currentFoodIndex1)
-        //{
-        //    case 0:
-        //        CharacterBase characterBase =  player.GetComponent<CharacterBase>();
-        //        break;
+        for (int i = 0; i < 5; i++)
+        {
+            string foodName = foodData.GetFood(currentFoodIndex1).name;
+            if (abilityNameArray[i] == foodName)
+            {
+                TMP_Text text = abilityArray[i].GetComponentInChildren<TMP_Text>();
+                text.text = abilityLevel[i].ToString();
+                abilityLevel[i]++; 
+                AddAbility(currentFoodIndex1);
+             
+                return;
+            }
+        }
+        if (abliltyCount < 5)
+        {
+            abilityArray[abliltyCount].sprite = foodData.GetFood(currentFoodIndex1).foodIcon;
+            abilityArray[abliltyCount].gameObject.SetActive(true);
+            abilityNameArray[abliltyCount] = foodData.GetFood(currentFoodIndex1).name;
+            TMP_Text text = abilityArray[abliltyCount].GetComponentInChildren<TMP_Text>();
+            text.text = abilityLevel[abliltyCount].ToString();
+            abilityLevel[abliltyCount]++;
 
-           
-        //}
+            abliltyCount++; 
+            AddAbility(currentFoodIndex1);
+            return;
+        }
     }
     public void ButtonClick_2() //有空要架構化
     {
-        abilityArray[abliltyCount].sprite = foodData.GetFood(currentFoodIndex2).foodIcon;
-        abliltyCount++;
-        //switch (currentFoodIndex1)
-        //{
-        //    case 0:
-        //        CharacterBase characterBase =  player.GetComponent<CharacterBase>();
-        //        break;
-
-
-        //}
+        for (int i = 0; i < 5; i++)
+        {
+            string foodName = foodData.GetFood(currentFoodIndex2).name;
+            if (abilityNameArray[i] == foodName)
+            {
+                TMP_Text text = abilityArray[i].GetComponentInChildren<TMP_Text>();
+                text.text = abilityLevel[i].ToString();
+                abilityLevel[i]++;
+                AddAbility(currentFoodIndex2);
+                return;
+            }
+        }
+        if (abliltyCount < 5)
+        {
+            abilityArray[abliltyCount].sprite = foodData.GetFood(currentFoodIndex2).foodIcon;
+            abilityArray[abliltyCount].gameObject.SetActive(true);
+            abilityNameArray[abliltyCount] = foodData.GetFood(currentFoodIndex2).name;
+            TMP_Text text = abilityArray[abliltyCount].GetComponentInChildren<TMP_Text>();
+            text.text = abilityLevel[abliltyCount].ToString();
+            abilityLevel[abliltyCount]++;
+            abliltyCount++;
+            AddAbility(currentFoodIndex2);
+            return;
+        }
     }
     public void ButtonClick_3() //有空要架構化
     {
-        abilityArray[abliltyCount].sprite = foodData.GetFood(currentFoodIndex3).foodIcon;
-        abliltyCount++;
-        //switch (currentFoodIndex1)
-        //{
-        //    case 0:
-        //        CharacterBase characterBase =  player.GetComponent<CharacterBase>();
-        //        break;
+        for (int i = 0; i < 5; i++)
+        {
+            string foodName = foodData.GetFood(currentFoodIndex3).name;
+            if (abilityNameArray[i] == foodName)
+            {
+                TMP_Text text = abilityArray[i].GetComponentInChildren<TMP_Text>();
+                text.text = abilityLevel[i].ToString();
+                abilityLevel[i]++;
+                AddAbility(currentFoodIndex3);
+               
+                return;
+            }
+        }
+        if (abliltyCount < 5)
+        {
+            abilityArray[abliltyCount].sprite = foodData.GetFood(currentFoodIndex3).foodIcon;
+            abilityArray[abliltyCount].gameObject.SetActive(true);
+            abilityNameArray[abliltyCount] = foodData.GetFood(currentFoodIndex3).name;
+            TMP_Text text = abilityArray[abliltyCount].GetComponentInChildren<TMP_Text>();
+            text.text = abilityLevel[abliltyCount].ToString();
+            abilityLevel[abliltyCount]++;
+            abliltyCount++;
+            AddAbility(currentFoodIndex3);
+            return;
+        }
+    }
+    public void AddAbility(int count)
+    {
+        switch (count)
+        {
+            case 0:
+                Debug.Log("薯條能力 加射擊範圍");
+               
+                ability_CatDetectRange += 1;
+                break;
+            case 1 :
+                Debug.Log("可頌能力 加坐騎攻擊速度");
 
+                ability_RideAttackSpeed += 0.2f;
+                break;
+            case 2 :
 
-        //}
+                Debug.Log("拉麵能力 加貓攻擊速度");
+            
+                ability_CatShootSpeed += 0.1f;
+                break;
+            case 3 :
+                Debug.Log("牛排飯能力 加移動速度");
+
+                ability_RideMoveSpeed += 3;
+                break;
+            case 4 :
+
+                Debug.Log("蔬菜湯能力 加坐騎攻擊傷害");
+                ability_RideAttackDamage += 2;
+                break;
+            case 5 :
+                Debug.Log("南瓜派能力 加貓攻擊傷害");
+                ability_BulletDamage += 1;
+                break;
+            case 6 :
+                Debug.Log("香菇雞湯能力 加腳色體積");
+
+                ability_BulltetScale += 1;
+                break;
+        }
+        GameObject selectMenu = GameObject.Find("SelectionMenu");
+        selectMenu.SetActive(false);
     }
 }

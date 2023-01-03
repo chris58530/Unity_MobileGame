@@ -8,7 +8,7 @@ public abstract class MojiBaseState
     protected bool canAttack;
     public virtual void EnterState(MojiStateManager creature)
     {
-        Debug.Log("MOJI" + creature.currentState );
+        //Debug.Log("MOJI" + creature.currentState );
         rb = creature.GetComponent<Rigidbody>();
         //rb.constraints = RigidbodyConstraints.FreezePositionY;
 
@@ -23,7 +23,7 @@ public abstract class MojiBaseState
             creature.SwitchState(creature.moveState);
 
         //持續減攻擊CD並傳回CD bar CD採用加法方式計時
-        float attackCD = creature.characterBase.GetAttackCD();
+        float attackCD = creature.characterBase.GetAttackCD() - PlayerAbility.ability_RideAttackSpeed;
         if (creature.currentAttackCD < attackCD)
         {
             creature.currentAttackCD += (1 *Time.deltaTime);
@@ -152,7 +152,7 @@ public class MojiMoveState : MojiBaseState
 
         float moveX = creature.floatingJoystick.Horizontal;
         float moveY = creature.floatingJoystick.Vertical;
-        rb.velocity = new Vector3(moveX * creature.currentMoveSpeed, rb.velocity.y, moveY * creature.currentMoveSpeed);
+        rb.velocity = new Vector3(moveX * creature.currentMoveSpeed+PlayerAbility.ability_RideMoveSpeed, rb.velocity.y, moveY * creature.currentMoveSpeed);
         if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
             creature.transform.rotation = Quaternion.LookRotation(rb.velocity);

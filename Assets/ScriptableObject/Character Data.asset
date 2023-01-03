@@ -12,4 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f629d7c320cd2784a8116aeca9759635, type: 3}
   m_Name: Character Data
   m_EditorClassIdentifier: 
-  _characterList: []
+  _characterList:
+  - name: moji
+    introduciotn: mmm
+    characterObject: {fileID: 3929357347147589621, guid: ddb4267ea810b57498d6f254a761802b,
+      type: 3}
+    moveSpeed: 20
+    attackPower: 20
+    attackCD: 2
+    currentAttackCD: 0
+    hurtCD: 2
+    currentHurtCD: 0
+    maxHP: 20
+    currentHP: 0
+  - name: Octopus
+    introduciotn: ooo
+    characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
+      type: 3}
+    moveSpeed: 20
+    attackPower: 20
+    attackCD: 2
+    currentAttackCD: 0
+    hurtCD: 2
+    currentHurtCD: 0
+    maxHP: 20
+    currentHP: 0
+  - name: Octopus
+    introduciotn: ooo
+    characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
+      type: 3}
+    moveSpeed: 20
+    attackPower: 20
+    attackCD: 2
+    currentAttackCD: 0
+    hurtCD: 2
+    currentHurtCD: 0
+    maxHP: 20
+    currentHP: 0
+  - name: Octopus
+    introduciotn: ooo
+    characterObject: {fileID: 3929357347147589621, guid: 88b8ec92cd898194aac515cf99b5145b,
+      type: 3}
+    moveSpeed: 20
+    attackPower: 20
+    attackCD: 2
+    currentAttackCD: 0
+    hurtCD: 2
+    currentHurtCD: 0
+    maxHP: 20
+    currentHP: 0
