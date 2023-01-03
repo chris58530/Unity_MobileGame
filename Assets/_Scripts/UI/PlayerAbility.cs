@@ -34,18 +34,19 @@ public class PlayerAbility : MonoBehaviour
 
     private void OnEnable()
     {
+        int currentLockAbility = PlayerCurrentData.AbilityCount;
         GameManager.instance.PauseTime(true);
 
-        currentFoodIndex1 = Random.Range(0, 7);
-        currentFoodIndex2 = Random.Range(0, 7);
+        currentFoodIndex1 = Random.Range(0, currentLockAbility);
+        currentFoodIndex2 = Random.Range(0, currentLockAbility );
         while (currentFoodIndex1 == currentFoodIndex2)
         {
-            currentFoodIndex2 = Random.Range(0, 7);
+            currentFoodIndex2 = Random.Range(0, currentLockAbility);
         }
-        currentFoodIndex3 = Random.Range(0, 7);
+        currentFoodIndex3 = Random.Range(0, currentLockAbility );
         while (currentFoodIndex2 == currentFoodIndex3 || currentFoodIndex1 == currentFoodIndex3)
         {
-            currentFoodIndex3 = Random.Range(0, 7);
+            currentFoodIndex3 = Random.Range(0, currentLockAbility );
         }
 
         button1.image.sprite = foodData.GetFood(currentFoodIndex1).foodSprite;

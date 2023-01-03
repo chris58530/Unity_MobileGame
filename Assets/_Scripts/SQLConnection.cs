@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.IO;
 
-public class SQLConnection :MonoBehaviour
+public class SQLConnection : MonoBehaviour
 {
     const string connectionString = "Data Source= aws-database.cuar87we7atl.ap-northeast-1.rds.amazonaws.com,1433;" +
                "User ID = chris58530; Password = 12345678;" +
@@ -25,9 +25,9 @@ public class SQLConnection :MonoBehaviour
         {
             Debug.Log(System.IO.File.Exists(path));
             Register();
-        }     
+        }
         else
-        {       
+        {
             var saveData = SaveSystem.LoadFormJson<SaveData>(SaveSystem.SQLSave);
             PlayerCurrentData.playerPID = saveData.PlayerIDFormSQL;
 
@@ -36,7 +36,7 @@ public class SQLConnection :MonoBehaviour
 
         GetShopItemFromSQL();
 
-    }  
+    }
     public void GetDataFromSQL()//沒有的話就會自動註冊 Register()
     {
         Debug.Log("GetDataFromSQL");
@@ -54,10 +54,12 @@ public class SQLConnection :MonoBehaviour
             PlayerCurrentData.playerLevel = int.Parse(reader[1].ToString());
             PlayerCurrentData.playerRuby = int.Parse(reader[2].ToString());
             PlayerCurrentData.playerMoney = int.Parse(reader[3].ToString());
+            PlayerCurrentData.AbilityCount = int.Parse(reader[5].ToString());
             Debug.Log("玩家PID : " + PlayerCurrentData.playerPID);
             Debug.Log("玩家等級 : " + PlayerCurrentData.playerLevel);
             Debug.Log("玩家寶石 : " + PlayerCurrentData.playerRuby);
             Debug.Log("玩家金錢 : " + PlayerCurrentData.playerMoney);
+            Debug.Log("玩家料理解鎖 : " + PlayerCurrentData.AbilityCount);
             sqlConnection.Close();
             sqlConnection.Dispose();
         }
@@ -66,7 +68,7 @@ public class SQLConnection :MonoBehaviour
             Debug.Log("SQL讀取不到");
             Register();
         }
-        
+
 
     }
     void Register()
@@ -89,7 +91,7 @@ public class SQLConnection :MonoBehaviour
         SqlConnection sqlConnection1 = new SqlConnection(connectionString);
         sqlConnection1.Open();
         //建立玩家資料 等級1 金錢0 寶石0
-        string insert = "INSERT INTO dbo.PlayerTable([PlayerLevel],[PlayerRuby],[PlayerMoney],[PlayerName])VALUES(1,0,0,'HelloWorld');";
+        string insert = "INSERT INTO dbo.PlayerTable([PlayerLevel],[PlayerRuby],[PlayerMoney],[PlayerName],[AbilityCount])VALUES(1,0,0,'HelloWorld',3);";
         SqlCommand sqlCommand1 = new SqlCommand(insert, sqlConnection1);
         sqlCommand1.ExecuteNonQuery();
 
@@ -111,6 +113,7 @@ public class SQLConnection :MonoBehaviour
                 PlayerCurrentData.playerLevel = int.Parse(reader2[1].ToString());
                 PlayerCurrentData.playerRuby = int.Parse(reader2[2].ToString());
                 PlayerCurrentData.playerMoney = int.Parse(reader2[3].ToString());
+                PlayerCurrentData.AbilityCount = int.Parse(reader2[5].ToString());
                 SaveSystem.SaveByJson(SaveSystem.SQLSave, SavingData());
 
             }
@@ -126,37 +129,32 @@ public class SQLConnection :MonoBehaviour
 
 
     }
-    public void UpdatelDataFromSQL()
+    public static void UpdatelDataFromSQL()
     {
         SqlConnection sqlConnection = new SqlConnection(connectionString);
         sqlConnection.Open();
-        string isChecked = "UPDATE PlayerTable SET PlayerMoney = @Money,PlayerLevel = @Level,PlayerRuby = @Ruby WHERE PID = @1 ,PlayerName = @2";
+        string isChecked = "UPDATE PlayerTable SET PlayerMoney = @Money,PlayerLevel = @Level,PlayerRuby = @Ruby ,AbilityCount = @Ability WHERE PID = @1 ";
         SqlCommand sqlCommand = new SqlCommand(isChecked, sqlConnection);
 
         string PID = PlayerCurrentData.playerPID;
         int Level = PlayerCurrentData.playerLevel;
         int Ruby = PlayerCurrentData.playerRuby;
         int Money = PlayerCurrentData.playerMoney;
+        int Ability = PlayerCurrentData.AbilityCount;
         sqlCommand.Parameters.Add(new SqlParameter("@1", PID));
         sqlCommand.Parameters.Add(new SqlParameter("@Level", Level));
         sqlCommand.Parameters.Add(new SqlParameter("@Ruby", Ruby));
         sqlCommand.Parameters.Add(new SqlParameter("@Money", Money));
+        sqlCommand.Parameters.Add(new SqlParameter("@Ability", Ability));
 
-        SqlDataReader reader = sqlCommand.ExecuteReader();
-        if (reader.Read())
-        {
-            PlayerCurrentData.playerLevel = int.Parse(reader[1].ToString());
-            PlayerCurrentData.playerRuby = int.Parse(reader[2].ToString());
-            PlayerCurrentData.playerMoney = int.Parse(reader[3].ToString());
-            Debug.Log("儲存...玩家等級 : " + PlayerCurrentData.playerLevel);
-            Debug.Log("儲存...玩家寶石 : " + PlayerCurrentData.playerRuby);
-            Debug.Log("儲存...玩家金錢 : " + PlayerCurrentData.playerMoney);
-            sqlConnection.Close();
-            sqlConnection.Dispose();
+        sqlCommand.ExecuteNonQuery();
+        Debug.Log("儲存...玩家等級 : " + PlayerCurrentData.playerLevel);
+        Debug.Log("儲存...玩家寶石 : " + PlayerCurrentData.playerRuby);
+        Debug.Log("儲存...玩家金錢 : " + PlayerCurrentData.playerMoney);
+        Debug.Log("儲存...玩家解鎖料理 : " + PlayerCurrentData.AbilityCount);
 
-        }
     }
-  
+
     public void GetShopItemFromSQL()
     {
         Debug.Log(" GetShop");

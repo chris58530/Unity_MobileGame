@@ -8,6 +8,7 @@ public class PlayerCurrentData : MonoBehaviour
     public static int playerLevel;
     public static int playerMoney;
     public static int playerRuby;
+    public static int AbilityCount;
 
     public static int[] itemCount = {0,0,0,0,0,0,0,0,0,0,0 };
 

@@ -104,7 +104,9 @@ public class OctopusMoveState : OctopusBaseState
 
         float moveX = creature.floatingJoystick.Horizontal;
         float moveY = creature.floatingJoystick.Vertical;
-        rb.velocity = new Vector3(moveX * creature.currentMoveSpeed+PlayerAbility.ability_RideMoveSpeed, rb.velocity.y, moveY * creature.currentMoveSpeed);
+        float speed = (creature.currentMoveSpeed + PlayerAbility.ability_RideMoveSpeed);
+
+        rb.velocity = new Vector3(moveX * speed, rb.velocity.y, moveY * speed);
         if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
             creature.transform.rotation = Quaternion.LookRotation(rb.velocity);

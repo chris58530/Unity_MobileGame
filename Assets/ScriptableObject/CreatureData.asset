@@ -56,7 +56,7 @@ MonoBehaviour:
     - {fileID: 8007638731067291284, guid: ade15ef446a99ee49b0784641153f466, type: 3}
     - {fileID: 2260792113439378229, guid: 0ca46a30e3aae22498df8aa4d35a7994, type: 3}
     - {fileID: 2930505800920096262, guid: 7ae3df82be0f43a4b93f68fe158c7dee, type: 3}
-    probability: 64000000320000000a0000000a000000
+    probability: 64000000320000000a00000064000000
   - creatureName: Rat
     moveSpeed: 2
     attackPower: 3
