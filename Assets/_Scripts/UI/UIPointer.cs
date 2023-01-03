@@ -7,6 +7,7 @@ public class UIPointer : MonoBehaviour
 {
     public void ClickActive(GameObject o)
     {        
+        SoundManager.instance.Bottun();
         o.SetActive(!o.activeInHierarchy);
     }
  

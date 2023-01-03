@@ -38,6 +38,7 @@ public class FoodLockUI : MonoBehaviour
                     PlayerCurrentData.itemCount[10] -= cost2;
                     PlayerCurrentData.itemCount[2] -= cost3;
                     PlayerCurrentData.AbilityCount++;
+                    SoundManager.instance.UnlcokItem();
                 }
             }
         }
@@ -57,6 +58,7 @@ public class FoodLockUI : MonoBehaviour
                     PlayerCurrentData.itemCount[10] -= cost2;
                     PlayerCurrentData.itemCount[0] -= cost3;
                     PlayerCurrentData.AbilityCount++;
+                    SoundManager.instance.UnlcokItem();
 
                 }
             }
@@ -64,7 +66,7 @@ public class FoodLockUI : MonoBehaviour
     }
     public void B6()
     {
-        int cost1 =1;
+        int cost1 = 1;
         int cost2 = 1;
         int cost3 = 1;
         if ((PlayerCurrentData.itemCount[4] - cost1) >= 0)
@@ -78,6 +80,7 @@ public class FoodLockUI : MonoBehaviour
                     PlayerCurrentData.itemCount[8] -= cost3;
                     PlayerCurrentData.AbilityCount++;
 
+                    SoundManager.instance.UnlcokItem();
                 }
             }
         }
@@ -97,6 +100,7 @@ public class FoodLockUI : MonoBehaviour
                     PlayerCurrentData.itemCount[10] -= cost2;
                     PlayerCurrentData.itemCount[5] -= cost3;
                     PlayerCurrentData.AbilityCount++;
+                    SoundManager.instance.UnlcokItem();
 
                 }
             }

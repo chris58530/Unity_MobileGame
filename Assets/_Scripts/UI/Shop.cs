@@ -56,6 +56,7 @@ public class Shop : MonoBehaviour
             PlayerCurrentData.playerMoney -= cost;
             PlayerCurrentData.itemCount[item1] += 1;
             Debug.Log(PlayerCurrentData.itemCount[item1]);
+            SoundManager.instance.Coin();
         }
         else Debug.Log("金錢不夠");
     }
@@ -67,6 +68,7 @@ public class Shop : MonoBehaviour
             PlayerCurrentData.itemCount[item2] += 1;
             PlayerCurrentData.playerMoney -= cost;
             Debug.Log(PlayerCurrentData.itemCount[item2]);
+            SoundManager.instance.Coin();
 
         }
         else Debug.Log("金錢不夠");
@@ -79,6 +81,7 @@ public class Shop : MonoBehaviour
             PlayerCurrentData.itemCount[item3] += 1;
             PlayerCurrentData.playerMoney -= cost;
             Debug.Log(PlayerCurrentData.itemCount[item3]);
+            SoundManager.instance.Coin();
         }
         else Debug.Log("金錢不夠");
     }
@@ -89,6 +92,7 @@ public class Shop : MonoBehaviour
         {
             PlayerCurrentData.playerRuby -= 1;
             PlayerCurrentData.playerMoney += 30;
+            SoundManager.instance.Coin();
         }
         else Debug.Log("寶石不夠");
        
@@ -100,6 +104,7 @@ public class Shop : MonoBehaviour
         {
             PlayerCurrentData.playerRuby -= cost;
             PlayerCurrentData.playerMoney += 30;
+            SoundManager.instance.Coin();
         }
         else Debug.Log("寶石不夠");
       
@@ -112,6 +117,7 @@ public class Shop : MonoBehaviour
         {
             PlayerCurrentData.playerRuby -= cost;
             PlayerCurrentData.playerMoney += 30;
+            SoundManager.instance.Coin();
         }
         else Debug.Log("寶石不夠");
         
@@ -120,13 +126,18 @@ public class Shop : MonoBehaviour
     public void RubyB1()
     {
         PlayerCurrentData.playerRuby += 1;
+        SoundManager.instance.BuyGem();
+
     }
     public void RubyB2()
     {
         PlayerCurrentData.playerRuby += 12;
+        SoundManager.instance.BuyGem();
+
     }
     public void RubyB3()
     {
         PlayerCurrentData.playerRuby += 40;
+        SoundManager.instance.BuyGem();
     }
 }
