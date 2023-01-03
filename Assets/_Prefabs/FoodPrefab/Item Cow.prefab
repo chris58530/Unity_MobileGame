@@ -110,3 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f538102aaa70604eacad5e374a817f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientsData: {fileID: 11400000, guid: 5227585823cfddc41b493e2d2b3b9feb, type: 2}
+  thisItemCount: 2
