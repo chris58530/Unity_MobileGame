@@ -9,6 +9,7 @@ TagManager:
   - PlayerDetectObject
   - Bullet
   - DeadEnemy
+  - SelectCanvas
   layers:
   - Default
   - TransparentFX

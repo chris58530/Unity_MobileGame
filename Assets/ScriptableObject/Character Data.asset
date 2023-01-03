@@ -19,7 +19,7 @@ MonoBehaviour:
       type: 3}
     moveSpeed: 20
     attackPower: 20
-    attackCD: 2
+    attackCD: 10
     currentAttackCD: 0
     hurtCD: 2
     currentHurtCD: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
       type: 3}
     moveSpeed: 20
     attackPower: 20
-    attackCD: 2
+    attackCD: 10
     currentAttackCD: 0
     hurtCD: 2
     currentHurtCD: 0

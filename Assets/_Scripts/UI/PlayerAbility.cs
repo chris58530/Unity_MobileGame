@@ -19,21 +19,23 @@ public class PlayerAbility : MonoBehaviour
     public int abliltyCount = 0;
     string[] abilityNameArray = { "", "", "", "", "" };
 
-    private int currentFoodIndex1;
-    private int currentFoodIndex2;
-    private int currentFoodIndex3;
+    private int currentFoodIndex1 =0;
+    private int currentFoodIndex2=0;
+    private int currentFoodIndex3 = 0;
 
     //腳色能力
     public static int ability_BulletDamage = 0;
     public static int ability_CatDetectRange = 0;
     public static float ability_CatShootSpeed = 0;
-    public static float ability_RideAttackSpeed = 0;
+    public static float ability_RideAttackSpeed = 1;
     public static float ability_RideMoveSpeed = 0;
     public static float ability_RideAttackDamage = 0;
     public static float ability_BulltetScale = 0;
 
     private void OnEnable()
     {
+        GameManager.instance.PauseTime(true);
+
         currentFoodIndex1 = Random.Range(0, 7);
         currentFoodIndex2 = Random.Range(0, 7);
         while (currentFoodIndex1 == currentFoodIndex2)
@@ -156,7 +158,7 @@ public class PlayerAbility : MonoBehaviour
             case 1 :
                 Debug.Log("可頌能力 加坐騎攻擊速度");
 
-                ability_RideAttackSpeed += 0.2f;
+                ability_RideAttackSpeed += 0.1f;
                 break;
             case 2 :
 
@@ -184,7 +186,12 @@ public class PlayerAbility : MonoBehaviour
                 ability_BulltetScale += 1;
                 break;
         }
-        GameObject selectMenu = GameObject.Find("SelectionMenu");
-        selectMenu.SetActive(false);
+        GameObject select = GameObject.Find("SystemCanvas");
+        select.transform.Find("SelectCanvas").gameObject.SetActive(false);
+    }
+    private void OnDisable()
+    {
+        GameManager.instance.PauseTime(false);
+
     }
 }

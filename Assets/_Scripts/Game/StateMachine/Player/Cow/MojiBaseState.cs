@@ -23,10 +23,10 @@ public abstract class MojiBaseState
             creature.SwitchState(creature.moveState);
 
         //持續減攻擊CD並傳回CD bar CD採用加法方式計時
-        float attackCD = creature.characterBase.GetAttackCD() - PlayerAbility.ability_RideAttackSpeed;
+        float attackCD = creature.characterBase.GetAttackCD() ;
         if (creature.currentAttackCD < attackCD)
         {
-            creature.currentAttackCD += (1 *Time.deltaTime);
+            creature.currentAttackCD += (1 *Time.deltaTime * PlayerAbility.ability_RideAttackSpeed);
             creature.characterBase.CDBarUpdate(creature.currentAttackCD);
             canAttack = false;
         }

@@ -23,7 +23,9 @@ public class CreatureBase : MonoBehaviour
     private void Start()
     {
         playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+
+       
+}
     private void Update()
     {
         DistanceWithPlayer();
